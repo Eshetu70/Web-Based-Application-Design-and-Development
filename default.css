@@ -1,7 +1,7 @@
 
         body {
             color: teal;
-            background-color: rgba(255, 255, 255, 0.397);
+            background-color: silver;
             font-family: bodonic MT;
             margin-left: 300px;
             margin-right: 300px;
@@ -9,36 +9,39 @@
        
         
         nav {
-            list-style-type: none;
-            margin: 0;
-            padding:0;
-            overflow: hidden;
-            font-size: 120;
             
+            text-align: center;  
         
         }
        
-    header{
-    text-align: center;
+        header{
+        
+            text-align: center;
+               
+            }
+      main{
+        text-align: center;
    
-    }
-    footer{
-       
-        text-align: left;
-        
-    }
-    footer section{
-      margin-left: 300px;
-       margin-right: 300px;
+       }
+
+       footer section{
+        margin-left: 300px;
+        margin-right: 300px;
        text-align: center;
-       
-    }
-    p{
+         
+      }
+
+     a{
+        color:lightseagreen;
+        font-weight: bold;
+      }
+    
+      p{
         text-align: left;
-        
+             
     }
-        
-    em{
+     
+      em{
         margin-left:300px;
         
     }
