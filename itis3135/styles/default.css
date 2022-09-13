@@ -38,7 +38,7 @@
                
             }
       main{
-        text-align: center;
+        font-size: 120%;
    
        }
        ol, td, th{
@@ -58,7 +58,11 @@
         margin-left: 300px;
         margin-right: 300px;
        text-align: center;
+       background-color:rgb(56, 11, 11);
          
+      }
+      footer nav {
+        background-color: rgb(56, 11, 11);
       }
       div.valid{
         text-align: center;
@@ -68,6 +72,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color:rgb(56, 11, 11);
  }
  header li {
   float: left;
@@ -81,14 +86,16 @@
   margin-right: 120px;
    
 }
-     a{
+
+a
+{
         text-decoration: none;
         color:teal;
         font-weight: bold;
         font-size: 20px;
         list-style-type: none;
         font-family: bodonic MT;
-      }
+}
       a:hover{
         text-decoration: underline;
         color:mediumorchid;
@@ -112,11 +119,13 @@
   thead, tfoot{
       background-color: blanchedalmond;
   }
-  tbody tr:nth-child(even){
+  tbody tr:nth-child(even)
+  {
       background-color: rgba(161, 158, 94, 0.349);
-
   }
-  tbody tr:nth-child(odd){
+
+  tbody tr:nth-child(odd)
+  {
       background-color: thistle;
 
   }
