@@ -5,12 +5,9 @@
             color: teal;
             background-color: silver;
             font-family: bodonic MT;
-            margin-left: 300px;
-            margin-right: 300px;
+            margin-left: 100px;
+            margin-right: 100px;
         }
-       div.great{
-        background-image: url(https://webpages.charlotte.edu/ewekjira/imagecomporgi.jpg);
-       }
         
         nav  {
             font-size: larger;
@@ -21,21 +18,20 @@
         nav ul {
           list-style-type: none;
         }
-        div.var{
-          list-style-type:none;
-        }
-      
-       
+
         h1, h2, h3{
             font-family: bodonic MT;
             text-align: center;
 
         }
         header{
-        
-            text-align: center;
-            font-family: bodonic MT;
+         
+          text-align: center;
+          font-family: bodonic MT;
                
+            }
+            figure{
+              text-align: center;
             }
       main{
         font-size: 120%;
@@ -55,15 +51,17 @@
         text-align: left;
        }
        footer div{
-        margin-left: 200px;
-        margin-right: 200px;
        text-align: center;
-       background-color:rgb(56, 11, 11);
          
       }
       footer nav {
         background-color: rgb(56, 11, 11);
       }
+      footer p {
+        text-align: center;
+
+      }
+
       div.valid{
         text-align: center;
       }
