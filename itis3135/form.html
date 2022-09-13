@@ -5,99 +5,76 @@
         <link href="styles/default.css" rel="stylesheet" type="text/css" >
         <title>ITIS 3135>> HTML Form</title>
     </head>
-   
-      <body>
-        
-        <header>
-            
-            <h1>Eshetu Wekjira &#9733; ITIS 3135</h1>
-            <nav>
-              <div class="var">
-              <ul>
-             <li> <a href="introduction.html"> Introduction</a></li> 
-
-            <li> <a href="contract.html"> Contract</a></li>
-
-            <li class="dropdown">
-              <a href="home.html" class="dropbtn" > Home</a>
-              <div class="dropdown-content">
-                <a href="https:tables.html"> Activity 2 Tables</a>
-                <a href="form.html">Activity 3 Form</a>
-                
-              </div>
-            </li>
+      <body>   
+      <header>
+      <h1>Eshetu Wekjira &#9733; ITIS 3135</h1>
+        <nav>
+         <ul>
+         <li><a href="introduction.html"> Introduction</a></li> 
+         <li><a href="contract.html"> Contract</a></li>
+         <li class="dropdown">
+         <a href="home.html" class="dropbtn" > Home</a>
+         <div class="dropdown-content">
+         <a href="https:tables.html"> Activity 2 Tables</a>
+         <a href="form.html">Activity 3 Form</a>
+         </div>
+         </li>
+         </ul>
+         </nav>
+       </header>
+         <main>
+     <h3> Activity 3 Form</h3>
+          <p>Our community kitchen program (CKP) serves breakfast, lunch, and coffee, offers training on cooking, and gives certification.</p>
+          <div class="form">
+          <ul>
+          <li> Power Bowls</li>
+          <li> Omelets and Frittatas</li>
+          <li>  Egg_sclusives</li>
+          <li> Juice Bar</li>
           </ul>
-          </div>
-                </nav>
-        
-            </header>
-            <hr>
-
-             <main>
-
-            <h2> Activity 3 HTML Form</h2>
-               
-            <p>  Our community kitchen program (CKP) that serves breakfast, lunch,  coffee, training how to cook, and give certification </p>
-            <div class="form">
-            <ul>
-                <li> Power Bowls</li>
-                <li> Omelets and Frittatas</li>
-                <li>  Egg_sclusives</li>
-                <li> Juice Bar</li>
-            </ul>
            </div>
-
-          <h2> Menu</h2>
+       <h3> Menu</h3>
           <table>
             <thead>
-                <tr>
-                    <th colspan="2" class="right"> Breakfast Sections</th> 
-                </tr>
+             <tr>
+                <th colspan="2" class="right"> Breakfast Sections</th> 
+             </tr>
             </thead>
             <tbody>
-                <tr>
-                <td>power breakfast quinoa Bowls</td>
-                <td>Protein packed, quinoa, italian suage mushroom, tomatos two basted eggs $10.37</td>
-                </tr>
-        
-                 <tr>
-                    <td>bacado</td>
-                    <td>bacon, avocado and monetery, jack topped with all-natural sour cream &10.78</td>
-                 </tr>
-                    <tr>
-                        <td> morning meditation</td>
-                        <td> orange, lemon, turmeric, ginger, agave nectar $5.02</td>
-                     </tr>        
-            </tbody>
-          </table>
+            <tr>
+            <td>power breakfast quinoa Bowls</td>
+            <td>Protein packed, quinoa, italian suage mushroom, tomatos two basted eggs $10.37</td>
+            </tr>
+             <tr>
+            <td>bacado</td>
+            <td>bacon, avocado and monetery, jack topped with all-natural sour cream &10.78</td> </tr>
+            <tr> <td> morning meditation</td>
+            <td> orange, lemon, turmeric, ginger, agave nectar $5.02</td>
+            </tr>        
+             </tbody>
+           </table>
 
-           <h2> Event</h2>
-           <P> Community kitchen cafe program  have prepare an event for homesless to feed them</P>
-           <h2> Let get the coupons and promotions</h2>
+           <h3> Event</h3>
+           <P>The community kitchen cafe program has prepared an event for the homeless to feed them.</P>
+           <h3>Let get the coupons and promotions</h3>
            <form action="”#”">
             <label for="first" class="bold">First Name:</label>
             <input type="text" name="first" id="first" required=""> <br>
-
             <label for="last" class="bold">Last Name:</label>
             <input type="text" name="last" id="last" required=""><br>
-
             <label for="email" class="bold">Email:
-                <input type="email" name="email" id="email" required="" placeholder="Enter a valid email address">
+            <input type="email" name="email" id="email" required="" placeholder="Enter a valid email address">
             </label> <br>
-
-
             <label for="telephone" class="bold">Phone number:
-
-                <input type="tel" required="" placeholder="(###) ###-####" id="telephone" size="10">
+            <input type="tel" required="" placeholder="(###) ###-####" id="telephone" size="10">
             </label> <br> <br>
             <p>Please select your preferred method of contact:</p>
               <input type="radio" id="radioemail" name="contact" value="Email">
               <label for="radioemail">Email</label><br>
               <input type="radio" id="radiophone" name="contact" value="Phone">
-              <label for="radiophone">Phone</label><br>
-             
+              <label for="radiophone">Phone</label><br>  
 
-            <fieldset>
+              <fieldset>
                 <legend class="bold">I would like to receive emails regarding:</legend>
 
                 <input type="checkbox" name="email" value="Coupons" id="coupons" required="">
@@ -109,8 +86,6 @@
                 <input type="checkbox" name="email" value="None" id="none" required="">
                 <label for="none">None</label>
             </fieldset> <br>
-
-
             <label class="bold"> Gender:
                 <select name="gender">
 
@@ -121,49 +96,35 @@
 
                 </select>
             </label>
-
-            <br> <br>
-            <button style="background-color:rgb(74, 66, 66); border-color:teal; color:turquoise">submit
-        </button>
-
-            <h2>Location</h2>
-        <p> Community Kitchen Program (CKP) is located at<br>
+            <br><br>
+            <button style="background-color:rgb(74, 66, 66); border-color:teal; color:turquoise">submit</button>
+            <button style="background-color:rgb(74, 66, 66); border-color:teal; color:turquoise">Reset</button>
+           <h3>Location</h3>
+           <p> Community Kitchen Program (CKP) is located at<br>
             3601 central ave<br>
             Charlotte, NC 28213.<br>
             See <a id="locationlink" href="https://goo.gl/maps/BDZyPmfn4H1GW7Re6">Google Maps</a> for directions.</p>
+         </form>
 
-        </form>
-
-          </main>
-           <br>
-           
+           </main>
+            <br>
             <footer>
                 
                 <nav>
                     <a href="https://webpages.charlotte.edu/ewekjira/" target="_blank"> UNCCHomePage</a> &#9553;
-                
                     <a href="https://github.com/Eshetu70/Eshetu70.github.io" target="_blank"> MyGitHubRepo</a> &#9553;
-
                     <a href="https://eshetu70.github.io/" target="_blank"> GitHub.ioPage</a> &#9553;
-                    
-                    <a href="https://www.freecodecamp.org/ewekjira/" target="_blank"> freecodecam</a> &#9553;
-                    
+                    <a href="https://www.freecodecamp.org/ewekjira/" target="_blank"> freecodecam</a> &#9553; 
                     <a href="https://www.codecademy.com/learn/welcome-to-codecademy/" target="_blank"> Codacademy</a> &#9553;
-                    <a href="https://www.linkedin.com/in/eshetu-wekjira-442a2123a/" target="_blank"> LinkedIn</a> &#9553;
-                    
+                    <a href="https://www.linkedin.com/in/eshetu-wekjira-442a2123a/" target="_blank"> LinkedIn</a> &#9553;     
                 </nav>
-                <hr>
-                <hr>
-                <br>
                 <div>
-                    Designed Enjoy <a href ="https://webpages.charlotte.edu/ewekjira/ewekjira.html"> ewekjira </a>
-
+                <p>Designed by:<a href ="ewekjiradesigner.com">Ewekjira Designer</a> @2022</p>
                 <p>
                 <a href="https://validator.w3.org/check?uri=referer">
-                <img src ="https://webpages.charlotte.edu/ewekjira/W3CHTML.png" alt ="network error">
-                </a>
+                <img src ="images/W3CHTML.png" alt ="network error"></a>
                 <a href="https://validator.w3.org/check?uri=referer">
-                <img src ="https://webpages.charlotte.edu/ewekjira/W3Ccss.png" alt ="image for W3C CSS"> </a>
+                <img src ="images/W3CCSS.png" alt ="image for W3C CSS"> </a>
                  </p>
                  </div>
                 
