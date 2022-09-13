@@ -7,51 +7,43 @@
             font-family: bodonic MT;
             margin-left: 100px;
             margin-right: 100px;
+            margin-top:50px;
         }
-        
         nav  {
             font-size: larger;
-            text-align: center;   
-        
-        }
-
-       
-
-        h1, h2, h3{
-            font-family: bodonic MT;
             text-align: center;
-
+            background-color: rgb(105, 100, 100);         
         }
-        h3 em{
-          text-align: left;
-        }
-        header{
-         
-          text-align: center;
-          font-family: bodonic MT;
-        }     
-
-      main{
-        font-size: 120%;
-      }
-   
-      p{
-        text-align: left;
-             
-    }
-     
-      em{
-        margin-left:300px;
-        
-    }
-    a
-    {
-            text-decoration: none;
-            color:teal;
-            font-weight: bold;
-            font-size: 20px;
-            list-style-type: none;
+        header{   
+            text-align: center;
             font-family: bodonic MT;
+        }  
+        header em {
+            text-align: center;
+        }
+        footer p {
+           text-align: center;        
+        }      
+       main{
+           font-size: 120%;
+       }
+       p{
+           text-align: left;
+              }
+       ul {
+           list-style-type: none;
+       }
+      a  {
+           text-decoration: none;
+           color:teal;
+           font-weight: bold;
+           font-size: 20px;
+           list-style-type: none;
+           font-family: bodonic MT;
+       }
+     a:hover{
+           text-decoration: underline;
+           color:mediumorchid;
     }
     
   
