@@ -1,0 +1,62 @@
+
+      
+       
+       body {
+            color: teal;
+            background-color: silver;
+            font-family: bodonic MT;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        
+        nav  {
+            font-size: larger;
+            text-align: center;   
+        
+        }
+
+       
+
+        h1, h2, h3{
+            font-family: bodonic MT;
+            text-align: center;
+
+        }
+        h3 em{
+          text-align: left;
+        }
+        header{
+         
+          text-align: center;
+          font-family: bodonic MT;
+        }     
+
+      main{
+        font-size: 120%;
+      }
+   
+      p{
+        text-align: left;
+             
+    }
+     
+      em{
+        margin-left:300px;
+        
+    }
+    a
+    {
+            text-decoration: none;
+            color:teal;
+            font-weight: bold;
+            font-size: 20px;
+            list-style-type: none;
+            font-family: bodonic MT;
+    }
+    
+  
+
+
+
+
+
