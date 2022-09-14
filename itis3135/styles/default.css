@@ -24,6 +24,11 @@
             text-align: center;
 
         }
+        h3
+        {
+	      font-size: 300%;
+	      line-height: 0px;
+         }
         header{
          
           text-align: center;
@@ -55,7 +60,7 @@
          
       }
       footer nav {
-        background-color: rgb(56, 11, 11);
+        background-color: rgb(73, 15, 11);
       }
       footer p {
         text-align: center;
@@ -70,7 +75,7 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color:rgb(56, 11, 11);
+      background-color:rgb(73, 15, 11);
      }
       header li {
       float: left;
@@ -143,7 +148,7 @@
        } 
     /* Add a red background color to navbar links on hover */
        .navbar a:hover, .dropdown:hover .dropbtn {
-       background-color: mediumorchid;
+       background-color: rgb(242, 150, 30);
        }
     
     /* Dropdown content (hidden by default) */
@@ -168,7 +173,7 @@
     
     /* Add a grey background color to dropdown links on hover */
       .dropdown-content a:hover {
-      background-color: #ddd;
+      background-color: rgb(114, 73, 73);
       }
     
     /* Show the dropdown menu on hover */
