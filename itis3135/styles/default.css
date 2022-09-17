@@ -11,12 +11,13 @@
         
         nav  {
             font-size: larger;
-            text-align: center;   
-        
+            text-align: center;
+             
         }
 
         nav ul {
           list-style-type: none;
+          
         }
 
         h1, h2, h3{
@@ -60,7 +61,15 @@
       }
       footer nav {
         background-color: rgb(73, 15, 11);
+        text-align: center;
+        padding: 8px 10px;
       }
+      footer nav a {
+        justify-content: space-between;
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+
       footer p {
         text-align: center;
 
@@ -85,7 +94,7 @@
      text-align: center;
      padding: 14px 16px;
      margin-left: 30px;
-     margin-right: 120px;
+     margin-right: 30px;
    
      }
 
@@ -100,7 +109,7 @@
       }
       a:hover{
         text-decoration: underline;
-        color:mediumorchid;
+        color:rgb(3, 247, 247);
       }
     
       p{
