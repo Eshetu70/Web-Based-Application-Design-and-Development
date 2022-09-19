@@ -45,7 +45,8 @@ function getAccelaration()
     var mile =prompt("Please enter a distance in miles")
     var time =prompt("Please enter a time in second")
     acceleration =mile/(time*time);
-    document.getElementById("speed").innerHTML ="Accelearation is equal: " + acceleration + "mi / s2 "+ " Thank you for using our app!";
+    var Num =acceleration.toFixed(2);
+    document.getElementById("speed").innerHTML ="Accelearation is equal: " + Num + "mi / s2 "+ " Thank you for using our app!";
 }
 
 function BodyMassIndex()
@@ -72,3 +73,24 @@ function BodyMassIndex()
     
     document.getElementById("BMX").innerHTML ="Your body mass index is: " + num + " , "  +  check + "! " + " Thank you for using our app!";
 }
+
+function multiplications()
+{
+    var first =prompt("Please enter a first number")
+    var second =prompt("Please enter a second number")
+    answer =(first*second);
+    var mul =answer.toFixed(3);
+    document.getElementById("multiplications").innerHTML = "" + first +" x " +second + " = " + mul + ""+ " Thank you for using our app!";
+}
+   today=new Date();
+    var cmas=new Date(today.getFullYear(), 10, 24);
+   if (today.getMonth()==10 && today.getDate()>24) 
+     {
+   cmas.setFullYear(cmas.getFullYear()+1); 
+}  
+   var one_day=1000*60*60*24;
+
+   function ThanksgivingDay(){
+   document.getElementById("ThanksgivingDay").innerHTML = (Math.ceil((cmas.getTime()-today.getTime())/(one_day))+
+   " days left until Thanksgiving!");
+   }
