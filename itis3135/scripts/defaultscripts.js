@@ -1,14 +1,14 @@
 
 
 var name;
-var feeling;
+var feeling; 
 function questions(){ 
-    name =prompt("Please enter your name:", "  ")
-    feeling =prompt("how are you feeling?", "  ")
+    name =prompt("Please enter your name:", " ");
+    feeling =prompt("How are you feeling?:", " ");
     document.getElementById("date").innerHTML = "Today is " + getCurrentTime() + " on " +  getTodaysDate() + ", " + currentYear;
     document.getElementById("welcome").innerHTML="Ewekjira designers welcomes you, " + getName()  + "!\n" +
     "We're glad you are doing "+ getFeeling() + ".";
-    
+    form = document.querySelector("signup");
 }
 
 function setName(name){
