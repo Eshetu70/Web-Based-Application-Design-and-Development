@@ -1,10 +1,24 @@
 
 
 var name;
-var feeling; 
-function questions(){ 
-    name =prompt("Please enter your name:", " ");
-    feeling =prompt("How are you feeling?:", " ");
+var feeling;
+
+async function promptUser() {
+
+}
+async function questions(){ 
+    let evt = await new Promise((resolve, reject) => {
+        document.getElementById("preInputForm").addEventListener("submit", (evt) => {
+            evt.preventDefault();
+            resolve(evt);
+        });
+    });
+    console.log("Submitted!");
+    const data = new FormData(evt.target);
+    name = data.get('first');
+    feeling = data.get('feeling');
+    document.getElementById("preInput").style = "visibility: hidden;";
+    document.getElementById("afterInput").style = "";
     document.getElementById("date").innerHTML = "Today is " + getCurrentTime() + " on " +  getTodaysDate() + ", " + currentYear;
     document.getElementById("welcome").innerHTML="Ewekjira designers welcomes you, " + getName()  + "!\n" +
     "We're glad you are doing "+ getFeeling() + ".";
