@@ -2,12 +2,13 @@
 
 var name;
 var feeling;
-function questions(){
-    document.getElementById("frm1").submit();
+function questions(){ 
+    name =prompt("Please enter your name:", "  ")
+    feeling =prompt("how are you feeling?", "  ")
     document.getElementById("date").innerHTML = "Today is " + getCurrentTime() + " on " +  getTodaysDate() + ", " + currentYear;
     document.getElementById("welcome").innerHTML="Ewekjira designers welcomes you, " + getName()  + "!\n" +
     "We're glad you are doing "+ getFeeling() + ".";
-    document.getElementById("questions()").submit();
+    
 }
 
 function setName(name){
