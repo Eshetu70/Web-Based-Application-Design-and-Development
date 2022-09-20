@@ -3,11 +3,11 @@
 var name;
 var feeling;
 function questions(){
-    setName(prompt("Please enter your name", " "))
-    setFeeling(prompt("How are you feeling?", "  "))
+    
     document.getElementById("date").innerHTML = "Today is " + getCurrentTime() + " on " +  getTodaysDate() + ", " + currentYear;
     document.getElementById("welcome").innerHTML="Ewekjira designers welcomes you, " + getName()  + "!\n" +
     "We're glad you are doing "+ getFeeling() + ".";
+    document.getElementById("questions()").submit();
 }
 
 function setName(name){
