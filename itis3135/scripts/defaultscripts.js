@@ -22,6 +22,8 @@ async function questions(){
     document.getElementById("date").innerHTML = "Today is " + getCurrentTime() + " on " +  getTodaysDate() + ", " + currentYear;
     document.getElementById("welcome").innerHTML="Ewekjira designers welcomes you, " + getName()  + "!\n" +
     "We're glad you are doing "+ getFeeling() + ".";
+    form = document.querySelector("signup");
+}
 
 function setName(name){
     this.name =name;
