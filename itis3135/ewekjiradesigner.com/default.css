@@ -2,22 +2,25 @@
       
        
        body {
-            color: teal;
-            background-color: silver;
+            color: #FFE8D4;
+            background-color: #44524b;
             font-family: bodonic MT;
-            margin-left: 100px;
-            margin-right: 100px;
+            margin-left: 150px;
+            margin-right: 150px;
             margin-top:50px;
         }
         nav  {
             font-size: larger;
             text-align: center;
-            background-color: rgb(105, 100, 100);         
+            background-color: #A7AAA4;         
         }
         header{   
             text-align: center;
             font-family: bodonic MT;
         }  
+        h2 , h3{
+            text-align: center;
+        }
         header em {
             text-align: center;
         }
@@ -31,12 +34,11 @@
        main{
            font-size: 120%;
        }
-       p{
+       p {
            text-align: left;
               }
-       ul {
-           list-style-type: none;
-       }
+       
+       
       a  {
            text-decoration: none;
            color:teal;
@@ -44,10 +46,11 @@
            font-size: 20px;
            list-style-type: none;
            font-family: bodonic MT;
+           text-align: center;
        }
      a:hover{
            text-decoration: underline;
-           color:mediumorchid;
+           color:rgb(42, 193, 193);
     }
     
   
