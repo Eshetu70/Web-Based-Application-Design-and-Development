@@ -20,7 +20,7 @@ async function questions(){
     document.getElementById("preInput").style = "visibility: hidden;";
     document.getElementById("afterInput").style = "";
     document.getElementById("date").innerHTML = "Today is " + getCurrentTime() + " on " +  getTodaysDate() + ", " + currentYear;
-    document.getElementById("welcome").innerHTML="Ewekjira designers welcomes you, " + getName()  + "!\n" +
+    document.getElementById("welcome").innerHTML="Eshetu Wekjira designers welcomes you, " + getName()  + "!\n" +
     "We're glad you are doing "+ getFeeling() + ".";
     form = document.querySelector("signup");
 }

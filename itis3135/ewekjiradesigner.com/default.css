@@ -54,7 +54,9 @@
            color:rgb(42, 193, 193);
     }
     
-  
+  ul{
+    list-style-type: circle;
+  }
 
 
 
