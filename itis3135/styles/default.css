@@ -84,8 +84,6 @@
       background-color:rgb(73, 15, 11);
       padding: 14px 16px;
      }
-      
-
      header nav a {
       justify-content: space-between;
       margin-left: 30px;
@@ -94,7 +92,6 @@
       font-size: 120%;
       
      }
-
      a
       {
         text-decoration: none;
