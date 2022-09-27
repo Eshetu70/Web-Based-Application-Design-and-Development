@@ -138,11 +138,11 @@
       }
 
     .wrapper{
-        padding-top: 160px;
+        padding-top: 100px;
         transform: rotate(45deg);
-        padding-left: 100px;
         text-align: center;
-        line-height: 1.4;
+        padding-bottom: 100px;
+        
       
       }
       .diamond{
@@ -151,8 +151,8 @@
       .box{
         background-color: #269c84;
         display: inline-block;
-        height: 100px;
-        width: 100px;
+        height: 150px;
+        width: 150px;
         overflow: hidden;
       }
       .box:hover{
