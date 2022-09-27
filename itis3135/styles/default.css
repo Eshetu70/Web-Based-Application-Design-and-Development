@@ -91,6 +91,7 @@
       margin-left: 30px;
       margin-right: 30px;
       font-family: 'Playfair Display', serif;
+      font-size: 120%;
       
      }
 
@@ -137,6 +138,41 @@
     {
       background-color: #26413C;
 
+      }
+
+    .wrapper{
+        padding-top: 160px;
+        transform: rotate(45deg);
+        padding-left: 100px;
+        text-align: center;
+        line-height: 1.4;
+      
+      }
+      .diamond{
+        text-align: center;
+      }
+      .box{
+        background-color: #269c84;
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+      }
+      .box:hover{
+        background: rgb(46, 44, 44);
+
+      }
+      .box p{
+        transform: rotate(-45deg);
+        padding:5px;
+        font-size: 25;
+      }
+      .box p i {
+        color: #fff;
+
+      }
+      .box:hover i{
+        color: #c4b04d;
       }
 
       
