@@ -20,14 +20,18 @@
           
         }
 
-        h1, h2, h3{
+        h1, h2, h3, h4, h5{
             font-family: 'Playfair Display', serif;
             text-align: center;
 
         }
+        h2 a{
+          font-size: 150%;
+          text-decoration: #03120E;
+          color: #c4b04d;
+        }
         
         header{
-         
           text-align: center;
           font-family: bodonic MT;
                
@@ -76,27 +80,18 @@
         text-align: center;
       }
       
-      header ul {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
+      header nav {
       background-color:rgb(73, 15, 11);
+      padding: 14px 16px;
      }
-      header li {
-      float: left;
-      }
+      
 
-     header li a {
-     display: block;
-     text-align: center;
-     padding: 12px 14px;
-     margin-left: 30px;
-     margin-right: 30px;
-   
-     }
-
-     header nav ul li {
+     header nav a {
       justify-content: space-between;
+      margin-left: 30px;
+      margin-right: 30px;
+      font-family: 'Playfair Display', serif;
+      
      }
 
      a
