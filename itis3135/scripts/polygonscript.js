@@ -71,12 +71,12 @@ function getShape(sides){
     
     }
     else if(sides ==9){
-    sides ="A polygon with 10 side is a Nonagon";
+    sides ="A polygon with 9 side is a Nonagon";
   
        }
 
     else if(sides ==10){
-    sides ="A polygon with 1 side is a Decagon";
+    sides ="A polygon with 10 side is a Decagon";
     
 
        }
