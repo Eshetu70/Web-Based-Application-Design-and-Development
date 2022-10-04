@@ -1,5 +1,5 @@
 
-
+ 
 var shapeSides = getNumber();
 var i = 0;
 while (i == 0) {
