@@ -19,7 +19,6 @@ function getNumber()
 {
     var polygonNumber =parseFloat(prompt("Emotional Whale Designers welcome you! please enter number between 0 to 10 and we will tell name of polygon of that sides"));
     return polygonNumber;
-
 } 
 function getError() 
 {

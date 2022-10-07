@@ -212,11 +212,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);;
+        filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
        
     }
     
 
+      .cont{
+        display: grid;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
+      }
 
-
+     
 

@@ -1,95 +1,98 @@
 <!DOCTYPE html>
-<html lang ="en">
-    <head>
-        <meta charset ="UTF-8">
-        <link href="styles/default.css" rel="stylesheet" type="text/css" >
-        <title> Eshetu Wekjira >> ITIS3135>> HTML Form</title>
-    </head>
-      <body>   
-        <div data-include="components/header.html"></div>
-         <main>
-     <h2> Activity 3 Form</h2>
-          <p>Our community kitchen program (CKP) serves breakfast, lunch, and coffee, offers training on cooking, and gives certification.</p>
-          <div class="form">
-          <ul>
-          <li> Power Bowls</li>
-          <li> Omelets and Frittatas</li>
-          <li>  Egg_sclusives</li>
-          <li> Juice Bar</li>
-          </ul>
-           </div>
-       <h3> Menu</h3>
-          <table>
-            <thead>
-             <tr>
-           <th colspan="2" class="right"> Breakfast Sections</th> 
-           </tr>
-            </thead>
-            <tbody>
-            <tr>
-            <td>power breakfast quinoa Bowls</td>
-            <td>Protein packed, quinoa, italian suage mushroom, tomatos two basted eggs $10.37</td>
-            </tr>
-             <tr>
-            <td>bacado</td>
-            <td>bacon, avocado and monetery, jack topped with all-natural sour cream &10.78</td> </tr>
-            <tr> <td> morning meditation</td>
-            <td> orange, lemon, turmeric, ginger, agave nectar $5.02</td>
-            </tr>        
-             </tbody>
-           </table>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="styles/default.css" rel="stylesheet" type="text/css">
+  <title> Eshetu Wekjira >> ITIS3135>> HTML Form</title>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+  <main>
+    <h2> Activity 3 Form</h2>
+    <p>Our community kitchen program (CKP) serves breakfast, lunch, and coffee, offers training on cooking, and gives
+      certification.</p>
+    <div class="form">
+      <ul>
+        <li> Power Bowls</li>
+        <li> Omelets and Frittatas</li>
+        <li> Egg_sclusives</li>
+        <li> Juice Bar</li>
+      </ul>
+    </div>
+    <h3> Menu</h3>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2" class="right"> Breakfast Sections</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>power breakfast quinoa Bowls</td>
+          <td>Protein packed, quinoa, italian suage mushroom, tomatos two basted eggs $10.37</td>
+        </tr>
+        <tr>
+          <td>bacado</td>
+          <td>bacon, avocado and monetery, jack topped with all-natural sour cream &10.78</td>
+        </tr>
+        <tr>
+          <td> morning meditation</td>
+          <td> orange, lemon, turmeric, ginger, agave nectar $5.02</td>
+        </tr>
+      </tbody>
+    </table>
 
-           <h3> Event</h3>
-           <P>The community kitchen cafe program has prepared an event for the homeless to feed them.</P>
-           <h3>Let get the coupons and promotions</h3>
-          <form action="”#”">
-            <label for="first" class="bold">First Name:</label>
-            <input type="text" name="first" id="first" required=""> <br>
-            <label for="last" class="bold">Last Name:</label>
-            <input type="text" name="last" id="last" required=""><br>
-            <label for="email" class="bold">Email:
-            <input type="email" name="email" id="email" required="" placeholder="Enter a valid email address">
-            </label> <br>
-            <label for="telephone" class="bold">Phone number:
-            <input type="tel" required="" placeholder="(###) ###-####" id="telephone" size="10">
-            </label> <br> <br>
-            <p>Please select your preferred method of contact:</p>
-              <input type="radio" id="radioemail" name="contact" value="Email">
-              <label for="radioemail">Email</label><br>
-              <input type="radio" id="radiophone" name="contact" value="Phone">
-              <label for="radiophone">Phone</label><br>  
+    <h3> Event</h3>
+    <P>The community kitchen cafe program has prepared an event for the homeless to feed them.</P>
+    <h3>Let get the coupons and promotions</h3>
+    <form action="”#”">
+      <label for="first" class="bold">First Name:</label>
+      <input type="text" name="first" id="first" required=""> <br>
+      <label for="last" class="bold">Last Name:</label>
+      <input type="text" name="last" id="last" required=""><br>
+      <label for="email" class="bold">Email:
+        <input type="email" name="email" id="email" required="" placeholder="Enter a valid email address">
+      </label> <br>
+      <label for="telephone" class="bold">Phone number:
+        <input type="tel" required="" placeholder="(###) ###-####" id="telephone" size="10">
+      </label> <br> <br>
+      <p>Please select your preferred method of contact:</p>
+      <input type="radio" id="radioemail" name="contact" value="Email">
+      <label for="radioemail">Email</label><br>
+      <input type="radio" id="radiophone" name="contact" value="Phone">
+      <label for="radiophone">Phone</label><br>
 
-              <fieldset>
-                <legend class="bold">I would like to receive emails regarding:</legend>
-                <input type="checkbox" name="email" value="Coupons" id="coupons" required="">
-                <label for="coupons">Coupons</label>
-                <input type="checkbox" name="email" value="Promotions" id="promotions" required="">
-                <label for="promotions">Promotions</label>
-                <input type="checkbox" name="email" value="None" id="none" required="">
-                <label for="none">None</label>
-            </fieldset> <br>
-            <label class="bold"> Gender:
-                <select name="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="prefer not to say">Prefer not to say</option>
-                    <option value="other">Other</option>
-                </select>
-            </label>
-            <br><br>
-            <button style="background-color:rgb(74, 66, 66); border-color:teal; color:turquoise">submit</button>
-            <button style="background-color:rgb(74, 66, 66); border-color:teal; color:turquoise">Reset</button>
-           <h3>Location</h3>
-           <p> Community Kitchen Program (CKP) is located at<br>
-            3601 central ave<br>
-            Charlotte, NC 28213.<br>
-            See <a id="locationlink" href="https://goo.gl/maps/BDZyPmfn4H1GW7Re6">Google Maps</a> for directions.</p>
-          </form>
-           </main>
-            <br>
-            <div data-include="components/footer.html"></div>
-            <script src="scripts/HTMLInclude.js"></script>
-                
-    </body>
+      <fieldset>
+        <legend class="bold">I would like to receive emails regarding:</legend>
+        <input type="checkbox" name="email" value="Coupons" id="coupons" required="">
+        <label for="coupons">Coupons</label>
+        <input type="checkbox" name="email" value="Promotions" id="promotions" required="">
+        <label for="promotions">Promotions</label>
+        <input type="checkbox" name="email" value="None" id="none" required="">
+        <label for="none">None</label>
+      </fieldset> <br>
+      <label class="bold"> Gender:
+        <select name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="prefer not to say">Prefer not to say</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <br><br>
+      <button style="background-color:rgb(74, 66, 66); border-color:teal; color:turquoise">submit</button>
+      <button style="background-color:rgb(74, 66, 66); border-color:teal; color:turquoise">Reset</button>
+      <h3>Location</h3>
+      <p> Community Kitchen Program (CKP) is located at<br>
+        3601 central ave<br>
+        Charlotte, NC 28213.<br>
+        See <a id="locationlink" href="https://goo.gl/maps/BDZyPmfn4H1GW7Re6">Google Maps</a> for directions.</p>
+    </form>
+  </main>
+  <br>
+  <div data-include="components/footer.html"></div>
+  <script src="scripts/HTMLInclude.js"></script>
+
+</body>
 
 </html>
