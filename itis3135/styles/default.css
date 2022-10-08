@@ -225,5 +225,48 @@
         filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
       }
 
-     
 
+      .container {
+        
+        max-width: 30em;
+        margin-left: auto;
+        margin-right: auto;
+        
+        }
+        
+        .calculator__display{
+          background-color: black;
+          font-size: 4em;
+	        text-align: right;
+        
+        }
+      .calculator__keys{
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-height: 40em;
+        filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
+      }
+      .calculator {
+        border-radius: 25px;
+        box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5em;
+        max-width: 50em;
+        overflow: hidden;
+        
+        }
+    
+         .key--equal {
+          background-image: linear-gradient(invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%));
+          grid-column: -2;
+          grid-row: 0 / span 4;
+          
+          }
+          button{
+            font-size: large;
+          }
+             
+          
