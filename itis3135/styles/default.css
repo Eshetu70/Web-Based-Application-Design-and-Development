@@ -213,18 +213,13 @@
         align-items: center;
         justify-content: center;
         filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
-       
     }
-    
-
       .cont{
         display: grid;
         text-align: center;
         align-items: center;
         justify-content: center;
-        filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
       }
-
 
       .container {
         
@@ -233,7 +228,6 @@
         margin-right: auto;
         
         }
-        
         .calculator__display{
           background-color: black;
           font-size: 4em;
@@ -246,7 +240,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         max-height: 40em;
-        filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
+        
       }
       .calculator {
         border-radius: 25px;
@@ -267,6 +261,21 @@
           }
           button{
             font-size: large;
+            filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
           }
              
+          input{
+            filter: invert(91%) sepia(10%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
+          }
+         #activitysix , #heading{
+          font-size: larger;
+          text-align: center;
+          font-family: 'Playfair Display', serif;
+         }
+          
+         .heading{
+          font-size: larger;
+          text-align: center;
+          font-family: 'Playfair Display', serif;
+         }
           
