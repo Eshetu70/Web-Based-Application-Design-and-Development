@@ -1,0 +1,20 @@
+
+body{
+    background-color: antiquewhite;
+    margin-right: 100px;
+    margin-left: 100px;
+    font-family: bodonic MT;
+    font-size: 25px;
+    color: teal;
+}
+nav  {
+    font-size: larger;
+    text-align: center;    
+}
+h1, h2, h3{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: rgb(223, 48, 36);
+}
