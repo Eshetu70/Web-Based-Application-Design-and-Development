@@ -1,281 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Slab:wght@200&display=swap');
 
-      
-       
-       body {
-            color: #ECF39E;
-            background-color: #31572C;
-            font-family: bodonic MT;
-            margin-left: 100px;
-            margin-right: 100px;
-        }
-        
-        nav  {
-            font-size: larger;
-            text-align: center;
-             
-        }
+body {
+  color: #ECF39E;
+  background-color: #31572C;
+  font-family: bodonic MT;
+  margin-left: 100px;
+  margin-right: 100px;
+}
 
-        nav ul {
-          list-style-type: none;
-          
-        }
+nav {
+  font-size: larger;
+  text-align: center;
 
-        h1, h2, h3, h4, h5{
-            font-family: 'Playfair Display', serif;
-            text-align: center;
+}
 
-        }
-        h2 a{
-          font-size: 150%;
-          text-decoration: #03120E;
-          color: #c4b04d;
-        }
-        
-        header{
-          text-align: center;
-          font-family: bodonic MT;
-               
-            }
-            figure{
-              text-align: center;
-            }
-      main{
-        font-size: 120%;
-   
-       }
-       ol, td, th{
-        text-align: left;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       }
-     
-       div.form{
-        text-align: left;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       }
+nav ul {
+  list-style-type: none;
 
-       form{
-        text-align: left;
-       }
-       footer div{
-       text-align: center;
-         
-      }
-      footer nav {
-        background-color: rgb(73, 15, 11);
-        text-align: center;
-        padding: 8px 10px;
-      }
-      footer nav a {
-        justify-content: space-between;
-        margin-left: 30px;
-        margin-right: 30px;
-      }
+}
 
-      footer p {
-        text-align: center;
+h1, h2, h3, h4, h5 {
+font-family: 'Roboto Slab', serif;;
+text-align: center;
 
-      }
+}
 
-      div.valid{
-        text-align: center;
-      }
-      
-      header nav {
-      background-color:rgb(73, 15, 11);
-      padding: 14px 16px;
-     }
-     header nav a {
-      justify-content: space-between;
-      margin-left: 30px;
-      margin-right: 30px;
-      font-family: 'Playfair Display', serif;
-      font-size: 120%;
-      
-     }
-     a
-      {
-        text-decoration: none;
-        color:#ECF39E;
-        font-weight: bold;
-        font-size: 20px;
-        list-style-type: none;
-        font-family: bodonic MT;
-      }
-      a:hover{
-        text-decoration: underline;
-        color:rgb(3, 247, 247);
-      }
-    
-      p{
-        text-align: left;         
-      }
-      p a{
-        font-size: medium;
-      }
-     
-      em{
-        margin-left:300px;
-        
-       }
-     th, td{
-      border: 1px solid black;
-      padding: .2em 1em .2em .5em;
-      text-align: left;
-      vertical-align: middle;
-     }
-     thead, tfoot{
-      background-color: #03120E;
-    }
-     tbody tr:nth-child(even)
-    {
-      background-color: rgba(161, 158, 94, 0.349);
-    }
+h2 a {
+  font-size: 150%;
+  text-decoration: #03120E;
+  color: #c4b04d;
+}
 
-     tbody tr:nth-child(odd)
-    {
-      background-color: #26413C;
+header {
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
 
-      }
+}
 
-    .wrapper{
-        padding-top: 100px;
-        transform: rotate(45deg);
-        text-align: center;
-        padding-bottom: 100px;
-      
-      }
-      .diamond{
-        text-align: center;
-      }
-      .box{
-        background-color: #269c84;
-        display: inline-block;
-        height: 150px;
-        width: 150px;
-        overflow: hidden;
-      }
-      .box:hover{
-        background: rgb(46, 44, 44);
+figure {
+  text-align: center;
+}
 
-      }
-      .box p{
-        transform: rotate(-45deg);
-        padding:5px;
-        font-size: 25;
-      }
-      .box p  {
-        color: #fff;
+main {
+  font-size: 120%;
 
-      }
-      .box:hover i{
-        color: #c4b04d;
-      }
-    
+}
 
-      .contaner{
-        width: 100%;
-        height: 100vh;
-        background: #c4b04d;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+ol,
+td,
+th {
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-      }
-      
-      .single_itema{
-        width: 570px;
-        height: 570px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #03120E;
-        border-radius: 54px;
-       }
-       .radius{
-        width: 300px;
-        height: 300px;
-        border: 18px solid #c4b04d;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        background-color: #26413C;
-        border-style: calc(100%, 100%, 100%, 100%, 100%, 100%);
-        transform: rotate(45deg);
+div.form {
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-       }
-       .radius p{
-        transform: rotate(-45deg);
-       }
-  
-    .cent{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
-    }
-      .cont{
-        display: grid;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-      }
+form {
+  text-align: left;
+}
 
-      .container {
-        
-        max-width: 30em;
-        margin-left: auto;
-        margin-right: auto;
-        
-        }
-        .calculator__display{
-          background-color: black;
-          font-size: 4em;
-	        text-align: right;
-        
-        }
-      .calculator__keys{
-        width: 100%;
-        height: 100vh;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        max-height: 40em;
-        
-      }
-      .calculator {
-        border-radius: 25px;
-        box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5em;
-        max-width: 50em;
-        overflow: hidden;
-        
-        }
-    
-         .key--equal {
-          background-image: linear-gradient(invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%));
-          grid-column: -2;
-          grid-row: 0 / span 4;
-          
-          }
-          button{
-            font-size: large;
-            filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
-          }
-             
-          input{
-            filter: invert(91%) sepia(10%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
-          }
-         #activitysix , #heading{
-          font-size: larger;
-          text-align: center;
-          font-family: 'Playfair Display', serif;
-         }
-          
-         .heading{
-          font-size: larger;
-          text-align: center;
-          font-family: 'Playfair Display', serif;
-         }
-          
+footer div {
+  text-align: center;
+
+}
+
+footer nav {
+  background-color: rgb(73, 15, 11);
+  text-align: center;
+  padding: 8px 10px;
+}
+
+footer nav a {
+  justify-content: space-between;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+footer p {
+  text-align: center;
+
+}
+
+div.valid {
+  text-align: center;
+}
+
+header nav {
+  background-color: rgb(73, 15, 11);
+  padding: 14px 16px;
+}
+
+header nav a {
+  justify-content: space-between;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 120%;
+
+}
+
+a {
+  text-decoration: none;
+  color: #ECF39E;
+  font-weight: bold;
+  font-size: 20px;
+  list-style-type: none;
+  font-family: bodonic MT;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: rgb(3, 247, 247);
+}
+
+p {
+  text-align: left;
+}
+
+p a {
+  font-size: medium;
+}
+
+em {
+  margin-left: 300px;
+
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: .2em 1em .2em .5em;
+  text-align: left;
+  vertical-align: middle;
+}
+
+thead,
+tfoot {
+  background-color: #03120E;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(161, 158, 94, 0.349);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #26413C;
+
+}
+
+.wrapper {
+  padding-top: 100px;
+  transform: rotate(45deg);
+  text-align: center;
+  padding-bottom: 100px;
+
+}
+
+.diamond {
+  text-align: center;
+}
+
+.box {
+  background-color: #269c84;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+}
+
+.box:hover {
+  background: rgb(46, 44, 44);
+
+}
+
+.box p {
+  transform: rotate(-45deg);
+  padding: 5px;
+  font-size: 25px;
+}
+
+.box p {
+  color: #fff;
+
+}
+
+.box:hover i {
+  color: #c4b04d;
+}
+
+
+.contaner {
+  width: 100%;
+  height: 100vh;
+  background: #c4b04d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.single_itema {
+  width: 570px;
+  height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #03120E;
+  border-radius: 54px;
+}
+
+.radius {
+  width: 300px;
+  height: 300px;
+  border: 18px solid #c4b04d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #26413C;
+  transform: rotate(45deg);
+
+}
+
+.radius p {
+  transform: rotate(-45deg);
+}
+
+.cent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
+}
+
+.cont {
+  display: grid;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.calculator__display {
+  background-color: black;
+  font-size: 4em;
+  text-align: right;
+
+}
+
+.calculator__keys {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-height: 40em;
+
+}
+
+.calculator {
+  border-radius: 25px;
+  box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  max-width: 50em;
+  overflow: hidden;
+
+}
+
+.key--equal {
+  filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
+  grid-column: -2;
+  grid-row: 4 / span 3;
+
+}
+
+button {
+  font-size: large;
+  filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
+}
+
+input {
+  filter: invert(91%) sepia(10%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
+}
+
+#activitysix,
+#heading {
+  font-size: larger;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.heading {
+  font-size: larger;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
