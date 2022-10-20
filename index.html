@@ -30,13 +30,20 @@
    </main>
    <footer>
     <div>
-      <p>Designed by:<a href ="itis3135/ewekjiradesigner.com">Eshetu Wekjira Designer</a> @2022</p>
-    <p>
-    <a href="https://validator.w3.org/check?uri=referer">
-    <img src="itis3135/images/W3CHTML.png" alt ="image for a Validation "></a>
-    <a href="https://validator.w3.org/check?uri=referer">
-    <img src ="itis3135/images/W3CCSS.png" alt ="image for a validation"> </a></p>
-    </div> 
+      <p>Designed by:<a href="ewekjiradesigner.com">Eshetu Wekjira Designer</a> @2022</p>
+      <p>
+        <a href="https://validator.w3.org/check?uri=referer">
+          <img src="itis3135/images/W3CHTML.png" width="88" height="31" alt="Validate webpage HTML." />
+        </a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+          <img src="itis3135/images/W3CCSS.png" width="88" height="31" alt="Validate webpage CSS." />
+        </a>
+      </p>
+      <script>
+        document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+        document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+      </script>
+    </div>
   </footer>
 </body>
 </html>
