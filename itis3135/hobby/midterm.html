@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Eshetu Wekjira ITIS3135 Midterm</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+        body {
+            background-color: #3e4241;
+            font-family: 'Playfair Display', serif;
+            color: rgb(11, 238, 238);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        h2, h3 {
+            padding-top: 50px;
+            text-align: center;
+            justify-content: center;
+        }
+        .tablinks {
+            text-align: center;
+            margin-left: 50px;
+        }
+        figure {
+            text-align: center;
+        }
+        .bottom p {
+            text-align: center;
+            justify-content: center;
+        }
+        .bottom {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+            justify-content: center;
+        }
+        p {
+            text-align: justify;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            color: rgb(14, 231, 231);
+            opacity: 100%;
+            font-family: 'Playfair Display', serif;
+            font-size: 110%;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            text-align: center;
+            color: rgb(11, 238, 238);
+        }
+        main {
+            font-size: 150%;
+        }
+        td, th {
+            border: 1px solid rgb(53, 47, 47);
+            font-size: 20px;
+            padding: 8px;
+            text-align: left;
+            font-size: 110%;
+        }
+        th {
+            text-align: center;
+            background-color: rgba(120, 118, 84, 0.349);
+        }
+        tbody tr:nth-child(even) {
+            background-color: rgba(161, 158, 94, 0.349);
+        }
+        tbody tr:nth-child(odd) {
+            background-color: black;
+        }
+        .center {
+            text-align: center;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        a {
+            text-decoration: none;
+            color: #ECF39E;
+        }
+        a:hover {
+            text-decoration: underline;
+
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .text {
+            font-size: 20px;
+            padding-left: 20px;
+        }
+
+        figcaption {
+            font-style: italic;
+        }
+
+        form {
+            display: inline-block;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Eshetu Wekjira's Emotional Whale 🐋 &#9733; ITIS 3135</h1>
+    </header>
+    <main>
+        <div class="tab">
+            <button class="tablinks" onclick="MidTerm(event, 'home')">Home</button>
+            <button class="tablinks" onclick="MidTerm(event, 'About')">About Me</button>
+            <button class="tablinks" onclick="MidTerm(event, 'hobby')">Hobby</button>
+        </div>
+        <div id="home" class="tabcontent">
+            <h2>Welcome to my Home</h2>
+            <div class="container">
+                <div class="image">
+                    <figure>
+                        <a href="images/myimage.jpg"><img src="images/myimage.jpg" alt="my image"></a>
+                        <figcaption>Charlotte, NC</figcaption>
+                    </figure>
+                </div>
+                <div class="text">
+                    <p><strong>Name:</strong>Eshetu Wekjira</p>
+                    <p><strong>Degree Institutions:</strong> UNC Charlotte</p>
+                    <p><strong>Major:</strong> Computer Science</p>
+                    <p><strong>Concentration:</strong> Software, System and Network</p>
+                    <p><strong>Expected Grad:</strong> Spring 2023</p>
+                </div>
+            </div>
+            <h3>Volunteer</h3>
+            <p>I participated in volunteer programs to help communities and worked in community kitchen programs and
+                helping them by creating different events and
+                then helping feed the homeless, training them how to cook, and offering them the job.</p>
+            <fieldset>
+                <legend class="bold">Enter Your Details Information To Win a Gift Box and Help Your Community!</legend>
+                <form action="#" method="get">
+                    <label for="firstName" class="text2">First name:</label>
+                    <input type="text" id="firstName" name="firstName" aria-required="true"><br>
+                    <label for="lastName" class="text2">Last name:</label>
+                    <input type="text" id="lastName" name="lastName" aria-required="true"><br>
+                    <label for="telephone" class="bold">Phone number:</label>
+                    <input type="tel" required="" placeholder="(###) ###-####" id="telephone" size="10"><br>
+                    <label for="email" class="text2">Email:</label>
+                    <input type="email" id="email" name="email" aria-required="true"><br>
+                    <input type="submit" value="Submit" class="text">
+                </form>
+            </fieldset>
+        </div>
+        <div id="About" class="tabcontent">
+            <h2>About Me</h2>
+            <figure>
+                <a href="images/myimage.jpg"><img src="images/myPic.jpg" alt="my image" width="450" height="400"></a>
+                <figcaption>Charlotte, NC</figcaption>
+            </figure>
+            <h3>Educational Background</h3>
+            <p>My name is Eshetu T. Wekjira. I was born and raised in Ethiopia and moved to the USA in 2018.
+                I will graduate in May 2023 from the University of North Carolina in Charlotte with a bachelor's
+                degree in Computer Science.I developed a program using multiple programming languages such as Java,
+                Structured Query Language,
+                Python, Hypertext Markup Language, and Cascading Style Sheets.</p>
+            <h3> I have registered for four courses this semester</h3>
+            <table class="center">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ITSC 3181</td>
+                        <td>
+                            <p>I am learning about the fundamentals of computer architectures and their programmability
+                                using
+                                assembly and system programming.
+                                At the end of the course, I will completely understand how
+                                CPU works and its instructions.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ITSC 2600</td>
+                        <td>
+                            <p>I am learning about setting goals, defining my dream career, becoming a part of the
+                                University, planning coursework, building networks, managing time, and working in a
+                                team. I will develop my communication skills
+                                and professional codes at the end of this course.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ITIS 3135</td>
+                        <td>
+                            <p>I am Learning design and programming concepts for developing interactive web-based
+                                applications.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ENGL 2116</td>
+                        <td>
+                            <p>I am learning how to write technical and professional writing.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="hobby" class="tabcontent">
+            <h3>Hobbies</h3>
+            <p>My hobbies include helping others, reading science fiction, watching scientific
+                movies, and making a volunter. </p>
+            <figure>
+                <a href="images/volunteer.jpg"><img src="images/volunteer.jpg" alt="volunteer image"></a>
+                <figcaption>Charlotte, NC</figcaption>
+            </figure>
+        </div>
+
+    </main>
+    <script>
+        function MidTerm(evt, hobbys) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(hobbys).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <footer class="bottom">
+        <p>Designed by:<a href="ewekjiradesigner.com">Eshetu Wekjira Designer</a> @2022</p>
+
+        <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html">
+            <img src="images/W3CHTML.png" width="88" height="31" alt="Validate webpage HTML.">
+        </a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css">
+            <img src="images/W3CCSS.png" width="88" height="31" alt="Validate webpage CSS.">
+        </a>
+    </footer>
+
+</body>
+
+</html>
