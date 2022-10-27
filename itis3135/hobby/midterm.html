@@ -6,6 +6,7 @@
     <title>Eshetu Wekjira ITIS3135 Midterm</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
         body {
             background-color: #3e4241;
             font-family: 'Playfair Display', serif;
@@ -19,28 +20,34 @@
             text-align: center;
             justify-content: center;
         }
+
         .tablinks {
             text-align: center;
             margin-left: 50px;
         }
+
         figure {
             text-align: center;
         }
+
         .bottom p {
             text-align: center;
             justify-content: center;
         }
+
         .bottom {
             padding-top: 50px;
             padding-bottom: 50px;
             text-align: center;
             justify-content: center;
         }
+
         p {
             text-align: justify;
             margin-left: 30px;
             margin-right: 30px;
         }
+
         .tab button {
             background-color: inherit;
             float: left;
@@ -49,7 +56,7 @@
             cursor: pointer;
             padding: 14px 16px;
             transition: 0.3s;
-            font-size: 17px;
+            font-size: 20px;
             color: rgb(14, 231, 231);
             opacity: 100%;
             font-family: 'Playfair Display', serif;
@@ -63,6 +70,7 @@
             text-align: center;
             color: rgb(11, 238, 238);
         }
+
         main {
             font-size: 150%;
         }
@@ -77,44 +85,48 @@
             text-align: center;
             background-color: rgba(120, 118, 84, 0.349);
         }
+
         tbody tr:nth-child(even) {
             background-color: rgba(161, 158, 94, 0.349);
         }
+
         tbody tr:nth-child(odd) {
             background-color: black;
         }
+
         .center {
             text-align: center;
             margin-left: 50px;
             margin-right: 50px;
         }
+
         a {
             text-decoration: none;
             color: #ECF39E;
         }
+
         a:hover {
             text-decoration: underline;
 
         }
-
         .container {
             display: flex;
             align-items: center;
             justify-content: center
         }
-
         .text {
             font-size: 20px;
             padding-left: 20px;
         }
-
         figcaption {
             font-style: italic;
         }
-
         form {
             display: inline-block;
             text-align: justify;
+        }
+        .image {
+            text-align: center;
         }
     </style>
 </head>
@@ -124,7 +136,7 @@
     </header>
     <main>
         <div class="tab">
-            <button class="tablinks" onclick="MidTerm(event, 'home')">Home</button>
+            <button class="tablinks" onclick="MidTerm(event, 'home')" id="defaultOpen">Home</button>
             <button class="tablinks" onclick="MidTerm(event, 'About')">About Me</button>
             <button class="tablinks" onclick="MidTerm(event, 'hobby')">Hobby</button>
         </div>
@@ -173,7 +185,7 @@
             <h3>Educational Background</h3>
             <p>My name is Eshetu T. Wekjira. I was born and raised in Ethiopia and moved to the USA in 2018.
                 I will graduate in May 2023 from the University of North Carolina in Charlotte with a bachelor's
-                degree in Computer Science.I developed a program using multiple programming languages such as Java,
+                degree in Computer Science. I developed a program using multiple programming languages such as Java,
                 Structured Query Language,
                 Python, Hypertext Markup Language, and Cascading Style Sheets.</p>
             <h3> I have registered for four courses this semester</h3>
@@ -224,10 +236,64 @@
             <h3>Hobbies</h3>
             <p>My hobbies include helping others, reading science fiction, watching scientific
                 movies, and making a volunter. </p>
-            <figure>
-                <a href="images/volunteer.jpg"><img src="images/volunteer.jpg" alt="volunteer image"></a>
-                <figcaption>Charlotte, NC</figcaption>
-            </figure>
+            <div class="container">
+                <div class="image">
+                    <figure>
+                        <a href="images/volunteer.jpg"><img src="images/volunteer.jpg" alt="volunteer image"></a>
+                        <figcaption>Charlotte, NC</figcaption>
+                    </figure>
+                </div>
+                <div class="text">
+                    <p>The pictures were taken at community kitchen programs during the event
+                        name "let's feed homeless for today".</p>
+                </div>
+            </div>
+            <h3>Science Fictions</h3>
+            <p>I enjoy reading science fiction related to technology because the science fiction genre is more
+                beneficial for creativity, problem-solving, and analytical skills and builds motivation for innovations
+                and enjoyment by many people. People always have unlimited resources and technology demands to respond
+                to this complete demand. Science fiction plays the primary goal of initiating and motivating people to
+                innovate and create. Science fiction has stimulated many to proceed careers in science which has, in
+                turn, succeeded in headways
+                in technology, such as the advancements in cloning, artificial intelligence, satellites internet, etc.
+            </p>
+            <h3>My Favorite Movie and Scientific Fiction.</h3>
+            <table class="center">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Authors</th>
+                        <th>Summaries</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Movie</td>
+                        <td>Back to the Future II</td>
+                        <td>1989</td>
+                        <td>Robert Zemeckis</td>
+                        <td>
+                            <p>“Back to the Future II” came out in 1989 and predicted that by 2015, society would have a
+                                flying car. That's become true; we will be flying cars by 2023.
+                                “Back to the Future II” movies mention several technologies during that time, such as
+                                ATMs, flying cars,
+                                sensor lights, and many others, and most of them happen today. </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fiction</td>
+                        <td>I, Robot</td>
+                        <td>2004</td>
+                        <td>Isaac Asimov</td>
+                        <td>Robots are helpful in multiple areas like a laboratory, the military, a hospital, and a
+                            school. Robots can reduce injuries by replacing dangerous jobs, such as work involving fires
+                            or radiation. In 2035, intelligent robots will fill
+                            public service positions worldwide, operating under three rules to keep humans safe.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
     </main>
@@ -245,6 +311,7 @@
             document.getElementById(hobbys).style.display = "block";
             evt.currentTarget.className += " active";
         }
+        document.getElementById("defaultOpen").click();
     </script>
     <footer class="bottom">
         <p>Designed by:<a href="ewekjiradesigner.com">Eshetu Wekjira Designer</a> @2022</p>
