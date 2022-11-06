@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="styles/project.css" rel="stylesheet" type="text/css">
+    <script src="../scripts/jquery-3.6.1.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/slide.js"></script>
+    <title>Eshetu Wekjira ITIS3135 About Me</title>
+</head>
+
+<body>
+    <div data-include="components/header.html"></div>
+    <main>
+        <h2>About Me</h2>
+        <div class="center">
+            <div class="container">
+                <img id="slide" src="../images/bestimage.jpg" alt="" title="tilte">
+                <div id="slides">
+                    <img src="../gallery/myimage.jpg" alt="">
+                    <img src="../gallery/Birthday-Candles.jpg" alt="">
+                    <img src="../gallery/myPic.jpg" alt="">
+                    <img src="../gallery/taper-candles.jpg" alt="">
+                </div>
+                <div class="resource">
+                    <br>
+                    <p>Hello! I am Robel Mamo</p>
+                    <p>I graduated college in 2017 from the University of Maryland. After graduating, I moved to North
+                        Carolina state and worked as a Manager for Frist Watch for four years. At the beginning of 2021,
+                        I created my own company, which includes volunteers training people how to cook and also giving
+                        them certification for the manager and cooking.
+                        I am currently working with central piedmont community college on workshops and labs; I trained
+                        the students how to cook and certified them after training in four-month courses; besides that,
+                        I started a tutorial center for a programming language to endorse people with computer skills.
+                        Right now, I am working on the tutorial center
+                        and teaching and guiding students who want to learn programming languages online. </p>
+                </div>
+            </div>
+        </div>
+        <div class="cen">
+            <div class="tab">
+                <button class="tablinks" onclick="About(event, 'Education')" id="defaultOpen">Education</button>
+                <button class="tablinks" onclick="About(event, 'Honors')">Honors</button>
+                <button class="tablinks" onclick="About(event, 'Managercertification')">Manager certification</button>
+            </div>
+        </div>
+        <div id="Education" class="tabcontent">
+            <h3 style="text-align: left; font-size: larger">Education</h3>
+            <ul>
+                <li>Maryland University
+                    <ul>
+                        <li>
+                            Bachelor Degree in Hotel Management and Tourism
+                        </li>
+                        <li>
+                            ESOL Strand
+                        </li>
+                        <li>
+                            GPA: 4.0
+                        </li>
+                        <li>
+                            Graduated: 2018
+                        </li>
+                    </ul>
+                </li>
+                <li>Addis Ababa University - 2010
+                    <ul>
+                        <li>
+                            BS in Elementary Education
+                        </li>
+
+                        <li>
+                            Concentration: STEM
+                        </li>
+
+                        <li>
+                            GPA: 4.0
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="Honors" class="tabcontent">
+            <h3 style="text-align: left; font-size: larger">Honors</h3>
+            <ul>
+                <li>Maryland University
+                    <ul>
+                        <li>
+                            University Valedictorian - 2018
+                        </li>
+                        <li>
+                            Summa Cum Laude - 2018
+                        </li>
+                        <li>
+                            Scholars Program Graduate - 2018
+                        </li>
+                        <li>
+                            Deans List 2014-2018
+                        </li>
+                        <li>
+                            Kirkland Merit Scholarship 2014-2018
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="Managercertification" class="tabcontent">
+            <h3 style="text-align: left; font-size: larger">Manager certification</h3>
+            <ul>
+                <li>Community Kitchen Program 2019-2022
+                    <ul>
+                        <li>CHief Executive Officer</li>
+                    </ul>
+                <li>Frist Watch 2018-2021
+                    <ul>
+                        <li>General Manager</li>
+                    </ul>
+                </li>
+                <li>Maryland 2016-2018
+                    <ul>
+                        <li>
+                            General Manager at First Watch
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="../scripts/HTMLInclude.js"></script>
+</body>
+
+</html>

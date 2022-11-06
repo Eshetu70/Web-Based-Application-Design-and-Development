@@ -313,3 +313,23 @@ input {
   filter: invert(91%) sepia(10%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
   opacity: 2000%;
 }
+#slides img{
+  display: none;
+}
+
+#caption, #gallery {
+	text-align: center;
+  
+}
+#image_list li{
+  padding: 0 0.25em;
+	display: inline;
+}
+#image_list{
+  text-align: center;
+  justify-content: center;
+}
+#gallery img{
+  height: 450px;
+  width: 600px;
+}

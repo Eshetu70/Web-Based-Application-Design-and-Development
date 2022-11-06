@@ -1,0 +1,120 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Slab:wght@200&display=swap');
+body{
+    background-color: #26413C;
+    margin-right: 200px;
+    margin-left: 200px;
+    font-family: 'Playfair Display', serif;
+    color:#7AFDFF
+}
+
+header  nav{
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    background-color: rgb(29, 26, 26);
+     padding: 14px 16px;
+    
+      }
+    main{
+        font-size: 120%;
+    }
+nav a{
+    align-items: center;
+    text-align:center;
+    justify-content: space-between;
+    padding: 0 0.8em;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    text-decoration: none;
+    color: #7AFDFF;
+}
+a:hover{
+    text-decoration: underline;
+    color: #4DFF4D;
+}
+h1, h2, h3{
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+}
+footer a{
+    text-decoration: none;
+    color: #c4b04d;
+}
+
+footer nav{
+    background-color: rgb(29, 26, 26);
+    margin-top: 50px;
+}
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.resource{
+  width: 510px;
+  height: 590px;
+  background-color: black; 
+  padding-top: 10px;
+  padding-left: 15px;
+  margin-top: 50px;
+  margin-left: 40px;
+  align-items: center;
+  
+}
+
+.image{
+ width: 510px;
+ height: 620px;
+ margin-top: 20px;
+ padding-top: 10px
+ 
+}
+figcaption{
+    text-align: center;
+    font-style: italic;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #c4b04d; 
+}
+#slides img{
+    display: none;
+  }
+#slide{
+ width: 510px;
+ height: 600px;
+ margin-top: 50px;
+  }
+  .center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tabcontent {
+    display: none;
+  }
+  .tab{
+    margin-top: 50px;
+    display: block;
+    text-align: center;
+    align-content: center;
+    background-color: black;
+    
+  }
+button{
+    display: block;
+    justify-content:space-between;
+    color: #7AFDFF;
+    font-size: 110%; 
+    background-color: black;
+    text-align: center; 
+    font-family: 'Playfair Display', serif; 
+    padding-left: 20px;
+}
+
