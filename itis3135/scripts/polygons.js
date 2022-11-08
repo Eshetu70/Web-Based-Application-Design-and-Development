@@ -78,7 +78,6 @@ function getShape(sides) {
     return sides;
 }
 
-
 function validateEntry(sides) {
     if (typeof sides == 'number') {
         if (sides >= -10 && sides <= 10) {
