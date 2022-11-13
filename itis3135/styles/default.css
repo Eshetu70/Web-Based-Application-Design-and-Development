@@ -227,31 +227,37 @@ tbody tr:nth-child(odd) {
   transform: rotate(45deg);
 
 }
-
 .radius p {
   transform: rotate(-45deg);
 }
-
 .cent {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
+  filter: invert(91%) sepia(6%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%); 
 }
-
 .cont {
   display: grid;
   text-align: center;
   align-items: center;
   justify-content: center;
+  font-size: 140%;
+  
 }
-
+.calculatorbutton, .calculatorbuttons{
+  padding-top: 10px;
+  margin-left: 20px;
+}
+#cal_form{
+  background-color: rgb(24, 22, 22);
+  width: 300px;
+  height: 400px;
+  
+}
 .container {
-
   max-width: 30em;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .calculator__display {
@@ -311,7 +317,7 @@ input {
 }
 .center{
   filter: invert(91%) sepia(10%) saturate(1994%) hue-rotate(19deg) brightness(99%) contrast(106%);
-  opacity: 2000%;
+  opacity: 100%;
 }
 #slides img{
   display: none;
