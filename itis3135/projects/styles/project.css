@@ -118,3 +118,16 @@ button{
     padding-left: 20px;
 }
 
+#accordion, #sli{
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 2px 0 0 0;
+    padding: .5em .5em .5em .7em;
+    color: antiquewhite;
+    border:1px solid #a28b2f;
+    margin-top: 50px;
+    border-radius: 10px;
+    
+}
+
