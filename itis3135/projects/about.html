@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
-    <script src="scripts/index.js"></script>
+    <script src="scripts/sliders.js"></script>
     <script src="scripts/slide.js"></script>
     <title>Eshetu Wekjira ITIS3135 About Me</title>
 </head>
@@ -16,34 +16,46 @@
     <div data-include="components/header.html"></div>
     <main>
         <h2>About Me</h2>
+        <h4>Let's explore my pictures!</h4>
         <div class="center">
             <div class="container">
-                <img id="slide" src="../images/bestimage.jpg" alt="" title="tilte">
-                <div id="slides">
-                    <img src="../gallery/myimage.jpg" alt="">
-                    <img src="../gallery/Birthday-Candles.jpg" alt="">
-                    <img src="../gallery/myPic.jpg" alt="">
-                    <img src="../gallery/taper-candles.jpg" alt="">
+                <div class="page">
+                    <ul id="slider">
+                        <li><img src="images/mygraduate.jpg" width="510" height="610" alt="" title="My Graduation"></li>
+                        <li><img src="images/familyvacation.jpg" width="510" height="590" alt=""
+                                title="Family Vacation"></li>
+                        <li><img src="images/giftfrommystudent.jpg" width="510" height="590" alt=""
+                                title="Gift From my Student"></li>
+                        <li><img src="images/graduate.jpg" width="510" height="590" alt="" title="My Graduated Student">
+                        </li>
+                        <li><img src="images/donation.jpg" width="510" height="590" alt="" title="Donate clothes"></li>
+                        <li><img src="images/hostingGrad.jpg" width="510" height="590" alt=""
+                                title="Hosting for Graduations Stage"></li>
+                        <li><img src="images/mygraduate.jpg" width="510" height="590" alt=""
+                                title="My Graduation Picture"></li>
+                    </ul>
+                    <p id="id_pager"></p>
                 </div>
-                <div class="resource">
+                <div class="resources">
                     <br>
                     <p>Hello! I am Robel Mamo</p>
                     <p>I graduated college in 2017 from the University of Maryland. After graduating, I moved to North
                         Carolina state.
-                        I am currently working with central piedmont community college on workshops and labs.</p><p> I trained
+                        I am currently working with central piedmont community college on workshops and labs.</p>
+                    <p> I trained
                         the students how to cook and certified them after training in four-month courses. </p>
-                        <p>Besides that, I started a tutorial center for a programming language to endorse people with computer skills.
+                    <p>Besides that, I started a tutorial center for a programming language to endorse people with
+                        computer skills.
                         Right now, I am working on the tutorial center
                         and teaching and guiding students who want to learn programming languages online. </p>
                 </div>
             </div>
         </div>
-        
         <div id="accordion">
-            <h3 id="sli"  style="text-align: left; font-size: larger">Education</h3>
+            <h3 id="sli" style="text-align: left; font-size: larger">Education</h3>
             <div>
                 <ul>
-                <li>Maryland University
+                    <li>Maryland University
                         <ul>
                             <li>
                                 Bachelor Degree in Hotel Management and Tourism
@@ -76,7 +88,7 @@
                     </li>
                 </ul>
             </div>
-            <h3 id="sli"  style="text-align: left; font-size: larger">Honors</h3>
+            <h3 id="sli" style="text-align: left; font-size: larger">Honors</h3>
             <div>
                 <ul>
                     <li>Maryland University
@@ -126,5 +138,4 @@
     <div data-include="components/footer.html"></div>
     <script src="../scripts/HTMLInclude.js"></script>
 </body>
-
 </html>
