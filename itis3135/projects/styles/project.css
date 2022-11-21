@@ -120,7 +120,9 @@ ul li a {
     font-size: 90%;
     color: green;
 }
-
+ul #accordio{
+    list-style-type: none;
+}
 .page {
     width: 510px;
     height: 620px;
@@ -159,7 +161,7 @@ button {
 }
 
 #accordion,
-#sli {
+.sli {
     display: block;
     cursor: pointer;
     position: relative;
