@@ -72,35 +72,28 @@ a:hover {
   text-decoration: underline;
   color: rgb(3, 247, 247);
 } 
-  .container
-  {
-    width: 410px;
-    margin: 40px auto;
-    overflow: auto;
-    justify-items: center;
-  } 
-.slide-inner{
-  width:540px;
-  height:350px;
-  position: relative;
-  overflow: hidden;
-  float: left;
-  padding: 3px;
-  border: #907e26 solid 1px;
- 
+  
+.bx-wrapper {
+	margin-bottom: 20px;
 }
+#id_pager {
+	text-align: center;
+	font-size: 90%;
+	color: green;
+}
+.container{
+    width: 540px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 3px solid #a28b2f;
+    text-align: center;
+  
+}
+
 .slide-inner img {
-display:none;
-width:540px;
-height:350px;
-text-align: center;
-justify-content: center;
-
-}
+  display:none;
+   width:540px;
+   height:400px;
+  justify-content: center;
   
-.slide-inner img.active{
-  display: inline-block;
-  
-}
-
-
+  }

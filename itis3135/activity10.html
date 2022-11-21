@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link href="styles/activity10.css" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
     <script src="scripts/jquery-3.6.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
@@ -16,19 +17,20 @@
         <h2>Activity #10 - Image Swap Application</h2>
         <h3>USA's Recent Six President Names List.</h3>
         <div class="container">
-            <div class="slide-inner">
-                <img src="images/Obama.png" alt="President Barack obama"
-                    title="Barack Obama 44th President of the United States (2009 - 2017)">
-                <img src="images/Biden.png" alt="Joe Biden"
-                    title="Joe Biden 46th President of the United States (2021- )">
-                <img src="images/Trump.png" alt="Trump"
-                    title="Donald Trump 45th President of the United States (2017 - 2021)">
-                <img src="images/W.Bush.png" alt="George W.Bush"
-                    title="George W. Bush 43rd President of the United States (2001-2009)">
-                <img src="images/Clinton.png" alt="William"
-                    title="William Jefferson Clinton, 42nd President of the United States (1993-2001)">
-            </div>
-        </div>
+            <ul class="slide-inner">
+               <li><img src="images/Obama.png" alt="President Barack obama"
+                    title="Barack Obama 44th President of the United States (2009 - 2017)"></li> 
+                <li> <img src="images/Biden.png" alt="Joe Biden"
+                    title="Joe Biden 46th President of the United States (2021- )"></li> 
+                <li> <img src="images/Trump.png" alt="Trump"
+                    title="Donald Trump 45th President of the United States (2017 - 2021)"></li> 
+                <li> <img src="images/W.Bush.png" alt="George W.Bush"
+                    title="George W. Bush 43rd President of the United States (2001-2009)"></li> 
+                <li> <img src="images/Clinton.png" alt="William"
+                    title="William Jefferson Clinton, 42nd President of the United States (1993-2001)"></li> 
+                </ul>
+                <p id="id_pager"></p>
+                </div>
     </main>
     <br> <br> <br> <br>
     <div data-include="components/footer.html"></div>

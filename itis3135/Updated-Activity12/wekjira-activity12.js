@@ -1,8 +1,5 @@
-
-
-
 $(document).ready(function() {
-    $(".slide-inner").bxSlider({
+    $("#slider").bxSlider({
         auto: true,
         minSlides: 1,
         maxSlides: 1,
