@@ -4,7 +4,7 @@ $(document).ready(function() {
         minSlides: 1,
         maxSlides: 1,
         slideWidth: 600,
-        slideMargin: 20,
+        slideMargin: 30,
         randomStart: true,
         captions: true,
         pause:3000,

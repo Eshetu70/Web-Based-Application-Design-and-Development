@@ -54,7 +54,7 @@ footer a {
 
 footer nav {
     background-color: rgb(29, 26, 26);
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .container {
@@ -71,18 +71,17 @@ footer nav {
 }
 .resource {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     background-color: black;
     padding-top: 10px;
     padding-left: 15px;
-    margin-top: 50px;
     align-items: center;
     border: 3px solid #a28b2f;
     border-radius: 25px;
 }
 .resources {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     background-color: black;
     padding-left: 15px;
     margin-left: 40px;
@@ -94,7 +93,6 @@ footer nav {
     font-size: 120%;
 }
 figure {
-    
     border: 4px solid #a28b2f;
     width: 100%;
     height: 100vh;
@@ -121,12 +119,11 @@ ul #accordio{
 }
 .page {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     border: 4px solid #a28b2f;
     border-radius: 10px; 
     background-color: black;
-
-    
+ 
 }
 .center {
     display: flex;
@@ -168,8 +165,13 @@ button {
     border-radius: 20px;
 }
 #accordion{
-    border: 4px solid #a28b2f;
+    border: 3px solid #a28b2f;
     border-radius: 25px;
+    margin-right: 11px;
+  
+}
+.ce{
+    background-color: #c4b04d;
 }
 
 .right {
@@ -177,7 +179,7 @@ button {
 }
 
 .middle {
-    border: 1px solid #a28b2f;
+    border: 3px solid #a28b2f;
     border-radius: 25px;
     padding-top: 40px;
 }
@@ -200,15 +202,15 @@ tbody tr:nth-child(odd) {
 }
 .image{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     border: 4px solid #a28b2f;
     border-radius: 25px;
     margin-left: 40px;
-    margin-top: 50px;
+    
 }
  .image img{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     border-radius: 25px; 
 }
  li img{
@@ -216,7 +218,65 @@ tbody tr:nth-child(odd) {
  }
 
 #slider li img {
-    width: 100%;
-    border-radius: 25px;  
-    height: 710px;
+   height: 60vh;
+   width: 100%;
+   border-radius: 10px;
+}
+.bx-wrapper {
+    filter: invert(9%) sepia(5%) saturate(194%) hue-rotate(10deg) brightness(99%) contrast(109%); 
+    border-radius: 10px;
+    padding-bottom: 40px;
+    
+}
+#id_pager {
+	text-align: center;
+	font-size: 90%;
+	color: green;    
+}
+
+.bol{
+    border: 4px solid #a28b2f;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    height: 64vh;
+    width: 98%;
+    margin-left: 2px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+ 
+@media only screen and (max-width: 480px) {
+    .resource, .resources {
+        width: 100%;
+        height: 80%;
+    }
+    
+    .page{
+        width: 100%;
+        height: 80%;
+    }
+
+    header {
+        background-image: url(media-queries-phone.jpg);
+        height: 93px;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: 140%;
+    }
+
+    main {
+        float: none;
+        width: 100%;
+    }
+
+    nav {
+        float:none;
+        width: auto;
+    }
+    #accordion{
+        margin-top: 50px;
+    }
 }
