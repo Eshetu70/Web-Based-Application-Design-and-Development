@@ -47,11 +47,20 @@
      <footer>
         <p>Page built by Eshetu wekjira Designer</p>
          <p>Eshetu Wekjira Designer is a protected name under U.S. copyright law.</p>
-        <p><a href="https://validator.w3.org/check?uri=referer">
-        <img src ="W3CHTML.png" alt ="images for validation"></a>
-        <a href="https://validator.w3.org/check?uri=referer">
-        <img src ="W3CCSS.png" alt ="image for W3CCSS"> </a> </p>
-            
+         <div>
+            <p>
+              <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html">
+                <img src="../images/W3CHTML.png" width="88" height="31" alt="Validate webpage HTML."/>
+              </a>
+              <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css">
+                <img src="../images/W3CCSS.png" width="88" height="31" alt="Validate webpage CSS."/>
+              </a>
+            </p>
+            <script>
+              document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+              document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+            </script>
+          </div>
        </footer>
     </body>
 

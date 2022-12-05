@@ -42,6 +42,9 @@ h4 {
     text-align: center;
 }
 
+.left{
+    text-align: left;
+}
 footer {
     padding-top: 50px;
     text-align: center;
@@ -238,14 +241,32 @@ tbody tr:nth-child(odd) {
     border: 4px solid #a28b2f;
     margin-bottom: 20px;
     margin-top: 30px;
-    height: 64vh;
+    height: 69vh;
     width: 98%;
     margin-left: 2px;
     border-radius: 10px;
     text-align: center;
 }
+.faculty{
+    width: 600px;
+    height: 420px;
+}
+.emb {
+    text-align: center;
+    justify-content: left;
+}
+#faculty{
+list-style-type: circle;
 
- 
+}
+.font{
+   font-size: 110%; 
+}
+ .p {
+    justify-content: left;
+    text-align: justify;
+   
+ }
 @media only screen and (max-width: 480px) {
     .resource, .resources {
         width: 100%;
