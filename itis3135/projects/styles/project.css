@@ -194,6 +194,10 @@ td {
     text-align: left;
     color: antiquewhite;
 }
+td{
+    font-family:bodonic MT;
+    font-size: 26px;
+}
 
 tbody tr:nth-child(even) {
     background-color: rgba(161, 158, 94, 0.349);
