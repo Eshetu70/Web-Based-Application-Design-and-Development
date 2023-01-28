@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="Description" content="Testing website for accessibility.">
+  <!-- css -->
+  <link rel="stylesheet" href="wekjira-Activity_Accessibility.css">
+  <title> Eshetu Wekjira ITIS3135 >>Activity-Accessibility</title>
+</head>
+<body>
+  <header>
+    <h1>Eshetu Wekjira's Emotional Whale 🐋 &#9733; ITIS 3135</h1>
+  </header>
+  <main>
+   <h2>Activity-Accessibility</h2>
+    <table class="center">
+      <caption></caption>
+      <thead>
+        <tr>
+          <!-- identify table headers <th> with scope attribute -->
+          <th scope="col" class="text">TYPE</th>
+          <th scope="col" class="text">PRODUCT</th>
+          <th scope ="col" class="text">FEATURES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col" class="text">Birthday Candles</th>
+          <td><img src="images/Birthday-Candles.jpg" alt="Birthday Candles" class="size"></td>
+          <td><ol>
+            <li>Comes in a range of fun, vibrant colors</li>
+            <li>Small and slender forms allow you to add as many or as few of them to a dessert as you desire</li>
+            <li>Offers a way to personalize customers' desserts on birthdays and anniversaries</li>
+            </ol>
+            </td>   
+        </tr>
+        <tr>
+            <th scope="row" class="text">Votives</th>
+            <td><img src="images/voltives.jpeg" alt="Voltives" class="size"></td>
+            <td><ol>
+              <li>Inexpensive and easy to use</li>
+              <li>Bigger than tea lights to provide longer burn times, making them better for longer events</li>
+            </ol></td>
+          </tr>
+          <tr>
+              <th scope="row" class="text2">Taper Candles</th>
+              <td><img src="images/taper-candles.jpg" alt="Taper Candles" class="size"></td>
+              <td><ol>
+                <li>Commonly known as window candles</li>
+                <li>Long, slender constructions add dimension to table tops</li>
+              </ol></td>
+            </tr>
+      </tbody>
+    </table>
+     <!--Add the form here-->
+     <br><br>
+     <fieldset>
+     <legend class="bold">Enter Your Details To Win a Gift Box!</legend>
+    <form action="#" method="get">
+      <label for="firstName" class="text2">First name:</label>
+      <input type="text" id="firstName" name="firstName" aria-required="true"><br>
+      <label for="lastName" class="text2">Last name:</label>
+      <input type="text" id="lastName" name="lastName" aria-required="true"><br>
+      <label for="telephone" class="bold">Phone number:</label>
+      <input type="tel" required="" placeholder="(###) ###-####" id="telephone" size="10"><br>
+      <label for="email" class="text2">Email:</label>
+      <input type="email" id="email" name="email" aria-required="true"><br>
+      <input type="submit" value="Submit" class="text">
+    </form>
+    </fieldset>
+    <div class="whitespace"></div>
+    <a href="https://teachaccess.github.io/tutorial/#/12">Click here to find more about accessibility</a>
+    <div class="whitespace"></div>
+
+    <a href="https://dequeuniversity.com/rules/axe/3.2/color-contrast"> Find out if your font
+      color and background color passes WCAG standard!</a>
+  </main>
+
+  <footer>
+      <a href="https://validator.w3.org/check?uri=referer">
+      <img src="images/W3CHTML.png" alt ="image for a Validation "></a>
+      <a href="https://validator.w3.org/check?uri=referer">
+      <img src ="images/W3CCSS.png" alt ="image for a validation"> </a>
+  </footer>
+</body>
+</html>

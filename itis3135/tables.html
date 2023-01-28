@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="styles/default.css" rel="stylesheet" type="text/css">
+    <title> Eshetu Wekjira >>ITIS3135 >> Tables </title>
+</head>
+<body>
+    <div data-include="components/header.html"></div>
+    <main>
+        <h2> Activity 2 Tables</h2>
+        <h3> My Tabular Data</h3>
+        <ol>
+            <li> Eshetu Wekjira ekjira@uncc.edu 2</li>
+            <li> Roba Mamo romamo@gmail.com 4</li>
+            <li> Saly Lius alius@gmail.com 6</li>
+            <li> Thomas Johnson Thomjohnson@gmail.com 8</li>
+            <li> Rachel Nicolas rnicolas@yaahoo.com 3</li>
+            <li> John Christian Jchristian@gmail.com 1</li>
+            <li> Joseph stathan jstathan&gmail.com 5</li>
+        </ol>
+        <h3> Employeee Data in Simple Table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Eshetu Wekjira </td>
+                    <td>ekjira@uncc.edu </td>
+                    <td>$78,0000 </td>
+                </tr>
+                <tr>
+                    <td>Salome Lius</td>
+                    <td>aliuse@gmail.com </td>
+                    <td>$73,000</td>
+                </tr>
+                <tr>
+                    <td>Saly Lius</td>
+                    <td>alius@gmail.com </td>
+                    <td>$73,000 </td>
+                </tr>
+                <tr>
+                    <td>Thomas Johnson</td>
+                    <td>Thomjohnson@gmail.com </td>
+                    <td>$93,000 </td>
+                </tr>
+                <tr>
+                    <td>Rachel Nicolas </td>
+                    <td>rnicolas@yaahoo.com </td>
+                    <td>$33,000 </td>
+                </tr>
+                <tr>
+                    <td>John Christian</td>
+                    <td>Jchristian@gmail.com </td>
+                    <td>$95,000 </td>
+                </tr>
+                <tr>
+                    <td>Joseph stathan </td>
+                    <td>stathan&gmail.com </td>
+                    <td>$50,000 </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3> Employeee Data in Complex Table</h3>
+        <figure>
+            <figcaption> Employee Information</figcaption>
+            <table>
+                <thead>
+                    <tr>
+                        <th id="Category">Category</th>
+                        <th id="Name">Name</th>
+                        <th id="Email">Email</th>
+                        <th id="Salary">Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="Category" rowspan="3" class="brown"> Superviser</td>
+                        <td headers="Name">Eshetu Wekjira </td>
+                        <td headers="Email">ekjira@uncc.edu </td>
+                        <td headers="Salary">$78,000 </td>
+                    </tr>
+                    <tr>
+                        <td headers="Name">Salome Lius</td>
+                        <td headers="Email">aliuse@gmail.com </td>
+                        <td headers="Salary">$73,000 </td>
+                    </tr>
+                    <tr>
+                        <td headers="Name">Saly Lius</td>
+                        <td headers="Email">alius@gmail.com </td>
+                        <td headers="Salary">$73,000 </td>
+                    </tr>
+
+                    <tr>
+                        <td headers="Category" rowspan="2" class="brown"> Marketing</td>
+                        <td headers="Name">Thomas Johnson</td>
+                        <td headers="Email">Thomjohnson@gmail.com </td>
+                        <td headers="Salary">$93,000</td>
+                    </tr>
+                    <tr>
+                        <td headers="Name">Rachel Nicolas </td>
+                        <td headers="Email">rnicolas@yaahoo.com </td>
+                        <td headers="Salary">$33,000</td>
+                    </tr>
+                    <tr>
+                        <td headers="Category" rowspan="2" class="brown"> Sales</td>
+                        <td headers="Name">John Christian</td>
+                        <td headers="Email">Jchristian@gmail.com </td>
+                        <td headers="Salary">$95,000 </td>
+                    </tr>
+                    <tr>
+                        <td headers="Name">Joseph stathan </td>
+                        <td headers="Email">stathan&gmail.com </td>
+                        <td headers="Salary">$50,000</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="right">Total Annual Salary Budget</td>
+                        <td headers="Salary"> $495000 </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </figure>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <script src="scripts/HTMLInclude.js"></script>
+</body>
+
+</html>
