@@ -12,7 +12,7 @@ This repository contains the code and resources for a website developed using HT
 - **3:** Open the index.html file in your preferred web browser.
 
 ## Folder Structure
-**index.html:** The main HTML file that represents the structure of the website.
-**styles/:** Directory containing CSS files for styling the website.
-**scripts/:** Directory containing JavaScript files for adding interactivity to the website.
-**images/:** Directory to store image files used in the website.
+- **index.html:** The main HTML file that represents the structure of the website.
+- **styles/:** Directory containing CSS files for styling the website.
+- **scripts/:** Directory containing JavaScript files for adding interactivity to the website.
+- **images/:** Directory to store image files used in the website.
