@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="styles/default.css" rel="stylesheet" type="text/css">
+  <script src="scripts/defaultscripts.js"></script>
+  <title> Eshetu Wekjira >> ITIS3135>>Fristscripts </title>
+</head>
+<body onload="questions()">
+  <div data-include="components/header.html"></div>
+  <br>
+  <br>
+  <div id="preInput">
+    <form id="preInputForm">
+      <label for="first"> Please enter your name:</label>
+      <input type="text" name="first" id="first"><br> 
+      <label for="feeling"> How are you feeling? </label>
+      <input type="text" name="feeling" id="feeling"><br> 
+      <button>Submit</button>
+    </form>
+  </div>
+  <main id="afterInput" style="visibility: hidden;">
+    <h2>Activity 5 First JavaScripts</h2>
+    <h3 id="date">date</h3>
+    <h3 id="welcome">welcome</h3>
+    <br>
+    <h4>Eshetu Wekjira designers do incredible things</h4>
+    <button onclick="getAccelaration()">Calculate accerations</button>
+    <p id="speed"></p>
+    <button onclick="BodyMassIndex()">Body Mass Index</button>
+    <p id="BMX"></p>
+    <button onclick=" multiplications()"> multiplications</button>
+    <p id="multiplications"></p>
+    <button onclick=" ThanksgivingDay()"> Days left until Thanksgiving </button>
+    <p id="ThanksgivingDay"></p>
+  </main>
+  <div data-include="components/footer.html"></div>
+  <script src="scripts/HTMLInclude.js"></script>
+</body>
+
+</html>
