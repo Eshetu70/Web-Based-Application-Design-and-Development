@@ -106,6 +106,35 @@
             font-size: 1.2em;
             margin-top: 20px;
         }
+        .link-section {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px; /* Space between the links */
+        }
+        
+        .link-section a {
+            text-decoration: none; /* Removes underline */
+            font-size: 14px; /* You can adjust the size */
+            font-weight: bold; /* You can adjust this for more emphasis */
+            transition: color 0.3s ease; /* Smooth transition on hover */
+        }
+        
+        .link-section .opstech {
+            color: #28a745; /* Green color for OpsTech */
+        }
+        
+        .link-section .opstech:hover {
+            color: #218838; /* Darker green when hovered */
+        }
+        
+        .link-section .rme {
+            color: #007bff; /* Blue color for RME */
+        }
+        
+        .link-section .rme:hover {
+            color: #0056b3; /* Darker blue when hovered */
+        }
+        
     </style>
 </head>
 <body>
@@ -221,12 +250,31 @@
         commentsDiv.classList.add("comments");
         stationItem.appendChild(commentsDiv);
 
+        
         // Add comment button
         const addComment = document.createElement("textarea");
         addComment.classList.add("add-comment");
         addComment.placeholder = "Add extra comments...";
         addComment.addEventListener("input", () => addMoreComment(stationItem, addComment));
         stationItem.appendChild(addComment);
+
+     // Links for OpsTech and RME
+        const linkSection = document.createElement("div");
+        linkSection.classList.add("link-section");
+        const opsTechLink = document.createElement("a");
+        opsTechLink.href = "https://t.corp.amazon.com/create/copy/V1573569886";
+        opsTechLink.innerText = "OpsTech";
+        opsTechLink.target = "_blank";
+        linkSection.appendChild(opsTechLink);
+        
+        const rmeLink = document.createElement("a");
+        rmeLink.href = "https://t.corp.amazon.com/create/copy/V1560699329";
+        rmeLink.innerText = "RME";
+        rmeLink.target = "_blank";
+        linkSection.appendChild(rmeLink);
+
+        stationItem.appendChild(linkSection);
+
 
         return stationItem;
     }
