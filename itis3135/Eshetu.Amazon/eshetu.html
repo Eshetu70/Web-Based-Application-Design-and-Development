@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPMix Station Lines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .line-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 1000px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .line-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .stations, .even-stations, .odd-stations {
+            width: 33%;
+            padding: 10px;
+        }
+        .stations {
+            border-right: 1px solid #ccc;
+        }
+        .even-stations, .odd-stations {
+            padding-left: 20px;
+        }
+        .station-item {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            background-color: #e6ffe6;
+            position: relative;
+        }
+        .station-item.red {
+            border-color: red;
+            background-color: #ffe6e6;
+        }
+        .station-item.needs-attention {
+            background-color: rgba(255, 255, 153, 0.5);
+            border-color: orange;
+            transition: background-color 0.3s;
+        }
+        .options-select {
+            margin-top: 10px;
+            width: 100%;
+        }
+        .comments {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background-color: #fff;
+        }
+        .comment-item {
+            background-color: yellow;
+            padding: 3px;
+            margin: 2px 0;
+            border-radius: 3px;
+        }
+        .done-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #totalRed {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>PPMix Station Lines</h1>
+
+<div id="stationsContainer"></div>
+<div id="totalRed">Red Bar Percentage: 0%</div>
+
+<script>
+    const numLines = 6;
+    const stationsPerLine = 25;
+    const options = [
+        "Cables", "Monitor", "Screen", "Hyper Scanner", "Tape Machine", 
+        "Tables", "Pslip Machine", "Zebra Printer", "Keypad", 
+        "Hand Scanner", "Tote Shouter"
+    ];
+    const attentionOptions = ["Monitor", "Tape Machine"]; // Options that need attention or maintenance
+    const stationsContainer = document.getElementById("stationsContainer");
+    let redBarCount = 0;
+    const totalStations = numLines * stationsPerLine;
+
+    function createStations() {
+        for (let line = 1; line <= numLines; line++) {
+            const allStations = [];
+            const oddStations = [];
+            const evenStations = [];
+
+            for (let station = 1; station <= stationsPerLine; station++) {
+                const stationName = `SingleLine ${line}_${String(station).padStart(2, '0')}`;
+                allStations.push(stationName);
+
+                if (station % 2 === 0) {
+                    evenStations.push(stationName);
+                } else {
+                    oddStations.push(stationName);
+                }
+            }
+            renderLine(line, allStations, oddStations, evenStations);
+        }
+    }
+
+    function renderLine(lineNumber, allStations, oddStations, evenStations) {
+        const lineContainer = document.createElement("div");
+        lineContainer.classList.add("line-container");
+
+        const lineTitle = document.createElement("div");
+        lineTitle.classList.add("line-title");
+        lineTitle.innerText = `Line ${lineNumber}`;
+        lineContainer.appendChild(lineTitle);
+
+        const allStationsDiv = document.createElement("div");
+        allStationsDiv.classList.add("stations");
+        allStationsDiv.innerHTML = `<strong>All Stations</strong>`;
+        allStations.forEach(station => allStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(allStationsDiv);
+
+        const oddStationsDiv = document.createElement("div");
+        oddStationsDiv.classList.add("odd-stations");
+        oddStationsDiv.innerHTML = `<strong>Odd Stations</strong>`;
+        oddStations.forEach(station => oddStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(oddStationsDiv);
+
+        const evenStationsDiv = document.createElement("div");
+        evenStationsDiv.classList.add("even-stations");
+        evenStationsDiv.innerHTML = `<strong>Even Stations</strong>`;
+        evenStations.forEach(station => evenStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(evenStationsDiv);
+
+        stationsContainer.appendChild(lineContainer);
+    }
+
+    function createStationItem(stationName) {
+        const stationItem = document.createElement("div");
+        stationItem.classList.add("station-item");
+        stationItem.dataset.selected = "false";
+
+        const stationTitle = document.createElement("span");
+        stationTitle.innerText = stationName;
+        stationItem.appendChild(stationTitle);
+
+        // Dropdown menu for options
+        const optionsSelect = document.createElement("select");
+        optionsSelect.classList.add("options-select");
+        optionsSelect.multiple = true; // Enable multiple selection
+        optionsSelect.addEventListener("change", () => toggleOptions(stationItem, optionsSelect));
+        
+        // Default unselected option
+        const defaultOption = document.createElement("option");
+        defaultOption.innerText = "Select Options";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        optionsSelect.appendChild(defaultOption);
+
+        options.forEach(option => {
+            const optionElement = document.createElement("option");
+            optionElement.value = option;
+            optionElement.innerText = option;
+            optionsSelect.appendChild(optionElement);
+        });
+        stationItem.appendChild(optionsSelect);
+
+        // "Done" button
+        const doneButton = document.createElement("button");
+        doneButton.classList.add("done-button");
+        doneButton.innerText = "Done";
+        doneButton.addEventListener("click", () => markAsDone(stationItem, optionsSelect));
+        stationItem.appendChild(doneButton);
+
+        // Comments section
+        const commentsDiv = document.createElement("div");
+        commentsDiv.classList.add("comments");
+        stationItem.appendChild(commentsDiv);
+
+        return stationItem;
+    }
+
+    function toggleOptions(stationItem, optionsSelect) {
+        const selectedOptions = Array.from(optionsSelect.selectedOptions).filter(option => option.value);
+        const commentsDiv = stationItem.querySelector(".comments");
+
+        // Update comments with selected options
+        commentsDiv.innerHTML = ""; // Clear previous comments
+        selectedOptions.forEach(option => {
+            const commentItem = document.createElement("div");
+            commentItem.classList.add("comment-item");
+            commentItem.innerText = option.value;
+            commentsDiv.appendChild(commentItem);
+        });
+
+        const needsAttention = selectedOptions.some(option => attentionOptions.includes(option.value));
+        if (needsAttention) {
+            stationItem.classList.add("needs-attention");
+        } else {
+            stationItem.classList.remove("needs-attention");
+        }
+
+        if (selectedOptions.length > 0 && stationItem.dataset.selected === "false") {
+            stationItem.classList.add("red");
+            stationItem.dataset.selected = "true";
+            redBarCount++;
+        } else if (selectedOptions.length === 0 && stationItem.dataset.selected === "true") {
+            stationItem.classList.remove("red");
+            stationItem.dataset.selected = "false";
+            redBarCount--;
+        }
+
+        updateRedBarPercentage();
+    }
+
+    function markAsDone(stationItem, optionsSelect) {
+        stationItem.classList.remove("red", "needs-attention");
+        stationItem.dataset.selected = "false";
+
+        // Deselect all options in the dropdown
+        optionsSelect.selectedIndex = 0;
+
+        // Clear comments
+        const commentsDiv = stationItem.querySelector(".comments");
+        commentsDiv.innerHTML = "";
+
+        // Decrease redBarCount if station was marked as red
+        if (redBarCount > 0) {
+            redBarCount--;
+        }
+        updateRedBarPercentage();
+    }
+
+    function updateRedBarPercentage() {
+        const percentage = ((redBarCount / totalStations) * 100).toFixed(2);
+        document.getElementById("totalRed").innerText = `Red Bar Percentage: ${percentage}%`;
+    }
+
+    createStations();
+</script>
+
+</body>
+</html>
