@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPMix Station Lines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .line-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 1200px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .line-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .stations {
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-right: 1px solid #ccc;
+        }
+        .station-item {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            background-color: #e6ffe6;
+            position: relative;
+        }
+        .station-item.red {
+            border-color: red;
+            background-color: #ffe6e6;
+        }
+        .station-item.needs-attention {
+            background-color: rgba(255, 255, 153, 0.5);
+            border-color: orange;
+            transition: background-color 0.3s;
+        }
+        .options-select {
+            margin-top: 10px;
+            width: 100%;
+        }
+        .comments {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background-color: #fff;
+        }
+        .comment-item {
+            background-color: yellow;
+            padding: 3px;
+            margin: 2px 0;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .comment-item input {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            resize: vertical;
+        }
+        .add-comment {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .done-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #totalRed {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>SinglesStation.Eshetu(SSE)</h1>
+
+<div id="stationsContainer"></div>
+<div id="totalRed">Red Bar Percentage: 0%</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js"></script>
+<script>
+    // Firebase setup
+    const firebaseConfig = {
+        apiKey: "AIzaSyATEIsJ6smlNjZ8sgAju8jH7GFcA6yMivU",
+        authDomain: "eshetu-5edef.firebaseapp.com",
+        projectId: "eshetu-5edef",
+        storageBucket: "eshetu-5edef.firebasestorage.app",
+        messagingSenderId: "195903882586",
+        appId: "1:195903882586:web:bb0ad120136091ce119f63",
+        measurementId: "G-Q6NMRLHGLS"
+    };
+    
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const database = firebase.database(app);
+
+    const numLines = 6;
+    const stationsPerLine = 25;
+    const stationsContainer = document.getElementById("stationsContainer");
+    let redBarCount = 0;
+    const totalStations = numLines * stationsPerLine;
+
+    function createStations() {
+        for (let line = 1; line <= numLines; line++) {
+            const allStations = [];
+            for (let station = 1; station <= stationsPerLine; station++) {
+                const stationName = `SingleLine ${line}_${String(station).padStart(2, '0')}`;
+                allStations.push(stationName);
+            }
+            renderLine(line, allStations);
+        }
+    }
+
+    function renderLine(lineNumber, allStations) {
+        const lineContainer = document.createElement("div");
+        lineContainer.classList.add("line-container");
+
+        const lineTitle = document.createElement("div");
+        lineTitle.classList.add("line-title");
+        lineTitle.innerText = `Line ${lineNumber}`;
+        lineContainer.appendChild(lineTitle);
+
+        const allStationsDiv = document.createElement("div");
+        allStationsDiv.classList.add("stations");
+        allStationsDiv.innerHTML = `<strong>All Stations</strong>`;
+        allStations.forEach(station => allStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(allStationsDiv);
+
+        stationsContainer.appendChild(lineContainer);
+    }
+
+    function createStationItem(stationName) {
+        const stationItem = document.createElement("div");
+        stationItem.classList.add("station-item");
+        stationItem.dataset.stationName = stationName;
+
+        const stationTitle = document.createElement("span");
+        stationTitle.innerText = stationName;
+        stationItem.appendChild(stationTitle);
+
+        const doneButton = document.createElement("button");
+        doneButton.classList.add("done-button");
+        doneButton.innerText = "Done";
+        doneButton.addEventListener("click", () => markAsDone(stationItem));
+        stationItem.appendChild(doneButton);
+
+        return stationItem;
+    }
+
+    function markAsDone(stationItem) {
+        stationItem.classList.toggle("red");
+        if (stationItem.classList.contains("red")) {
+            redBarCount++;
+        } else {
+            redBarCount--;
+        }
+        updateRedBarPercentage();
+    }
+
+    function updateRedBarPercentage() {
+        const redBarPercentage = (redBarCount / totalStations) * 100;
+        document.getElementById("totalRed").innerText = `Red Bar Percentage: ${redBarPercentage.toFixed(2)}%`;
+    }
+
+    // Initialize stations
+    createStations();
+</script>
+</body>
+</html>
