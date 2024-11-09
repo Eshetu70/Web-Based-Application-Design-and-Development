@@ -73,6 +73,21 @@
             padding: 3px;
             margin: 2px 0;
             border-radius: 3px;
+            cursor: pointer;
+        }
+        .comment-item input {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            resize: vertical;
+        }
+        .add-comment {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
         }
         .done-button {
             margin-top: 10px;
@@ -163,6 +178,7 @@
         const stationItem = document.createElement("div");
         stationItem.classList.add("station-item");
         stationItem.dataset.selected = "false";
+        stationItem.dataset.stationName = stationName;
 
         const stationTitle = document.createElement("span");
         stationTitle.innerText = stationName;
@@ -201,6 +217,13 @@
         commentsDiv.classList.add("comments");
         stationItem.appendChild(commentsDiv);
 
+        // Add comment button
+        const addComment = document.createElement("textarea");
+        addComment.classList.add("add-comment");
+        addComment.placeholder = "Add extra comments...";
+        addComment.addEventListener("input", () => addMoreComment(stationItem, addComment));
+        stationItem.appendChild(addComment);
+
         return stationItem;
     }
 
@@ -214,6 +237,7 @@
             const commentItem = document.createElement("div");
             commentItem.classList.add("comment-item");
             commentItem.innerText = option.value;
+            commentItem.setAttribute("contenteditable", "true");  // Make the comment editable
             commentsDiv.appendChild(commentItem);
         });
 
@@ -234,7 +258,27 @@
             redBarCount--;
         }
 
+        // Save to localStorage when selections are made
+        saveData();
         updateRedBarPercentage();
+    }
+
+    function addMoreComment(stationItem, addCommentElement) {
+        const commentsDiv = stationItem.querySelector(".comments");
+        const newCommentText = addCommentElement.value.trim();
+
+        // Create a new comment if text is entered
+        if (newCommentText && !commentsDiv.querySelector(".add-comment-item")) {
+            const newCommentItem = document.createElement("div");
+            newCommentItem.classList.add("comment-item", "add-comment-item");
+            newCommentItem.innerText = newCommentText;
+            newCommentItem.setAttribute("contenteditable", "true");
+            commentsDiv.appendChild(newCommentItem);
+
+            // Save data
+            saveData();
+            addCommentElement.value = ""; // Clear textarea after adding the comment
+        }
     }
 
     function markAsDone(stationItem, optionsSelect) {
@@ -248,10 +292,16 @@
         const commentsDiv = stationItem.querySelector(".comments");
         commentsDiv.innerHTML = "";
 
+        // Clear extra comments
+        const addCommentElement = stationItem.querySelector(".add-comment");
+        addCommentElement.value = "";
+
         // Decrease redBarCount if station was marked as red
         if (redBarCount > 0) {
             redBarCount--;
         }
+
+        saveData();
         updateRedBarPercentage();
     }
 
@@ -260,7 +310,49 @@
         document.getElementById("totalRed").innerText = `Red Bar Percentage: ${percentage}%`;
     }
 
+    // Save data to localStorage
+    function saveData() {
+        const stations = Array.from(document.querySelectorAll(".station-item")).map(stationItem => {
+            return {
+                name: stationItem.dataset.stationName,
+                selected: stationItem.dataset.selected === "true",
+                comments: Array.from(stationItem.querySelectorAll(".comment-item")).map(comment => comment.innerText),
+                options: Array.from(stationItem.querySelector(".options-select").selectedOptions).map(option => option.value)
+            };
+        });
+        localStorage.setItem("stationsData", JSON.stringify(stations));
+    }
+
+    // Load data from localStorage
+    function loadData() {
+        const savedData = JSON.parse(localStorage.getItem("stationsData"));
+        if (savedData) {
+            savedData.forEach(stationData => {
+                const stationItem = document.querySelector(`.station-item[data-station-name="${stationData.name}"]`);
+                if (stationItem) {
+                    stationItem.dataset.selected = stationData.selected ? "true" : "false";
+                    const optionsSelect = stationItem.querySelector(".options-select");
+                    stationData.options.forEach(option => {
+                        const optionElement = Array.from(optionsSelect.options).find(opt => opt.value === option);
+                        if (optionElement) optionElement.selected = true;
+                    });
+
+                    // Add comments if available
+                    const commentsDiv = stationItem.querySelector(".comments");
+                    stationData.comments.forEach(comment => {
+                        const commentItem = document.createElement("div");
+                        commentItem.classList.add("comment-item");
+                        commentItem.innerText = comment;
+                        commentsDiv.appendChild(commentItem);
+                    });
+                }
+            });
+        }
+    }
+
+    // Call to initialize stations
     createStations();
+    loadData();
 </script>
 
 </body>
