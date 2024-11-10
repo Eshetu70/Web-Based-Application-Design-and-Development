@@ -1,264 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional Service Website</title>
-  <style>
-    /* General Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Service Website</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
 
-    /* Header Section */
-    header {
-      background: #004466;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+        /* Header Section */
+        header {
+            background: #004466;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 5px;
-    }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
 
-    header p {
-      font-size: 1.2rem;
-    }
+        header p {
+            font-size: 1.2rem;
+        }
 
-    /* Navigation Styles */
-    nav {
-      background-color: #006699;
-      display: flex;
-      justify-content: center;
-    }
+        /* Navigation Styles */
+        nav {
+            background-color: #006699;
+            display: flex;
+            justify-content: center;
+        }
 
-    nav a {
-      color: #fff;
-      padding: 15px 25px;
-      text-decoration: none;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: background 0.3s;
-    }
+        nav a {
+            color: #fff;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
 
-    nav a:hover {
-      background-color: #005580;
-    }
+        nav a:hover {
+            background-color: #005580;
+        }
 
-    /* Content Section */
-    .content {
-      padding: 30px;
-      text-align: center;
-    }
+        /* Content Section */
+        .content {
+            padding: 30px;
+            text-align: center;
+        }
 
-    .tab-content {
-      display: none;
-    }
+        .tab-content {
+            display: none;
+        }
 
-    .active {
-      display: block;
-    }
+        .active {
+            display: block;
+        }
 
-    .services-list {
-      max-width: 700px;
-      margin: 20px auto;
-      text-align: left;
-    }
+        .services-list {
+            max-width: 700px;
+            margin: 20px auto;
+            text-align: left;
+        }
 
-    .services-list h3 {
-      color: #004466;
-      margin-bottom: 10px;
-    }
+        .services-list h3 {
+            color: #004466;
+            margin-bottom: 10px;
+        }
 
-    .services-list ul {
-      list-style-type: none;
-    }
+        .services-list ul {
+            list-style-type: none;
+        }
 
-    .services-list ul li {
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-      transition: box-shadow 0.3s;
-      cursor: pointer;
-    }
+        .services-list ul li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: box-shadow 0.3s;
+            cursor: pointer;
+        }
 
-    .services-list ul li:hover {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+        .services-list ul li:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .price {
-      font-weight: bold;
-      color: #006600;
-    }
+        .price {
+            font-weight: bold;
+            color: #006600;
+        }
 
-    /* Footer Section */
-    footer {
-      background-color: #004466;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
+        /* Footer Section */
+        footer {
+            background-color: #004466;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
 
-    footer p {
-      margin: 5px;
-    }
+        footer p {
+            margin: 5px;
+        }
 
-    footer a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-    /* PayPal Button Section */
-    #paypal-section {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-    }
+        /* Payment Section */
+        .payment-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
 
-    /* Payment Section */
-    .payment-section {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
+        .paypal-button,
+        .qr-code {
+            margin: 0 10px;
+        }
 
-    .paypal-button,
-    .qr-code {
-      margin: 10px;
-    }
+        .paypal-button img,
+        .qr-code img {
+            width: 150px;
+            height: auto;
+        }
 
-    .qr-code img {
-      width: 120px;
-      height: auto;
-    }
+        /* New QR Code & Information Section */
+        .qr-info {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-  </style>
+        .qr-info img {
+            width: 150px;
+            height: auto;
+        }
+
+        .qr-info p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- Header Section -->
-  <header>
-    <h1>Professional Services Hub</h1>
-    <p>Your premier choice for Haircuts, Landscaping, and Car Washing</p>
-  </header>
+    <!-- Header Section -->
+    <header>
+        <h1>Professional Services Hub</h1>
+        <p>Your premier choice for Haircuts, Landscaping, and Car Washing</p>
+    </header>
 
-  <!-- Navigation Tabs -->
-  <nav>
-    <a href="#" onclick="showTab('haircut')">Haircuts</a>
-    <a href="#" onclick="showTab('landscaping')">Landscaping</a>
-    <a href="#" onclick="showTab('carwash')">Car Washing</a>
-  </nav>
+    <!-- Navigation Tabs -->
+    <nav>
+        <a href="#" onclick="showTab('haircut')">Haircuts</a>
+        <a href="#" onclick="showTab('landscaping')">Landscaping</a>
+        <a href="#" onclick="showTab('carwash')">Car Washing</a>
+    </nav>
 
-  <!-- Content Section -->
-  <div class="content">
-    <!-- Haircuts Section -->
-    <div id="haircut" class="tab-content active">
-      <h2>Haircuts</h2>
-      <p>Experience top-tier haircut services tailored for men, women, and children. Our stylists provide quality cuts and styles with a touch of finesse.</p>
-      <div class="services-list">
-        <h3>Available Haircut Services:</h3>
-        <ul>
-          <li onclick="showPayPalButton('Basic Cut', 25)">Basic Cut - A clean, professional look. <span class="price">$25</span></li>
-          <li onclick="showPayPalButton('Styled Cut', 35)">Styled Cut - Add layers, textures, and personalized style. <span class="price">$35</span></li>
-          <li onclick="showPayPalButton('Kids Cut', 15)">Kids Cut - Friendly and gentle cuts for children. <span class="price">$15</span></li>
-        </ul>
-      </div>
+    <!-- Content Section -->
+    <div class="content">
+        <!-- Haircuts Section -->
+        <div id="haircut" class="tab-content active">
+            <h2>Haircuts</h2>
+            <p>Experience top-tier haircut services tailored for men, women, and children. Our stylists provide quality
+                cuts and styles with a touch of finesse.</p>
+            <div class="services-list">
+                <h3>Available Haircut Services:</h3>
+                <ul>
+                    <li onclick="showServiceInfo('Basic Cut', 25)">Basic Cut - A clean, professional look. <span
+                            class="price">$25</span></li>
+                    <li onclick="showServiceInfo('Styled Cut', 35)">Styled Cut - Add layers, textures, and personalized
+                        style. <span class="price">$35</span></li>
+                    <li onclick="showServiceInfo('Kids Cut', 15)">Kids Cut - Friendly and gentle cuts for children.
+                        <span class="price">$15</span>
+                    </li>
+                    <li onclick="showServiceInfo('Beard Trim', 10)">Beard Trim - Perfectly groomed and shaped. <span
+                            class="price">$10</span></li>
+                    <li onclick="showServiceInfo('Coloring Services', 50)">Coloring Services - Highlights and custom
+                        colors. <span class="price">Starting at $50</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Landscaping Section -->
+        <div id="landscaping" class="tab-content">
+            <h2>Landscaping</h2>
+            <p>Transform your outdoor space with our professional landscaping services, crafted for beauty,
+                sustainability, and functionality.</p>
+            <div class="services-list">
+                <h3>Our Landscaping Services:</h3>
+                <ul>
+                    <li onclick="showServiceInfo('Garden Design', 200)">Garden Design - Custom layouts and planting.
+                        <span class="price">Starting at $200</span>
+                    </li>
+                    <li onclick="showServiceInfo('Lawn Care', 50)">Lawn Care - Regular mowing and trimming. <span
+                            class="price">$50 per visit</span></li>
+                    <li onclick="showServiceInfo('Tree & Shrub Trimming', 75)">Tree & Shrub Trimming - Healthy,
+                        beautiful plants. <span class="price">Starting at $75</span></li>
+                    <li onclick="showServiceInfo('Mulching', 30)">Mulching - Boosts soil health and curb appeal. <span
+                            class="price">$30 per area</span></li>
+                    <li onclick="showServiceInfo('Seasonal Clean-Up', 100)">Seasonal Clean-Up - Spring and fall
+                        packages. <span class="price">Starting at $100</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Car Washing Section -->
+        <div id="carwash" class="tab-content">
+            <h2>Car Washing</h2>
+            <p>Keep your car looking spotless with our range of washing and detailing services, tailored for all types
+                of vehicles.</p>
+            <div class="services-list">
+                <h3>Car Wash Packages:</h3>
+                <ul>
+                    <li onclick="showServiceInfo('Basic Wash', 20)">Basic Wash - Exterior wash and rinse. <span
+                            class="price">$20</span></li>
+                    <li onclick="showServiceInfo('Full Service', 35)">Full Service - Exterior, interior vacuum, and
+                        windows. <span class="price">$35</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- New QR Code and Info Section -->
+        <div class="qr-info">
+            <h3>Scan to Visit Our Website</h3>
+            <p>Use the QR code below to visit our homepage for more details on our professional services and offers.</p>
+            <img src="https://www.qr-code-generator.com/wp-content/themes/qr-code-generator/img/qr-code-homepage.png"
+                alt="QR Code for Homepage">
+            <p>Scan the QR code to explore more!</p>
+        </div>
+
     </div>
 
-    <!-- Landscaping Section -->
-    <div id="landscaping" class="tab-content">
-      <h2>Landscaping</h2>
-      <p>Transform your outdoor space with our professional landscaping services, crafted for beauty, sustainability, and functionality.</p>
-      <div class="services-list">
-        <h3>Our Landscaping Services:</h3>
-        <ul>
-          <li onclick="showPayPalButton('Garden Design', 200)">Garden Design - Custom layouts and planting. <span class="price">Starting at $200</span></li>
-          <li onclick="showPayPalButton('Lawn Care', 50)">Lawn Care - Regular mowing and trimming. <span class="price">$50 per visit</span></li>
-        </ul>
-      </div>
-    </div>
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Professional Services Hub. All rights reserved.</p>
+        <p>Contact us at: <a href="mailto:eshetuwek1@gmail.com">eshetuwek1@gmail.com</a> | Phone: <a
+                href="tel:+17044888465">704-488-8465</a></p>
 
-    <!-- Car Washing Section -->
-    <div id="carwash" class="tab-content">
-      <h2>Car Washing</h2>
-      <p>Keep your car looking spotless with our range of washing and detailing services, tailored for all types of vehicles.</p>
-      <div class="services-list">
-        <h3>Car Wash Packages:</h3>
-        <ul>
-          <li onclick="showPayPalButton('Basic Wash', 20)">Basic Wash - Exterior wash and rinse. <span class="price">$20</span></li>
-          <li onclick="showPayPalButton('Full Service', 35)">Full Service - Exterior, interior vacuum, and windows. <span class="price">$35</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+        <!-- Payment Section with PayPal and QR Code -->
+        <div class="payment-section" style="display:none;" id="payment-info">
+            <p><strong>Proceed with PayPal payment for your selected service:</strong></p>
+            <p id="service-info"></p>
+            <p>Please wait while we redirect you to PayPal...</p>
+            <div class="payment-section">
+                <div class="paypal-button">
+                    <a href="https://www.paypal.com/ncp/payment/73D56MU93UBYG" target="_blank">
+                        <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-small.png"
+                            alt="Pay with PayPal">
+                    </a>
+                </div>
+                <div class="qr-code">
+                    <img src="images/Thank you for -qrcode.png" alt="Scan to Pay">
+                    <p>Scan to Pay</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  <!-- PayPal Button Section -->
-  <div id="paypal-section">
-    <p>Proceed with PayPal payment for your selected service:</p>
-    <div id="paypal-container"></div>
-  </div>
+    <script>
+        function showTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
 
-  <!-- Footer Section -->
-  <footer>
-    <!-- Payment Section with PayPal and QR Code -->
-    <div class="payment-section">
-      <div class="paypal-button">
-        <a href="https://www.paypal.com/ncp/payment/73D56MU93UBYG" target="_blank">
-          <img src="images/Thank_you_for_-qrcode.png" alt="Pay with PayPal">
-        </a>
-      </div>
-      <div class="qr-code">
-        <img src="https://example.com/your-qr-code.png" alt="Scan to Pay">
-        <p>Scan to Pay</p>
-      </div>
-    </div>
-    <p>&copy; 2023 Professional Services Hub. All rights reserved.</p>
-    <p>Contact us at: <a href="mailto:eshetuwek1@gmail.com">eshetuwek1@gmail.com</a> | Phone: <a href="tel:+17044888465">704-488-8465</a></p>
-  </footer>
+        function showServiceInfo(serviceName, price) {
+            // Display selected service info before redirecting to PayPal
+            const paymentInfo = document.getElementById('payment-info');
+            const serviceInfo = document.getElementById('service-info');
+            serviceInfo.innerHTML = `You are paying for: ${serviceName} - $${price}`;
+            paymentInfo.style.display = 'block';
 
-  <!-- JavaScript for Tab Navigation -->
-  <script>
-    function showTab(tabId) {
-      const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(content => content.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
-
-    function showPayPalButton(serviceName, price) {
-      // Display selected service info and PayPal button
-      const paypalSection = document.getElementById('paypal-section');
-      paypalSection.style.display = 'block';
-      document.getElementById('paypal-container').innerHTML = `<p>You are paying for: ${serviceName} - $${price}</p>`;
-    }
-  </script>
-
-  <!-- PayPal Integration Script -->
-  <script src="https://www.paypal.com/sdk/js?client-id=BAAZOHiWYfMtaPc7h2yRf1iLWavpX_P7lwxebvyxIdn94HucPvQqcW7lGYvH6EM5DvgsxuMb9JeSlT9tQ4&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
-  <script>
-    paypal.HostedButtons({
-      hostedButtonId: "6FE3VGDAN4WZN",
-    }).render("#paypal-container");
-  </script>
+            // Redirect to PayPal after showing the info (delay for 2 seconds to show the info)
+            setTimeout(function () {
+                window.location.href = `https://www.paypal.com/ncp/payment/73D56MU93UBYG`;
+            }, 4000); // Delay for 2 seconds to show the info
+        }
+    </script>
 
 </body>
+
 </html>
