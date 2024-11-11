@@ -1,1 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staffing Distribution Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        .priority-1 {
+            background-color: lightgreen;
+        }
+        .priority-2 {
+            background-color: lightblue;
+        }
+        .priority-3 {
+            background-color: lightyellow;
+        }
+        .priority-4 {
+            background-color: lightcoral;
+        }
+        .priority-header {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .station {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Staffing Distribution Table</h2>
+
+    <!-- Input fields for Associate Count -->
+    <label for="associatesCount">Enter number of associates: </label>
+    <input type="number" id="associatesCount" value="15" min="1">
+    <button onclick="distributeStaff()">Distribute Staff</button>
+
+    <!-- Table to display the staffing -->
+    <table id="staffingTable">
+        <thead>
+            <tr>
+                <th>Line</th>
+                <th>Odd Stations</th>
+                <th>Even Stations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="line1">
+                <td>Line 1</td>
+                <td id="line1Odd"></td>
+                <td id="line1Even"></td>
+            </tr>
+            <tr id="line2">
+                <td>Line 2</td>
+                <td id="line2Odd"></td>
+                <td id="line2Even"></td>
+            </tr>
+            <tr id="line3">
+                <td>Line 3</td>
+                <td id="line3Odd"></td>
+                <td id="line3Even"></td>
+            </tr>
+            <tr id="line4">
+                <td>Line 4</td>
+                <td id="line4Odd"></td>
+                <td id="line4Even"></td>
+            </tr>
+            <tr id="line5">
+                <td>Line 5</td>
+                <td id="line5Odd"></td>
+                <td id="line5Even"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function distributeStaff() {
+            const associatesCount = parseInt(document.getElementById("associatesCount").value);
+            const totalStations = 25; // Each line has 25 stations
+            const associates = [];
+            let associateIndex = 0;
+
+            // Create associate list with emojis
+            const emojis = ["👩‍💼", "👨‍💼", "👩‍🔬", "👨‍🔬", "👩‍🎓", "👨‍🎓", "👩‍🏫", "👨‍🏫", "👩‍💻", "👨‍💻", "👩‍🔧", "👨‍🔧", "👩‍🍳", "👨‍🍳", "👩‍⚕️", "👨‍⚕️", "👩‍🚀", "👨‍🚀"];
+            for (let i = 0; i < associatesCount; i++) {
+                associates.push(emojis[i % emojis.length] + " Associate " + (i + 1));
+            }
+
+            // Reset the table rows before distribution
+            for (let i = 1; i <= 5; i++) {
+                const oddCell = document.getElementById("line" + i + "Odd");
+                const evenCell = document.getElementById("line" + i + "Even");
+                oddCell.innerHTML = ""; // Reset odd station cell
+                evenCell.innerHTML = ""; // Reset even station cell
+            }
+
+            // Calculate how many associates should go to Priority 1 and Priority 2
+            let priority1Count = Math.ceil(associatesCount / 2);  // Priority 1 gets the larger share
+            let priority2Count = associatesCount - priority1Count; // Remaining goes to Priority 2
+
+            let associateIndexPriority1 = 0;
+            let associateIndexPriority2 = priority1Count;
+
+            // Priority 1: Odd stations of Line 1
+            document.getElementById("line1Odd").innerHTML += '<div class="priority-header">Priority 1</div>';
+            for (let station = 1; station <= totalStations; station++) {
+                if (station % 2 !== 0) { // Odd stations of Line 1
+                    let stationName = `001_${station < 10 ? '0' + station : station}`;
+                    if (associateIndexPriority1 < priority1Count) {
+                        document.getElementById("line1Odd").innerHTML += `<span class="priority-1 station">${stationName}: ${associates[associateIndexPriority1++]}</span><br>`;
+                    } else {
+                        document.getElementById("line1Odd").innerHTML += `<span class="priority-1 station">${stationName}: -</span><br>`;
+                    }
+                }
+            }
+
+            // Priority 2: Even stations of Line 2
+            document.getElementById("line2Even").innerHTML += '<div class="priority-header">Priority 2</div>';
+            for (let station = 1; station <= totalStations; station++) {
+                if (station % 2 === 0) { // Even stations of Line 2
+                    let stationName = `002_${station < 10 ? '0' + station : station}`;
+                    if (associateIndexPriority2 < associatesCount) {
+                        document.getElementById("line2Even").innerHTML += `<span class="priority-2 station">${stationName}: ${associates[associateIndexPriority2++]}</span><br>`;
+                    } else {
+                        document.getElementById("line2Even").innerHTML += `<span class="priority-2 station">${stationName}: -</span><br>`;
+                    }
+                }
+            }
+
+            // Priority 3: Even stations of Line 1
+            document.getElementById("line1Even").innerHTML += '<div class="priority-header">Priority 3</div>';
+            for (let station = 1; station <= totalStations; station++) {
+                if (station % 2 === 0) { // Even stations of Line 1
+                    let stationName = `001_${station < 10 ? '0' + station : station}`;
+                    if (associateIndexPriority2 < associatesCount) {
+                        document.getElementById("line1Even").innerHTML += `<span class="priority-3 station">${stationName}: ${associates[associateIndexPriority2++]}</span><br>`;
+                    } else {
+                        document.getElementById("line1Even").innerHTML += `<span class="priority-3 station">${stationName}: -</span><br>`;
+                    }
+                }
+            }
+
+            // Priority 4: Odd stations of Line 2
+            document.getElementById("line2Odd").innerHTML += '<div class="priority-header">Priority 4</div>';
+            for (let station = 1; station <= totalStations; station++) {
+                if (station % 2 !== 0) { // Odd stations of Line 2
+                    let stationName = `002_${station < 10 ? '0' + station : station}`;
+                    if (associateIndexPriority2 < associatesCount) {
+                        document.getElementById("line2Odd").innerHTML += `<span class="priority-4 station">${stationName}: ${associates[associateIndexPriority2++]}</span><br>`;
+                    } else {
+                        document.getElementById("line2Odd").innerHTML += `<span class="priority-4 station">${stationName}: -</span><br>`;
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html
+
 
