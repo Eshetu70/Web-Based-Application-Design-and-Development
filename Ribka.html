@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.21.0/docxtemplater.js"></script>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: PLayfair Display, serif;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: #555;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 20px;
+    }
+
+    /* Project Styles */
+    .Experiences {
+      margin-bottom: 20px;
+    }
+
+    /* About Styles */
+    .about-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Education Styles */
+    #education {
+      padding: 20px;
+    }
+
+    .education-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .education-item {
+      width: 400px;
+      margin: 20px;
+    }
+
+    .education-item h3 {
+      margin-top: 0;
+    }
+
+    .education-image {
+      margin-left: 20px;
+    }
+
+    .education-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #555;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #home {
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#Experiences">Experiences</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <section id="home">
+    <h2>Welcome to my portfolio!</h2>
+    <p>Here you can learn more about me and explore my projects.</p>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="ribkas.jpg" alt="Profile Picture" height="300" width="300">
+      </div>
+      <div class="about-text">
+        <section id="education">
+          <h2>Education</h2>
+          <div class="education-content">
+            <div class="education-item">
+              <h3>Masters in Public Health</h3>
+              <p>Kea Med University College</p>
+              <p>Year: 2019-2021</p>
+              <p>Masters Degree</p>
+            </div>
+            <div class="education-item">
+              <h3>Bachelor of Science in Nursing</h3>
+              <p>Kea Med University College</p>
+              <p>Year: 2015-2019</p>
+              <p>Bachelors Degree</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Hi, I'm Ribka Yonas</h3>
+        <p>My name is Ribka Yonas, and I am a compassionate junior BSc nurse with years of experience in treating and managing patient illnesses and disorders. I hold an eligibility certificate and have a successful history of providing high-quality care. Additionally, I specialize in reproductive health as a junior public health specialist.</p>
+        <p>I am commended for my ability to make appropriate treatment selections for a wide range of patient issues. I am competent in providing informed suggestions and writing prescriptions for the proper drugs. My focus remains on medical issues and patient care, and I actively collaborate with the medical team and other healthcare providers to ensure adherence to best practices and medical guidelines.</p>
+        <p>Currently, I work as an SRHR consultant with Marie Stops International Ethiopia, where I provide a range of services including family planning counseling, safe abortion care, and post-abortion family planning services. I am also experienced in antenatal care (ANC), postnatal care (PNC), child health, delivery services, nutrition guidance, and vaccination services. I also provide advice and support through social media platforms such as Facebook, Telegram, and Instagram.</p>
+        <p>I am familiar with monitoring existing data in DHIS2 and c3, particularly community health statistics.</p>
+      </div>
+    </div>
+  </section>
+  <section id="Experiences">
+    <h2>Work Experiences</h2>
+    <div class="Experiences">
+      <h3>Experiences</h3>
+      <p>As a public health specialist and sexual and reproductive health counselor, I have gained valuable experiences in providing comprehensive care and support to individuals in need. Here are some highlights of my experiences:</p>
+      <ul>
+        <li>Provided family planning counseling, safe abortion care, and post-abortion family planning services</li>
+        <li>Provided antenatal care (ANC), postnatal care (PNC), child health, delivery services, nutrition guidance, and vaccination services</li>
+        <li>Provided advice and support through social media platforms such as Facebook, Telegram, and Instagram</li>
+        <li>Monitored existing data in DHIS2 and c3, particularly community health statistics</li>
+      </ul>
+      <p>As a dedicated public health specialist and sexual and reproductive health counselor, I have had the privilege of providing essential care and guidance to individuals seeking assistance. My experiences in this field have allowed me to witness the positive impact of comprehensive healthcare. Here are a few noteworthy aspects of my professional:</p>
+      <ol>
+        <li><strong>Reproductive Health Counseling:</strong> I have extensive experience in providing counseling services related to reproductive health. This includes offering guidance on family planning methods, educating individuals about sexually transmitted infections (STIs), and promoting healthy sexual behaviors.</li>
+        <li><strong>Safe Abortion Care:</strong> I have been involved in ensuring safe and accessible abortion services, including pre-abortion counseling, performing abortion procedures, and providing post-abortion care. I am well-versed in the legal and ethical aspects of abortion services.</li>
+        <li><strong>Post-abortion Family Planning Services:</strong> I have provided post-abortion family planning services to individuals who have undergone abortion procedures. This includes counseling on contraceptive methods and providing contraceptive services.</li>
+        <li><strong>Family Planning Services:</strong> I have assisted individuals and couples in making informed decisions about family planning options. This includes discussing contraceptive methods, providing education on their usage and effectiveness, and helping clients select the most suitable method based on their needs and preferences.</li>
+        <li><strong>Maternal and Child Health:</strong> I have provided antenatal care (ANC) and postnatal care (PNC) services to pregnant women and new mothers, ensuring their well-being and that of their babies. This includes conducting health assessments, providing health education, and addressing any concerns or complications that may arise during pregnancy, childbirth, or the postpartum period.</li>
+        <li><strong>Adolescent Sexual and Reproductive Health:</strong> I have worked extensively with adolescents, providing counseling and education on topics such as puberty, reproductive health, safe sex practices, and STI prevention. I am skilled in creating a safe and non-judgmental environment for young individuals to discuss their concerns and seek appropriate guidance.</li>
+        <li><strong>Community Health:</strong> I have worked with community members to promote health and well-being. This includes conducting health assessments, providing health education, and addressing any concerns or complications that may arise during pregnancy, childbirth, or the postpartum period.</li>
+        <li><strong>Monitoring and Evaluation:</strong> I have experience in monitoring and evaluating health programs and services. This includes collecting data, analyzing results, and making recommendations for improvement. I am familiar with using various tools such as DHIS2 and c3 to track progress and identify areas of improvement.</li>
+        <li><strong>Health Education:</strong> I have provided health education to individuals and groups on a variety of topics, including reproductive health, family planning, STI prevention, and healthy lifestyle choices. I am skilled in creating engaging and informative presentations that are tailored to the needs of the audience.</li>
+        <li><strong>Health Promotion:</strong> I have worked with community members to promote health and well-being. This includes conducting health assessments, providing health education, and addressing any concerns or complications that may arise during pregnancy, childbirth, or the postpartum period.</li>
+        <li><strong>Health Communication:</strong> I have experience in communicating with individuals and groups about health-related topics. This includes providing education on reproductive health, family planning, STI prevention, and healthy lifestyle choices. I am skilled in creating engaging and informative presentations that are tailored to the needs of the audience.</li>
+        <li><strong>Health Research:</strong> I have conducted research on a variety of health-related topics, including reproductive health, family planning, STI prevention, and healthy lifestyle choices. I am skilled in designing and implementing studies, collecting and analyzing data, and presenting findings to stakeholders.</li>
+        <li><strong>Health Policy:</strong> I have experience in developing and implementing health policies. This includes conducting research, consulting with stakeholders, and making recommendations for improvement. I am familiar with the legal and ethical aspects of health policy development and implementation.</li>
+        <li><strong>Health Management:</strong> I have experience in managing health programs and services. This includes developing and implementing policies, monitoring progress, and making recommendations for improvement. I am familiar with the legal and ethical aspects of health management.</li>
+        <li><strong>Health Administration:</strong> I have experience in managing health programs and services. This includes developing and implementing policies, monitoring progress, and making recommendations for improvement. I am familiar with the legal and ethical aspects of health management.</li>
+        <li><strong>Health Systems:</strong> I have experience in managing health programs and services. This includes developing and implementing policies, monitoring progress, and making recommendations for improvement. I am familiar with the legal and ethical aspects of health management.</li>
+        <li><strong>Health Economics:</strong> I have experience in managing health programs and services. This includes developing and implementing policies, monitoring progress, and making recommendations for improvement. I am familiar with the legal and ethical aspects of health management.</li>
+        <li><strong>Health Informatics:</strong> I have experience in managing health programs and services. This includes developing and implementing policies, monitoring progress, and making recommendations for improvement. I am familiar with the legal and ethical aspects of health management.</li>
+        <li><strong>Health Information Systems:</strong> I have experience in managing health programs and services. This includes developing and implementing policies, monitoring progress, and making recommendations for improvement. I am familiar with the legal and ethical aspects of health management.</li>
+        <li><strong>Health Information Management:</strong> I have experience in managing health programs and services. This includes developing and implementing policies, monitoring progress, and making recommendations for improvement. I am familiar with the legal and ethical aspects of health management.</li>
+        <li><strong>Health Information Technology:</strong> I have experience in managing health programs and services. This includes developing and implementing policies, monitoring progress, and making recommendations for improvement. I am familiar with the legal and ethical aspects of health management.</li>
+      </ol>
+      <p>Throughout my experiences, I have demonstrated strong interpersonal skills, cultural sensitivity, and a non-judgmental approach to providing sexual and reproductive health counseling. I am dedicated to promoting the well-being and rights of individuals, and I continuously strive to stay updated on the latest research and best practices in the field.</p>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <ul>
+      <li>Phone: +251924334771</li>
+      <li>Email: ribkayonas83@gmail.com</li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/ribka-yonas/">LinkedIn</a></li>
+    </ul>
+    <button id="downloadPDFBtn" onclick="downloadPDF()">Download PDF</button>
+    <button id="downloadWordBtn" onclick="downloadWord()">Download Word</button>
+    <script>
+      function downloadPDF() {
+        const section = document.getElementById("contact");
+        html2canvas(section).then(function(canvas) {
+          const imgData = canvas.toDataURL("image/png", 1.0);
+          const pdf = new jsPDF();
+          pdf.addImage(
+            imgData,
+            "PNG",
+            0,
+            0,
+            pdf.internal.pageSize.getWidth(),
+            pdf.internal.pageSize.getHeight()
+          );
+          pdf.save("portfolio.pdf");
+        });
+      }
+
+      function downloadWord() {
+        const section = document.getElementById("contact");
+        html2canvas(section).then(function(canvas) {
+          const imgData = canvas.toDataURL("image/png", 1.0);
+          const doc = new window.docxtemplater();
+          doc.loadFromFile("template.docx");
+          doc.setData({
+            imgData: imgData
+          });
+          doc.render();
+          const output = doc.getZip().generate({
+            type: "blob"
+          });
+          const fileName = "portfolio.docx";
+          const link = document.createElement("a");
+          link.href = URL.createObjectURL(output);
+          link.download = fileName;
+          link.click();
+        });
+      }
+    </script>
+  </section>
+  <footer>
+    <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+  </footer>
+</body>
+</html>

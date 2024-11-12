@@ -1,0 +1,566 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SinglesStation.Eshetu(SSE)</title>
+    <script scr ="./scripts/script.js"> </script>
+    <script scr ="./HTMLInclude.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .line-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 1000px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .line-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .stations, .even-stations, .odd-stations {
+            width: 33%;
+            padding: 10px;
+        }
+        .stations {
+            border-right: 1px solid #ccc;
+        }
+        .even-stations, .odd-stations {
+            padding-left: 20px;
+        }
+        .station-item {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            background-color: #e6ffe6;
+            position: relative;
+        }
+        .station-item.red {
+            border-color: red;
+            background-color: #ffe6e6;
+        }
+        .station-item.needs-attention {
+            background-color: rgba(255, 255, 153, 0.5);
+            border-color: orange;
+            transition: background-color 0.3s;
+        }
+        .options-select {
+            margin-top: 10px;
+            width: 100%;
+        }
+        .comments {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background-color: #fff;
+        }
+        .comment-item {
+            background-color: yellow;
+            padding: 3px;
+            margin: 2px 0;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .comment-item input {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            resize: vertical;
+        }
+        .add-comment {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .done-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #totalRed {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .link-section {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px; /* Space between the links */
+        }
+        
+        .link-section a {
+            text-decoration: none; /* Removes underline */
+            font-size: 14px; /* You can adjust the size */
+            font-weight: bold; /* You can adjust this for more emphasis */
+            transition: color 0.3s ease; /* Smooth transition on hover */
+        }
+        
+        .link-section .opstech {
+            color: #28a745; /* Green color for OpsTech */
+            background-color: #f31818; /* Light gray background */
+        }
+        
+        .link-section .opstech:hover {
+            color: #f11717; /* Darker green when hovered */
+        }
+        
+        .link-section .rme {
+            color: #007bff; /* Blue color for RME */
+        }
+        
+        .link-section .rme:hover {
+            color: #0056b3; /* Darker blue when hovered */
+        }
+        
+    </style>
+</head>
+<body>
+
+<h1>MonitoringStatusOfSinglesStations.Eshetu(MSOSSE)</h1>
+
+
+<div id="stationsContainer"></div>
+<div id="totalRed">Red Bar Percentage: 0%</div>
+
+
+<script>
+    const numLines = 6;
+    const stationsPerLine = 25;
+    const options = [
+        "Cables", "Monitor", "Screen", "Hyper Scanner", "Tape Machine", 
+        "Tables", "Pslip Machine", "Zebra Printer", "Keypad", 
+        "Hand Scanner", "Tote Shouter"
+    ];
+    const attentionOptions = ["Monitor", "Tape Machine"]; // Options that need attention or maintenance
+    const stationsContainer = document.getElementById("stationsContainer");
+    let redBarCount = 0;
+    const totalStations = numLines * stationsPerLine;
+
+    function createStations() {
+        for (let line = 1; line <= numLines; line++) {
+            const allStations = [];
+            const oddStations = [];
+            const evenStations = [];
+
+            for (let station = 1; station <= stationsPerLine; station++) {
+                const stationName = `SingleLine ${line}_${String(station).padStart(2, '0')}`;
+                allStations.push(stationName);
+
+                if (station % 2 === 0) {
+                    evenStations.push(stationName);
+                } else {
+                    oddStations.push(stationName);
+                }
+            }
+            renderLine(line, allStations, oddStations, evenStations);
+        }
+    }
+
+    function renderLine(lineNumber, allStations, oddStations, evenStations) {
+        const lineContainer = document.createElement("div");
+        lineContainer.classList.add("line-container");
+
+        const lineTitle = document.createElement("div");
+        lineTitle.classList.add("line-title");
+        lineTitle.innerText = `Line ${lineNumber}`;
+        lineContainer.appendChild(lineTitle);
+
+        const allStationsDiv = document.createElement("div");
+        allStationsDiv.classList.add("stations");
+        allStationsDiv.innerHTML = `<strong>All Stations</strong>`;
+        allStations.forEach(station => allStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(allStationsDiv);
+
+        const oddStationsDiv = document.createElement("div");
+        oddStationsDiv.classList.add("odd-stations");
+        oddStationsDiv.innerHTML = `<strong>Odd Stations</strong>`;
+        oddStations.forEach(station => oddStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(oddStationsDiv);
+
+        const evenStationsDiv = document.createElement("div");
+        evenStationsDiv.classList.add("even-stations");
+        evenStationsDiv.innerHTML = `<strong>Even Stations</strong>`;
+        evenStations.forEach(station => evenStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(evenStationsDiv);
+
+        stationsContainer.appendChild(lineContainer);
+    }
+
+    function createStationItem(stationName) {
+        const stationItem = document.createElement("div");
+        stationItem.classList.add("station-item");
+        stationItem.dataset.selected = "false";
+        stationItem.dataset.stationName = stationName;
+
+        const stationTitle = document.createElement("span");
+        stationTitle.innerText = stationName;
+        stationItem.appendChild(stationTitle);
+
+        // Dropdown menu for options
+        const optionsSelect = document.createElement("select");
+        optionsSelect.classList.add("options-select");
+        optionsSelect.multiple = true; // Enable multiple selection
+        optionsSelect.addEventListener("change", () => toggleOptions(stationItem, optionsSelect));
+        
+        // Default unselected option
+        const defaultOption = document.createElement("option");
+        defaultOption.innerText = "Select Options";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        optionsSelect.appendChild(defaultOption);
+
+        options.forEach(option => {
+            const optionElement = document.createElement("option");
+            optionElement.value = option;
+            optionElement.innerText = option;
+            optionsSelect.appendChild(optionElement);
+        });
+        stationItem.appendChild(optionsSelect);
+
+        // "Done" button
+        const doneButton = document.createElement("button");
+        doneButton.classList.add("done-button");
+        doneButton.innerText = "Done";
+        doneButton.addEventListener("click", () => markAsDone(stationItem, optionsSelect));
+        stationItem.appendChild(doneButton);
+
+        // Comments section
+        const commentsDiv = document.createElement("div");
+        commentsDiv.classList.add("comments");
+        stationItem.appendChild(commentsDiv);
+
+        
+        // Add comment button
+        const addComment = document.createElement("textarea");
+        addComment.classList.add("add-comment");
+        addComment.placeholder = "Add extra comments...";
+        addComment.addEventListener("input", () => addMoreComment(stationItem, addComment));
+        stationItem.appendChild(addComment);
+
+     // Links for OpsTech and RME
+        const linkSection = document.createElement("div");
+        linkSection.classList.add("link-section");
+        const opsTechLink = document.createElement("a");
+        opsTechLink.href = "https://t.corp.amazon.com/create/copy/V1573569886";
+        opsTechLink.innerText = "OpsTech";
+        opsTechLink.target = "_blank";
+        linkSection.appendChild(opsTechLink);
+        
+        const rmeLink = document.createElement("a");
+        rmeLink.href = "https://t.corp.amazon.com/create/copy/V1560699329";
+        rmeLink.innerText = "RME";
+        rmeLink.target = "_blank";
+        linkSection.appendChild(rmeLink);
+
+        stationItem.appendChild(linkSection);
+
+
+        return stationItem;
+    }
+
+    function toggleOptions(stationItem, optionsSelect) {
+        const selectedOptions = Array.from(optionsSelect.selectedOptions).filter(option => option.value);
+        const commentsDiv = stationItem.querySelector(".comments");
+
+        // Update comments with selected options
+        commentsDiv.innerHTML = ""; // Clear previous comments
+        selectedOptions.forEach(option => {
+            const commentItem = document.createElement("div");
+            commentItem.classList.add("comment-item");
+            commentItem.innerText = option.value;
+            commentItem.setAttribute("contenteditable", "true");  // Make the comment editable
+            commentsDiv.appendChild(commentItem);
+        });
+
+        const needsAttention = selectedOptions.some(option => attentionOptions.includes(option.value));
+        if (needsAttention) {
+            stationItem.classList.add("needs-attention");
+        } else {
+            stationItem.classList.remove("needs-attention");
+        }
+
+        if (selectedOptions.length > 0 && stationItem.dataset.selected === "false") {
+            stationItem.classList.add("red");
+            stationItem.dataset.selected = "true";
+            redBarCount++;
+        } else if (selectedOptions.length === 0 && stationItem.dataset.selected === "true") {
+            stationItem.classList.remove("red");
+            stationItem.dataset.selected = "false";
+            redBarCount--;
+        }
+
+        // Save to localStorage when selections are made
+        saveData();
+        updateRedBarPercentage();
+    }
+
+    function addMoreComment(stationItem, addCommentElement) {
+        const commentsDiv = stationItem.querySelector(".comments");
+        const newCommentText = addCommentElement.value.trim();
+
+        // Create a new comment if text is entered
+        if (newCommentText && !commentsDiv.querySelector(".add-comment-item")) {
+            const newCommentItem = document.createElement("div");
+            newCommentItem.classList.add("comment-item", "add-comment-item");
+            newCommentItem.innerText = newCommentText;
+            newCommentItem.setAttribute("contenteditable", "true");
+            commentsDiv.appendChild(newCommentItem);
+
+            // Save data
+            saveData();
+            addCommentElement.value = ""; // Clear textarea after adding the comment
+        }
+    }
+
+    function markAsDone(stationItem, optionsSelect) {
+        stationItem.classList.remove("red", "needs-attention");
+        stationItem.dataset.selected = "false";
+
+        // Deselect all options in the dropdown
+        optionsSelect.selectedIndex = 0;
+
+        // Clear comments
+        const commentsDiv = stationItem.querySelector(".comments");
+        commentsDiv.innerHTML = "";
+
+        // Clear extra comments
+        const addCommentElement = stationItem.querySelector(".add-comment");
+        addCommentElement.value = "";
+
+        // Decrease redBarCount if station was marked as red
+        if (redBarCount > 0) {
+            redBarCount--;
+        }
+
+        saveData();
+        updateRedBarPercentage();
+    }
+
+    function updateRedBarPercentage() {
+        const percentage = ((redBarCount / totalStations) * 100).toFixed(2);
+        document.getElementById("totalRed").innerText = `Red Bar Percentage: ${percentage}%`;
+    }
+
+    // Save data to localStorage
+    function saveData() {
+        const stations = Array.from(document.querySelectorAll(".station-item")).map(stationItem => {
+            return {
+                name: stationItem.dataset.stationName,
+                selected: stationItem.dataset.selected === "true",
+                comments: Array.from(stationItem.querySelectorAll(".comment-item")).map(comment => comment.innerText),
+                options: Array.from(stationItem.querySelector(".options-select").selectedOptions).map(option => option.value)
+            };
+        });
+        localStorage.setItem("stationsData", JSON.stringify(stations));
+    }
+
+    // Load data from localStorage
+    function loadData() {
+        const savedData = JSON.parse(localStorage.getItem("stationsData"));
+        if (savedData) {
+            savedData.forEach(stationData => {
+                const stationItem = document.querySelector(`.station-item[data-station-name="${stationData.name}"]`);
+                if (stationItem) {
+                    stationItem.dataset.selected = stationData.selected ? "true" : "false";
+                    const optionsSelect = stationItem.querySelector(".options-select");
+                    stationData.options.forEach(option => {
+                        const optionElement = Array.from(optionsSelect.options).find(opt => opt.value === option);
+                        if (optionElement) optionElement.selected = true;
+                    });
+
+                    // Add comments if available
+                    const commentsDiv = stationItem.querySelector(".comments");
+                    stationData.comments.forEach(comment => {
+                        const commentItem = document.createElement("div");
+                        commentItem.classList.add("comment-item");
+                        commentItem.innerText = comment;
+                        commentsDiv.appendChild(commentItem);
+                    });
+                }
+            });
+        }
+    }
+
+    // Call to initialize stations
+    createStations();
+    loadData();
+</script>
+<script>
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    import { getDatabase, ref, set, get, child } from "firebase/database";
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyATEIsJ6smlNjZ8sgAju8jH7GFcA6yMivU",
+      authDomain: "eshetu-5edef.firebaseapp.com",
+      projectId: "eshetu-5edef",
+      storageBucket: "eshetu-5edef.firebasestorage.app",
+      messagingSenderId: "195903882586",
+      appId: "1:195903882586:web:bb0ad120136091ce119f63",
+      measurementId: "G-Q6NMRLHGLS"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getDatabase(app);
+    
+    
+    
+    function createStations() {
+        for (let line = 1; line <= numLines; line++) {
+            const allStations = [];
+            const oddStations = [];
+            const evenStations = [];
+    
+            for (let station = 1; station <= stationsPerLine; station++) {
+                const stationName = `SingleLine ${line}_${String(station).padStart(2, '0')}`;
+                allStations.push(stationName);
+    
+                if (station % 2 === 0) {
+                    evenStations.push(stationName);
+                } else {
+                    oddStations.push(stationName);
+                }
+            }
+            renderLine(line, allStations, oddStations, evenStations);
+        }
+    }
+    
+    function renderLine(lineNumber, allStations, oddStations, evenStations) {
+        const lineContainer = document.createElement("div");
+        lineContainer.classList.add("line-container");
+    
+        const lineTitle = document.createElement("div");
+        lineTitle.classList.add("line-title");
+        lineTitle.innerText = `Line ${lineNumber}`;
+        lineContainer.appendChild(lineTitle);
+    
+        const allStationsDiv = document.createElement("div");
+        allStationsDiv.classList.add("stations");
+        allStationsDiv.innerHTML = `<strong>All Stations</strong>`;
+        allStations.forEach(station => allStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(allStationsDiv);
+    
+        const oddStationsDiv = document.createElement("div");
+        oddStationsDiv.classList.add("odd-stations");
+        oddStationsDiv.innerHTML = `<strong>Odd Stations</strong>`;
+        oddStations.forEach(station => oddStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(oddStationsDiv);
+    
+        const evenStationsDiv = document.createElement("div");
+        evenStationsDiv.classList.add("even-stations");
+        evenStationsDiv.innerHTML = `<strong>Even Stations</strong>`;
+        evenStations.forEach(station => evenStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(evenStationsDiv);
+    
+        stationsContainer.appendChild(lineContainer);
+    }
+    
+    function createStationItem(stationName) {
+        const stationItem = document.createElement("div");
+        stationItem.classList.add("station-item");
+        stationItem.dataset.selected = "false";
+        stationItem.dataset.stationName = stationName;
+    
+        const stationTitle = document.createElement("span");
+        stationTitle.innerText = stationName;
+        stationItem.appendChild(stationTitle);
+    
+        // Dropdown menu for options
+        const optionsSelect = document.createElement("select");
+        optionsSelect.classList.add("options-select");
+        optionsSelect.multiple = true; // Enable multiple selection
+        optionsSelect.addEventListener("change", () => toggleOptions(stationItem, optionsSelect));
+        
+        // Default unselected option
+        const defaultOption = document.createElement("option");
+        defaultOption.innerText = "Select Options";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        optionsSelect.appendChild(defaultOption);
+    
+        options.forEach(option => {
+            const optionElement = document.createElement("option");
+            optionElement.value = option;
+            optionElement.innerText = option;
+            optionsSelect.appendChild(optionElement);
+        });
+        stationItem.appendChild(optionsSelect);
+    
+        // "Done" button
+        const doneButton = document.createElement("button");
+        doneButton.classList.add("done-button");
+        doneButton.innerText = "Done";
+        doneButton.addEventListener("click", () => markAsDone(stationItem, optionsSelect));
+        stationItem.appendChild(doneButton);
+    
+        // Comments section
+        const commentsDiv = document.createElement("div");
+        commentsDiv.classList.add("comments");
+        stationItem.appendChild(commentsDiv);
+    
+        // Add comment button
+        const addComment = document.createElement("textarea");
+        addComment.classList.add("add-comment");
+        addComment.placeholder = "Add extra comments...";
+        addComment.addEventListener("input", () => addMoreComment(stationItem, addComment));
+        stationItem.appendChild(addComment);
+    
+        return stationItem;
+    }
+    
+    function toggleOptions(stationItem, optionsSelect) {
+        const selectedOptions = Array.from(optionsSelect.selectedOptions).filter(option => option.value);
+        const commentsDiv = stationItem.querySelector(".comments");
+    
+        // Update comments with selected options
+        commentsDiv.innerHTML = ""; // Clear previous comments
+        selectedOptions.forEach(option => {
+            const commentItem = document.createElement("div");
+            commentItem.classList.add("comment-item");
+            commentItem.innerText = option.value;
+            commentItem.setAttribute("contenteditable", "true");  // Make the comment editable
+            commentsDiv.appendChild(commentItem);
+        });
+    
+        const needsAttention = selectedOptions.some(option => attentionOptions.includes(option.value));
+        if (needsAttention) {
+            stationItem.classList.add("needs-attention");
+        }
+    }
+    
+    // Logic to save and retrieve data from Firebase goes here
+    
+    createStations();
+    </script>
+
+</body>
+</html>
+<!-- Compare this snippet from Eshetu70.github.io/itis3135/Eshetu.Amazon/eshetu.html: -->
