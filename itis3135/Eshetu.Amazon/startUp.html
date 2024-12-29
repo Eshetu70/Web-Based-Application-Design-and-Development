@@ -33,7 +33,7 @@
     <button onclick="displayBulletPoints()">Display Bullet Points</button>
 
     <ul id="bulletList"></ul>
-    <audio id="backgroundAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop preload="auto"></audio>
+    <audio id="backgroundAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"></audio>
 
     <script>
         function displayBulletPoints() {
@@ -55,71 +55,57 @@
                 bulletList.appendChild(li);
             });
 
-            const totalDiscussionTime = 180000; // 3 minutes in ms
-            const timePerPoint = totalDiscussionTime / points.length; // Split time equally
+            let totalTimeElapsed = 0;
 
             points.forEach((point, index) => {
                 setTimeout(() => {
-                    backgroundAudio.pause(); // Pause background audio while speaking
+                    backgroundAudio.play(); // Play background music for 3 seconds before speech
+                    setTimeout(() => {
+                        backgroundAudio.pause(); // Pause music when speech starts
 
-                    const startMessage = `Golden moment for discussion:`;
-                    const explanation = `"${point.trim()}". What are your thoughts? How can we innovate? Let's hear your ideas.`;
+                        const focusAreas = ['safety', 'quality', 'standard work', 'success'];
+                        let focusAreaSpeech = point.trim();
 
-                    const maleVoice = new SpeechSynthesisUtterance(`${startMessage} ${explanation}`);
-                    maleVoice.voice = speechSynthesis.getVoices().find(voice => voice.name.includes('Male')) || null;
-                    maleVoice.rate = 0.9;
-                    maleVoice.volume = 1.0;
-                    speechSynthesis.speak(maleVoice);
+                        // Check if the point matches a focus area and emphasize it
+                        focusAreas.forEach(area => {
+                            if (point.toLowerCase().includes(area)) {
+                                focusAreaSpeech = `${area.toUpperCase()}: ${point.trim()}`;
+                            }
+                        });
 
-                    maleVoice.onend = () => {
-                        const femaleResponse = new SpeechSynthesisUtterance(`Thank you for sharing your ideas. This is a strong foundation to build upon. Moving to the next point.`);
-                        femaleResponse.voice = speechSynthesis.getVoices().find(voice => voice.name.includes('Female')) || null;
-                        femaleResponse.rate = 1.0;
-                        femaleResponse.volume = 1.0;
-                        speechSynthesis.speak(femaleResponse);
+                        const speech = new SpeechSynthesisUtterance(focusAreaSpeech);
+                        speech.rate = 0.9;
+                        speech.volume = 1.0;
+                        speechSynthesis.speak(speech);
 
-                        femaleResponse.onend = () => {
-                            backgroundAudio.play(); // Resume background audio after speaking
+                        speech.onend = () => {
+                            setTimeout(() => {
+                                backgroundAudio.play(); // Resume background music after speech
+                            }, 1000); // 1-second gap after speech before resuming music
                         };
-                    };
-                }, index * timePerPoint); // Delay each discussion equally
+                    }, 3000); // 3 seconds of music before starting speech
+                }, totalTimeElapsed);
+
+                totalTimeElapsed += 4000 + 3000; // 4 seconds for speech + 3 seconds for music
             });
 
-            // End with a loud chant and golden voices
             setTimeout(() => {
-                backgroundAudio.pause(); // Pause background audio for the chant
+                backgroundAudio.pause(); // Stop background audio
 
-                const chant = `Power clump! One! Two! Three! Let's go Singles!`;
-                const finalChant = new SpeechSynthesisUtterance(chant);
-                finalChant.rate = 0.75;
-                finalChant.volume = 1.0; // Maximum volume
-                speechSynthesis.speak(finalChant);
+                const questionSpeech = `If you have any questions, concerns, or station issues, please reach out to your leadership team, such as Eshetu. I am here on the floor to assist you.`;
+                const questionMessage = new SpeechSynthesisUtterance(questionSpeech);
+                questionMessage.rate = 0.85;
+                questionMessage.volume = 1.0;
+                speechSynthesis.speak(questionMessage);
 
-                finalChant.onend = () => {
-                    const crowdCheer = [
-                        `Power clump!`,
-                        `One!`,
-                        `Two!`,
-                        `Three!`,
-                        `Let's go Singles!`
-                    ];
-
-                    crowdCheer.forEach((phrase, i) => {
-                        setTimeout(() => {
-                            const cheer = new SpeechSynthesisUtterance(phrase);
-                            cheer.rate = 1.0;
-                            cheer.volume = 1.0; // Maximum volume
-                            speechSynthesis.speak(cheer);
-
-                            if (i === crowdCheer.length - 1) {
-                                cheer.onend = () => {
-                                    backgroundAudio.play(); // Resume background audio after chant
-                                };
-                            }
-                        }, i * 1000);
-                    });
+                questionMessage.onend = () => {
+                    const chant = `Power clump! One! Two! Three! Let's go Singles!`;
+                    const finalChant = new SpeechSynthesisUtterance(chant);
+                    finalChant.rate = 0.75;
+                    finalChant.volume = 1.0; // Maximum volume
+                    speechSynthesis.speak(finalChant);
                 };
-            }, totalDiscussionTime + 2000);
+            }, totalTimeElapsed + 2000); // Add delay for final chant
         }
     </script>
 </body>
