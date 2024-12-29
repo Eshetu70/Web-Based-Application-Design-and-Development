@@ -99,7 +99,7 @@
                 speechSynthesis.speak(questionMessage);
 
                 questionMessage.onend = () => {
-                    const chant = `Power clump! One! Two! Three! Let's go Singles!`;
+                    const chant = `Power clap! One! Two! Three! Let's go Singles!`;
                     const finalChant = new SpeechSynthesisUtterance(chant);
                     finalChant.rate = 0.75;
                     finalChant.volume = 1.0; // Maximum volume
