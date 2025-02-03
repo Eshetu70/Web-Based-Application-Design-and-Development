@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Service Website</title>
+    <style>
+        /* General Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+
+        /* Header Section */
+        header { background: #004466; color: #fff; padding: 20px; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 5px; }
+        header p { font-size: 1.2rem; }
+
+        /* Navigation Styles */
+        nav { background-color: #006699; display: flex; justify-content: center; }
+        nav a { color: #fff; padding: 15px 25px; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: background 0.3s; }
+        nav a:hover { background-color: #005580; }
+
+        /* Content Section */
+        .content { padding: 30px; text-align: center; }
+        .tab-content { display: none; }
+        .active { display: block; }
+        .services-list { max-width: 700px; margin: 20px auto; text-align: left; }
+        .services-list h3 { color: #004466; margin-bottom: 10px; }
+        .services-list ul { list-style-type: none; }
+        .services-list ul li { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9; transition: box-shadow 0.3s; cursor: pointer; }
+        .services-list ul li:hover { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        .price { font-weight: bold; color: #006600; }
+
+        /* Footer Section */
+        footer { background-color: #004466; color: #fff; text-align: center; padding: 20px; margin-top: 20px; font-size: 0.9rem; }
+        footer p { margin: 5px; }
+        footer a { color: #fff; text-decoration: none; font-weight: bold; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Professional Services Hub</h1>
+        <p>Your premier choice for various services</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav>
+        <a href="#" onclick="showTab('haircut')">Haircuts</a>
+        <a href="#" onclick="showTab('landscaping')">Landscaping</a>
+        <a href="#" onclick="showTab('carwash')">Car Washing</a>
+        <a href="#" onclick="showTab('cleaning')">Cleaning</a>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="content">
+        <!-- Haircuts Section -->
+        <div id="haircut" class="tab-content active">
+            <h2>Haircuts</h2>
+            <p>Offering top-quality haircuts for all ages. Our team of skilled barbers and stylists ensures that each client leaves with a haircut tailored to their style and needs.</p>
+            <div class="services-list">
+                <h3>Available Haircut Services:</h3>
+                <ul>
+                    <li>Kids Cut - Friendly and patient service for children, providing gentle and stylish haircuts in a comfortable environment. <span class="price">$30</span></li>
+                    <li>Men’s Cut - Professional and stylish cuts tailored to each client’s personality and preference. Ideal for a fresh look, professional appearance, or just a confidence boost. <span class="price">$50</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Landscaping Section -->
+        <div id="landscaping" class="tab-content">
+            <h2>Landscaping</h2>
+            <p>Enhance your outdoor environment with our landscaping services. From regular maintenance to custom designs, we bring beauty and structure to any yard or garden.</p>
+            <div class="services-list">
+                <h3>Landscaping Services:</h3>
+                <ul>
+                    <li>Garden Design - Transform your outdoor space with custom garden layouts that suit your taste and environment. Our designs are both beautiful and practical, enhancing the overall look of your property. <span class="price">Starting at $200</span></li>
+                    <li>Lawn Care - Routine lawn maintenance, including mowing, trimming, and cleanup. Keep your lawn looking healthy, green, and well-kept with our dependable service. <span class="price">$250 per visit</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Car Washing Section -->
+        <div id="carwash" class="tab-content">
+            <h2>Car Washing</h2>
+            <p>Get your car cleaned and polished with our comprehensive car washing packages, available for all car sizes. Our services ensure a spotless and shiny vehicle every time.</p>
+            <div class="services-list">
+                <h3>Car Wash Packages:</h3>
+                <ul>
+                    <li>Basic Wash (Small Cars) - Quick and efficient cleaning for smaller cars, covering all essential areas. <span class="price">$85</span></li>
+                    <li>Full Service - Small Car - Detailed cleaning for small cars, covering both interior and exterior. <span class="price">$120</span></li>
+                    <li>Full Service - SUV - Complete cleaning for SUVs, ensuring a pristine interior and exterior finish, ideal for maintaining your vehicle’s appearance. <span class="price">$160</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Cleaning Section -->
+        <div id="cleaning" class="tab-content">
+            <h2>Carpet Cleaning</h2>
+            <p>Experience high-quality carpet cleaning designed to keep your apartment carpets fresh and free of stains. Our services help to remove dust, allergens, and dirt.</p>
+            <div class="services-list">
+                <h3>Carpet Cleaning Services:</h3>
+                <ul>
+                    <li>1 Bedroom Apartment - Thorough carpet cleaning for single-bedroom apartments, perfect for maintaining a fresh and comfortable living space. <span class="price">$100</span></li>
+                    <li>2 Bedroom Apartment - Full-service carpet cleaning for two-bedroom apartments, ideal for families and households with pets. <span class="price">$120</span></li>
+                    <li>3 Bedroom Apartment - Extensive carpet cleaning for larger apartments, ensuring a clean and allergen-free environment. <span class="price">$200</span></li>
+                    <li>4 Bedroom Apartment - Deep cleaning service for four-bedroom apartments, focusing on stain removal and overall carpet freshness. <span class="price">$300</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Professional Services Hub. All rights reserved.</p>
+        <p>Contact us at: <a href="mailto:eshetuwek1@gmail.com">abenezermamo350@gmail.com</a> | Phone: <a href="tel:+1-816-694-7103">(816) 694-7103</a></p>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

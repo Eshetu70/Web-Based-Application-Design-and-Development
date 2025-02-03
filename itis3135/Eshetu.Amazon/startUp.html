@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Voices with Motivational Audio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f3f3f3;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        ul {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Golden Voices with Motivational Audio</h1>
+    <p>Enter your bullet points below:</p>
+    <textarea id="bulletInput" placeholder="Enter one bullet point per line..."></textarea>
+    <button onclick="displayBulletPoints()">Display Bullet Points</button>
+
+    <ul id="bulletList"></ul>
+    <audio id="backgroundAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"></audio>
+
+    <script>
+        function displayBulletPoints() {
+            const input = document.getElementById('bulletInput').value;
+            const bulletList = document.getElementById('bulletList');
+            const backgroundAudio = document.getElementById('backgroundAudio');
+
+            bulletList.innerHTML = ''; // Clear previous bullet points
+
+            const points = input.split('\n').filter(line => line.trim() !== ''); // Remove empty lines
+            if (points.length === 0) {
+                alert('Please enter at least one bullet point!');
+                return;
+            }
+
+            points.forEach(point => {
+                const li = document.createElement('li');
+                li.textContent = point.trim();
+                bulletList.appendChild(li);
+            });
+
+            let totalTimeElapsed = 0;
+
+            points.forEach((point, index) => {
+                setTimeout(() => {
+                    backgroundAudio.play(); // Play background music for 3 seconds before speech
+                    setTimeout(() => {
+                        backgroundAudio.pause(); // Pause music when speech starts
+
+                        const focusAreas = ['safety', 'quality', 'standard work', 'success'];
+                        let focusAreaSpeech = point.trim();
+
+                        // Check if the point matches a focus area and emphasize it
+                        focusAreas.forEach(area => {
+                            if (point.toLowerCase().includes(area)) {
+                                focusAreaSpeech = `${area.toUpperCase()}: ${point.trim()}`;
+                            }
+                        });
+
+                        const speech = new SpeechSynthesisUtterance(focusAreaSpeech);
+                        speech.rate = 0.9;
+                        speech.volume = 1.0;
+                        speechSynthesis.speak(speech);
+
+                        speech.onend = () => {
+                            setTimeout(() => {
+                                backgroundAudio.play(); // Resume background music after speech
+                            }, 1000); // 1-second gap after speech before resuming music
+                        };
+                    }, 3000); // 3 seconds of music before starting speech
+                }, totalTimeElapsed);
+
+                totalTimeElapsed += 4000 + 3000; // 4 seconds for speech + 3 seconds for music
+            });
+
+            setTimeout(() => {
+                backgroundAudio.pause(); // Stop background audio
+
+                const questionSpeech = `If you have any questions, concerns, or station issues, please reach out to your leadership team, such as Eshetu. I am here on the floor to assist you.`;
+                const questionMessage = new SpeechSynthesisUtterance(questionSpeech);
+                questionMessage.rate = 0.85;
+                questionMessage.volume = 1.0;
+                speechSynthesis.speak(questionMessage);
+
+                questionMessage.onend = () => {
+                    const chant = `Power clap! One! Two! Three! Let's go Singles!`;
+                    const finalChant = new SpeechSynthesisUtterance(chant);
+                    finalChant.rate = 0.75;
+                    finalChant.volume = 1.0; // Maximum volume
+                    speechSynthesis.speak(finalChant);
+                };
+            }, totalTimeElapsed + 2000); // Add delay for final chant
+        }
+    </script>
+</body>
+</html>

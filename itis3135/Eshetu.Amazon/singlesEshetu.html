@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SinglesStation.Eshetu(SSE)</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+    <script src="./scripts/script.js"></script>
+    <script src="./HTMLInclude.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .line-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 1000px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .line-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .stations, .even-stations, .odd-stations {
+            width: 33%;
+            padding: 10px;
+        }
+        .stations {
+            border-right: 1px solid #ccc;
+        }
+        .even-stations, .odd-stations {
+            padding-left: 20px;
+        }
+        .station-item {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            background-color: #e6ffe6;
+            position: relative;
+        }
+        .station-item.red {
+            border-color: red;
+            background-color: #ffe6e6;
+        }
+        .station-item.needs-attention {
+            background-color: rgba(255, 255, 153, 0.5);
+            border-color: orange;
+            transition: background-color 0.3s;
+        }
+        .options-select {
+            margin-top: 10px;
+            width: 100%;
+        }
+        .comments {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background-color: #fff;
+        }
+        .comment-item {
+            background-color: yellow;
+            padding: 3px;
+            margin: 2px 0;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .comment-item input {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            resize: vertical;
+        }
+        .add-comment {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .done-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #totalRed {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        .link-section {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px; /* Space between the links */
+        }
+        
+        .link-section a {
+            text-decoration: none; /* Removes underline */
+            font-size: 14px; /* You can adjust the size */
+            font-weight: bold; /* You can adjust this for more emphasis */
+            transition: color 0.3s ease; /* Smooth transition on hover */
+        }
+        
+        .link-section .opstech {
+            color: #28a745; /* Green color for OpsTech */
+            background-color: #f31818; /* Light gray background */
+        }
+        
+        .link-section .opstech:hover {
+            color: #f11717; /* Darker green when hovered */
+        }
+        
+        .link-section .rme {
+            color: #007bff; /* Blue color for RME */
+        }
+        
+        .link-section .rme:hover {
+            color: #0056b3; /* Darker blue when hovered */
+        }
+
+        /* Additional style for collapsed items */
+        .collapsed .details {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>MonitoringStatusOfSinglesStations.Eshetu(MSOSSE)</h1>
+
+<div id="stationsContainer"></div>
+<div id="totalRed">Red Bar Percentage: 0%</div>
+
+<script>
+    const numLines = 6;
+    const stationsPerLine = 25;
+    const options = [
+        "Cables", "Monitor", "Screen", "Hyper Scanner", "Tape Machine", 
+        "Tables", "Pslip Machine", "Zebra Printer", "Keypad", 
+        "Hand Scanner", "Tote Shouter"
+    ];
+    const attentionOptions = ["Monitor", "Tape Machine"]; // Options that need attention or maintenance
+    const stationsContainer = document.getElementById("stationsContainer");
+    let redBarCount = 0;
+    const totalStations = numLines * stationsPerLine;
+
+    function createStations() {
+        for (let line = 1; line <= numLines; line++) {
+            const allStations = [];
+            const oddStations = [];
+            const evenStations = [];
+
+            for (let station = 1; station <= stationsPerLine; station++) {
+                const stationName = `SingleLine ${line}_${String(station).padStart(2, '0')}`;
+                allStations.push(stationName);
+
+                if (station % 2 === 0) {
+                    evenStations.push(stationName);
+                } else {
+                    oddStations.push(stationName);
+                }
+            }
+            renderLine(line, allStations, oddStations, evenStations);
+        }
+    }
+
+    function renderLine(lineNumber, allStations, oddStations, evenStations) {
+        const lineContainer = document.createElement("div");
+        lineContainer.classList.add("line-container");
+
+        const lineTitle = document.createElement("div");
+        lineTitle.classList.add("line-title");
+        lineTitle.innerText = `Line ${lineNumber}`;
+        lineContainer.appendChild(lineTitle);
+
+        const allStationsDiv = document.createElement("div");
+        allStationsDiv.classList.add("stations");
+        const allStationsTitle = document.createElement("strong");
+        allStationsTitle.innerText = `All Stations`;
+        allStationsDiv.appendChild(allStationsTitle);
+        allStations.forEach(station => allStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(allStationsDiv);
+
+        const oddStationsDiv = document.createElement("div");
+        oddStationsDiv.classList.add("odd-stations");
+        const oddStationsTitle = document.createElement("strong");
+        oddStationsTitle.innerText = `Odd Stations`;
+        oddStationsDiv.appendChild(oddStationsTitle);
+        oddStations.forEach(station => oddStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(oddStationsDiv);
+
+        const evenStationsDiv = document.createElement("div");
+        evenStationsDiv.classList.add("even-stations");
+        const evenStationsTitle = document.createElement("strong");
+        evenStationsTitle.innerText = `Even Stations`;
+        evenStationsDiv.appendChild(evenStationsTitle);
+        evenStations.forEach(station => evenStationsDiv.appendChild(createStationItem(station)));
+        lineContainer.appendChild(evenStationsDiv);
+
+        // Attach event listeners for toggling
+        $(allStationsDiv).click(function() {
+            $(this).children().not('strong').slideToggle();
+        });
+        $(oddStationsDiv).click(function() {
+            $(this).children().not('strong').slideToggle();
+        });
+        $(evenStationsDiv).click(function() {
+            $(this).children().not('strong').slideToggle();
+        });
+
+        stationsContainer.appendChild(lineContainer);
+    }
+
+    function createStationItem(stationName) {
+        const stationItem = document.createElement("div");
+        stationItem.classList.add("station-item");
+        stationItem.dataset.selected = "false";
+        stationItem.dataset.stationName = stationName;
+
+        const stationTitle = document.createElement("span");
+        stationTitle.innerText = stationName;
+        stationItem.appendChild(stationTitle);
+
+        // Dropdown menu for options
+        const optionsSelect = document.createElement("select");
+        optionsSelect.classList.add("options-select");
+        optionsSelect.multiple = true;
+        optionsSelect.addEventListener("change", () => toggleOptions(stationItem, optionsSelect));
+
+        const defaultOption = document.createElement("option");
+        defaultOption.innerText = "Select Options";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        optionsSelect.appendChild(defaultOption);
+
+        options.forEach(option => {
+            const optionElement = document.createElement("option");
+            optionElement.value = option;
+            optionElement.innerText = option;
+            optionsSelect.appendChild(optionElement);
+        });
+
+        stationItem.appendChild(optionsSelect);
+
+        // Button to mark as done
+        const doneButton = document.createElement("button");
+        doneButton.classList.add("done-button");
+        doneButton.innerText = "Mark as Done";
+        doneButton.addEventListener("click", () => markAsDone(stationItem, optionsSelect));
+        stationItem.appendChild(doneButton);
+
+        const commentsDiv = document.createElement("div");
+        commentsDiv.classList.add("comments");
+        commentsDiv.style.display = "none";
+        stationItem.appendChild(commentsDiv);
+
+        const addComment = document.createElement("textarea");
+        addComment.classList.add("add-comment");
+        addComment.placeholder = "Add Comment";
+        commentsDiv.appendChild(addComment);
+
+        const commentButton = document.createElement("button");
+        commentButton.innerText = "Add Comment";
+        commentButton.addEventListener("click", () => addCommentToStation(stationItem, addComment));
+        commentsDiv.appendChild(commentButton);
+
+        return stationItem;
+    }
+
+    function toggleOptions(stationItem, optionsSelect) {
+        const selectedOptions = Array.from(optionsSelect.selectedOptions).map(option => option.value);
+        if (selectedOptions.includes("Monitor")) {
+            stationItem.classList.add("needs-attention");
+        } else {
+            stationItem.classList.remove("needs-attention");
+        }
+    }
+
+    function markAsDone(stationItem, optionsSelect) {
+        stationItem.classList.add("red");
+        redBarCount++;
+        updateRedBar();
+        optionsSelect.disabled = true;
+        stationItem.querySelector(".done-button").disabled = true;
+    }
+
+    function updateRedBar() {
+        const redPercentage = Math.round((redBarCount / totalStations) * 100);
+        document.getElementById("totalRed").innerText = `Red Bar Percentage: ${redPercentage}%`;
+    }
+
+    function addCommentToStation(stationItem, addComment) {
+        const commentText = addComment.value.trim();
+        if (commentText) {
+            const commentItem = document.createElement("div");
+            commentItem.classList.add("comment-item");
+            commentItem.innerHTML = `<input type="text" value="${commentText}" readonly />`;
+            stationItem.querySelector(".comments").appendChild(commentItem);
+            addComment.value = "";
+        }
+    }
+
+    createStations();
+</script>
+
+</body>
+</html>
