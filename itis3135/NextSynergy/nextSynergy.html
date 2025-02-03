@@ -68,14 +68,16 @@
         <h1>Welcome to NextSynergy Tech</h1>
     </header>
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#ecommerce">E-Commerce</a>
-        <a href="#mission">Mission & Vision</a>
-        <a href="#projects">Projects</a>
-        <a href="#tutorials">Tutorials</a>
-        <a href="#contact">Contact</a>
+        <a onclick="showSection('about')">About Us</a>
+        <a onclick="showSection('services')">Services</a>
+        <a onclick="showSection('ecommerce')">E-Commerce</a>
+        <a onclick="showSection('mission')">Mission & Vision</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('tutorials')">Tutorials</a>
+        <a onclick="showSection('budget')">Budget</a>
+        <a onclick="showSection('contact')">Contact</a>
     </nav>
+    
     
     <div class="container">
         <section id="about" class="section">
@@ -209,7 +211,41 @@
             <p>Explore our detailed tutorials: <a href="https://webpages.charlotte.edu/ewekjira/itis3135/projects/index.html" target="_blank">Visit Tutorials</a></p>
         </section>
         
-        
+        <section id="budget" class="section">
+            <h2>Budget & Infrastructure Development</h2>
+            <p><strong>Total Estimated Budget: 500,000,000 ETB</strong></p>
+            <p>NextSynergy Tech aims to establish a robust technological ecosystem, supporting digital transformation, education, and enterprise development in Ethiopia. A significant portion of this budget is allocated to land acquisition and infrastructure development in Addis Ababa or Sheger City.</p>
+            
+            <h3>1. Infrastructure & Land Development - 250,000,000 ETB</h3>
+            <ul>
+                <li>Land Acquisition for Tech Park in Addis Ababa or Sheger City - 100,000,000 ETB</li>
+                <li>Construction of NextSynergy Technology Hub - 100,000,000 ETB</li>
+                <li>Network Infrastructure & Data Centers - 50,000,000 ETB</li>
+            </ul>
+            
+            <h3>2. Technology & Software Development - 120,000,000 ETB</h3>
+            <ul>
+                <li>AI-Powered Software & Automation - 30,000,000 ETB</li>
+                <li>Blockchain & Cybersecurity Solutions - 20,000,000 ETB</li>
+                <li>Cloud Computing Infrastructure - 25,000,000 ETB</li>
+                <li>E-Commerce Platform Development - 20,000,000 ETB</li>
+            </ul>
+            
+            <h3>3. Education & Workforce Development - 80,000,000 ETB</h3>
+            <ul>
+                <li>Facility Setup & Equipment - 35,000,000 ETB</li>
+                <li>AI & Cybersecurity Training - 15,000,000 ETB</li>
+                <li>Software Development Bootcamps - 10,000,000 ETB</li>
+                <li>Scholarships & Internships - 20,000,000 ETB</li>
+            </ul>
+            
+            <h3>4. Government Collaboration & Public-Private Partnership - 30,000,000 ETB</h3>
+            <ul>
+                <li>Regulatory Compliance & Policy Support - 10,000,000 ETB</li>
+                <li>Public Service Digital Solutions - 15,000,000 ETB</li>
+                <li>International Collaboration - 5,000,000 ETB</li>
+            </ul>
+        </section>
 
         
         <section id="contact" class="section">
@@ -218,6 +254,19 @@
             <p>Phone: 704-488-8465</p>
         </section>
     </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
     
     <footer>
         <p>&copy; 2025 NextSynergy Tech. All rights reserved.</p>
