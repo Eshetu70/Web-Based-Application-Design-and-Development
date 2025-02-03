@@ -1,0 +1,40 @@
+body{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 26px;
+    opacity: 60%;
+    border: 20px solid rosybrown ;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 50% 20% / 0% 40%;
+    border-color: rgb(208, 118, 118) rgb(64, 155, 64) rgb(94, 94, 171) rgb(171, 171, 38); 
+}
+figure{
+    background-color: antiquewhite;
+    text-align: center;
+}
+figcaption{
+    color:yellow;
+}
+  ul {
+    text-align: center;
+    background-color: rgb(231, 231, 213);
+     font-family : 'PAPYRUS';
+     margin-left: 300px;
+     margin-right: 300px;
+     opacity: 60%;
+}
+p{
+    text-align: center;
+}
+strong{
+    font-size: 50px;
+    font-family : 'PAPYRUS';
+}
+h1{
+    font-family : "Comic Sans MS", "Comic Sans", cursive;
+}
+div.nam{
+    text-align: right;
+    margin-left: 100px;
+
+}

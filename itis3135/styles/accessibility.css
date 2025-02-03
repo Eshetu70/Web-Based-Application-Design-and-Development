@@ -1,0 +1,40 @@
+
+body{
+    background-color: rgb(51, 45, 45);
+    margin-right: 100px;
+    margin-left: 100px;
+    font-family: bodonic MT;
+    color: teal;
+}
+nav  {
+    margin-top: 50px;;
+    font-size: larger;
+    text-align: center;    
+}
+h1, h2, h3{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #c4b04d;
+}
+a:hover{
+    color: rgb(15, 235, 235);
+    text-decoration: underline;
+}
+footer nav {
+    background-color: black;
+    text-align: center;
+    padding: 6px 8px;
+    margin-top: 400px;;
+  }
+  footer nav a {
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  footer p {
+    text-align: center;
+
+  }
