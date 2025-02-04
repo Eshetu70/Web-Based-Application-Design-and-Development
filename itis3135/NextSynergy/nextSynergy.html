@@ -4,95 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NextSynergy Tech</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #004080;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-        }
-        h2 {
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #003366;
-            padding: 10px;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-        img {
-            width: 100%;
-            max-width: 400px;
-            display: block;
-            margin: 10px auto;
-            border-radius: 10px;
-        }
-        .section {
-            background: #fff;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-        footer {
-            background: #004080;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-         /* Responsive menu for mobile devices */
-         .dropdown {
-            display: none;
-            flex-direction: column;
-            background: #003366;
-            width: 100%;
-            text-align: center;
-            position: absolute;
-            top: 50px;
-            left: 0;
-        }
-        .dropdown a {
-            padding: 15px;
-            display: block;
-        }
-        .menu-icon {
-            display: none;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            text-align: center;
-        }
-        @media screen and (max-width: 768px) {
-            nav {
-                display: none;
+    
+    <link rel="stylesheet" href="server/Sytles/css.css">
+        <script>
+            let registeredUsers = [];
+    
+            function openTab(tabName) {
+                var i, tabcontent, tabs;
+                tabcontent = document.getElementsByClassName("tab-content");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tabs = document.getElementsByClassName("tab");
+                for (i = 0; i < tabs.length; i++) {
+                    tabs[i].classList.remove("active");
+                }
+                document.getElementById(tabName).style.display = "block";
             }
-            .menu-icon {
-                display: block;
+    
+            function validateLogin(event) {
+                event.preventDefault();
+                var email = document.getElementById("admin-email").value;
+                if (email === "eshetuwek1@gmail.com") {
+                    openTab('registrations');
+                    displayRegistrations();
+                } else {
+                    alert("You are not authorized to access this page.");
+                }
             }
-        }
-    </style>
+    
+            function submitRegistration(event) {
+                event.preventDefault();
+                let fullName = document.getElementById("full-name").value;
+                let email = document.getElementById("email").value;
+                let phone = document.getElementById("phone").value;
+                let course = document.getElementById("course").value;
+                let date = new Date().toLocaleDateString();
+    
+                registeredUsers.push({ fullName, email, phone, course, date });
+                document.getElementById("success-message").style.display = "block";
+            }
+    
+            function displayRegistrations() {
+                let registrationsTable = document.getElementById("registrations-table");
+                registrationsTable.innerHTML = "<tr><th>Full Name</th><th>Email</th><th>Phone</th><th>Course</th><th>Date</th></tr>";
+                registeredUsers.forEach(user => {
+                    let row = `<tr><td>${user.fullName}</td><td>${user.email}</td><td>${user.phone}</td><td>${user.course}</td><td>${user.date}</td></tr>`;
+                    registrationsTable.innerHTML += row;
+                });
+            }
+        </script>
+    
 </head>
 <body>
     <header>
@@ -228,15 +190,96 @@
             <img src="my.jpg" alt="Eshetu T. Wekjira" style="width: 150px; height: 150px; border-radius: 50%; display: block; margin: 0 auto;">
             <h2>Technology Tutorials</h2>
             <img src="tuto.png" alt="Tutorials">
+
+
+            <h1>What Makes NextSynergy Tech Different?</h1>
+            <p>NextSynergy Tech stands out as a premier technology solutions provider due to its comprehensive full-stack development capabilities, leveraging cutting-edge programming languages, frameworks, and database management systems. Our expertise ensures robust, scalable, and efficient solutions tailored to meet diverse business needs.</p>
+            
+            <h2>Key Technologies at NextSynergy Tech</h2>
+            <h3>Programming Languages:</h3>
+            <ul class="course-list">
+                <li>Java – Highly scalable and secure for enterprise-level applications.</li>
+                <li>Python – Versatile and widely used for data science, AI, and web applications.</li>
+                <li>Node.js – Efficient and lightweight for real-time and high-performance applications.</li>
+            </ul>
+            
+            <h3>Front-End Frameworks:</h3>
+            <ul class="course-list">
+                <li>React.js – Dynamic, component-based UI development for high-performance applications.</li>
+                <li>Angular – A powerful front-end framework for building scalable, modular applications.</li>
+            </ul>
+            
+            <h3>Back-End Frameworks:</h3>
+            <ul class="course-list">
+                <li>Express.js – A minimal and flexible Node.js framework for back-end development.</li>
+            </ul>
+            
+            <h3>Databases & Management Systems:</h3>
+            <ul class="course-list">
+                <li>SQL – Structured Query Language for efficient data management and retrieval.</li>
+                <li>MySQL – A robust relational database management system for scalable applications.</li>
+            </ul>
+            
+            <h2>NextSynergy Tech – Tutorial Center</h2>
+            <p>At NextSynergy Tech, we offer a specialized Tutorial Center designed to equip aspiring developers and professionals with cutting-edge skills in full-stack development. Our curriculum is structured to provide hands-on learning experiences, real-world project exposure, and mentorship from industry experts.</p>
+            
+            <h2>Courses Offered</h2>
+            <ul class="course-list">
+                <li>Full-Stack Development Mastery - Introduction to front-end, back-end, and database integration. Hands-on projects using React.js, Node.js, and Express.js.</li>
+                <li>Java for Enterprise Applications - Core Java fundamentals and object-oriented programming. Spring Boot for enterprise-level application development.</li>
+                <li>Python for Data Science & Web Development - Data analytics, machine learning, and AI implementation. Django & Flask frameworks for scalable web applications.</li>
+                <li>Advanced Node.js & Express.js - Server-side programming with Node.js. Building RESTful APIs using Express.js.</li>
+                <li>Database Management & Optimization - SQL fundamentals and relational database design. MySQL best practices for data security and performance tuning.</li>
+            </ul>
+            
+            <h2>Why Choose NextSynergy Tech?</h2>
+            <ul class="course-list">
+                <li>Industry-Relevant Curriculum – Designed by experienced professionals.</li>
+                <li>Hands-on Learning – Work on real-world projects and case studies.</li>
+                <li>Career Support – Job placement assistance and networking opportunities.</li>
+                <li>Expert Instructors – Learn from top-tier full-stack developers.</li>
+            </ul>
+            
+            <h2>Join us and elevate your career in technology!</h2>
+
+            <h2>Applications & Icons</h2>
+            <ul class="icon-list">
+                <li><a href="https://www.java.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Logo">Java</a></li>
+                <li><a href="https://www.python.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">Python</a></li>
+                <li><a href="https://nodejs.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js Logo">Node.js</a></li>
+                <li><a href="https://reactjs.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React.js Logo">React.js</a></li>
+                <li><a href="https://angular.io" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg" alt="Angular Logo">Angular</a></li>
+                <li><a href="https://expressjs.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" alt="Express.js Logo">Express.js</a></li>
+                <li><a href="https://www.mysql.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg" alt="MySQL Logo">MySQL</a></li>
+            </ul>
+
+
+
             <h3>At NextSynergy Tech, we believe in continuous learning and skill development. Our tutorial section provides hands-on coding exercises, video tutorials, and detailed documentation covering:</h3>
             <p>At NextSynergy Tech, we believe in continuous learning and skill development. Our tutorial section provides hands-on coding exercises, video tutorials, and detailed documentation covering:</p>
             <ul>
-                <li>Web Development (HTML, CSS, JavaScript, React, etc.)</li>
+                <li>Web Development (HTML, CSS, JavaScript, React, Node.js, etc.)</li>
                 <li>Mobile App Development (Android, iOS, Flutter, etc.)</li>
+                <li>Back end Programming (Java, C++, MySql, SQL,Node.js React.js, Python)</li>
+                <li>Database Management and SQL, MySQL ER, EER Diagram</li>
+                <li>Non Relatioal database MongoDB atlas</li>
+                <li>API Development and Integration</li>
+                <li>Artificial Intelligence and Machine Learning</li>
+                <li>Cloud Computing and DevOps</li>
+                <li>Firebase for Mobile application storage</li>
+                <li> Front End Developer HTM, CSS, JavaScripts, jQuery, AJAX, XML, JSON, EJS</li>
+                <li> Frame work React.js, Express.js, Angular, Bootcamps</li>
                 <li>Artificial Intelligence and Machine Learning</li>
                 <li>Cloud Computing and DevOps</li>
                 <li>Cybersecurity Fundamentals</li>
                 <li>Blockchain and Cryptocurrency Development</li>
+                <li>Software Development Best Practices</li>
+                <li> Five days Sprint Planning for Software Engineering </li>
+                <li>Software Development Life Cycle</li>
+                <li>Software Testing and Quality Assurance</li>
+                <li>Project Management and Agile Methodologies</li> 
+
+
             </ul>
             <p>Explore more learning resources and projects on our GitHub Repository: <a href="https://github.com/Eshetu70?tab=repositories" target="_blank">Visit GitHub</a></p>
             
@@ -278,7 +321,69 @@
                 <li>International Collaboration - 5,000,000 ETB</li>
             </ul>
         </section>
-
+        <div class="containers">
+            <h2>NextSynergy Tech - Tutorial Center</h2>
+            
+            <div class="tab-container">
+                <div class="tab" onclick="openTab('courses')">Courses</div>
+                <div class="tab" onclick="openTab('registration')">Registration</div>
+                <div class="tab" onclick="openTab('login')">Admin Login</div>
+                <div class="tab" onclick="openTab('registrations')">List of Registrations</div>
+            </div>
+            
+            <div id="courses" class="tab-content active">
+                <h2>Courses Offered</h2>
+                <ul>
+                    <li>Full-Stack Development Mastery</li>
+                    <li>Java for Enterprise Applications</li>
+                    <li>Python for Data Science & Web Development</li>
+                    <li>Advanced Node.js & Express.js</li>
+                    <li>Database Management & Optimization</li>
+                </ul>
+            </div>
+            
+            <div id="registration" class="tab-content">
+                <div class="register-form">
+                    <h2>Register for a Course</h2>
+                    <form onsubmit="submitRegistration(event)">
+                        <label for="full-name">Full Name:</label>
+                        <input type="text" id="full-name" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                        
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" required>
+                        
+                        <label for="course">Select Course:</label>
+                        <select id="course">
+                            <option value="Full-Stack Development Mastery">Full-Stack Development Mastery</option>
+                            <option value="Java for Enterprise Applications">Java for Enterprise Applications</option>
+                            <option value="Python for Data Science & Web Development">Python for Data Science & Web Development</option>
+                            <option value="Advanced Node.js & Express.js">Advanced Node.js & Express.js</option>
+                            <option value="Database Management & Optimization">Database Management & Optimization</option>
+                        </select>
+                        
+                        <button type="submit">Submit Registration</button>
+                    </form>
+                    <p id="success-message" class="success-message">Successfully registered! Thank you for choosing NextSynergy Tech as your first choice.</p>
+                </div>
+            </div>
+            
+            <div id="login" class="tab-content">
+                <h2>Admin Login</h2>
+                <form onsubmit="validateLogin(event)">
+                    <label for="admin-email">Email:</label>
+                    <input type="email" id="admin-email" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            
+            <div id="registrations" class="tab-content" style="display:none;">
+                <h2>List of Registrations</h2>
+                <table id="registrations-table" border="1"></table>
+            </div>
+        </div>
         
         <section id="contact" class="section">
             <h2>Contact Us</h2>
@@ -307,6 +412,7 @@
                 nav.style.display = 'block';
             }
         }
+    
     </script>
     
     <footer>
