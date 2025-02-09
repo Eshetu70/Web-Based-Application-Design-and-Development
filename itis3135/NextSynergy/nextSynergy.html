@@ -11,6 +11,38 @@
     <link rel="stylesheet" href="server/Sytles/css.css">
     <script scr="server/HTMLInclude.js"></script>
     <script src="server/script.js"></script>
+
+    <style>
+        
+      
+        .payment-section {
+            display: flex;
+            background: #262424;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            border-color: rgb(184, 113, 26);
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 3px solid gold;
+        }
+        .payment-info{
+            border-color: bisque;
+            
+        }
+        .paypal-button img {
+            width: 180px;
+            margin: 15px 0;
+        }
+        .qr-code img {
+            width: 120px;
+            margin-top: 15px;
+        }
+        .qr-code p {
+            font-weight: bold;
+        }
+    </style>
         
 </head>
 <body>
@@ -375,8 +407,38 @@
     
     </script>
     
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 NextSynergy Tech. All rights reserved.</p>
+        
+        <!-- Payment Section with PayPal and QR Code -->
+        <div class="payment-section" id="payment-info">
+            <p id="service-info"></p>
+            <p>Please wait while we redirect you to PayPal...</p>
+            <div class="payment-section">
+                <div class="paypal-button">
+                    <a href="https://www.paypal.com/ncp/payment/73D56MU93UBYG" target="_blank">
+                        <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-small.png" alt="Pay with PayPal">
+                    </a>
+                </div>
+                <div class="qr-code">
+                    <img src="image/Thank you for -qrcode.png" alt="Scan to Pay">
+                    <p>Scan to Pay</p>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        function showServiceInfo(serviceName, price) {
+            const paymentInfo = document.getElementById('payment-info');
+            const serviceInfo = document.getElementById('service-info');
+            serviceInfo.innerHTML = `You are paying for: ${serviceName} - $${price}`;
+            paymentInfo.style.display = 'block';
+            setTimeout(function () {
+                window.location.href = `https://www.paypal.com/ncp/payment/73D56MU93UBYG`;
+            }, 4000);
+        }
+    </script>
+
 </body>
 </html>

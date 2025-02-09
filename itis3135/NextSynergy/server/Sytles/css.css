@@ -55,6 +55,7 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            position: relative;
         }
          /* Responsive menu for mobile devices */
          .dropdown {
