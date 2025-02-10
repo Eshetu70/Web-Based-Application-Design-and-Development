@@ -1,3 +1,4 @@
+c
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +12,15 @@
     <link rel="stylesheet" href="server/Sytles/css.css">
     <script scr="server/HTMLInclude.js"></script>
     <script src="server/script.js"></script>
+    <link rel="stylesheet" href="server/Sytles/course.css">
+    <link rel="stylesheet" href="server/Sytles/mobile.css">
 
     <style>
         
       
         .payment-section {
             display: flex;
-            background: #262424;
+            background: #004080;
             padding: 20px;
             margin: 20px auto;
             border-radius: 10px;
@@ -41,6 +44,39 @@
         }
         .qr-code p {
             font-weight: bold;
+
+            h2 {
+                color: #333;
+            }
+            .tab-container {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 10px;
+            }
+            .tab {
+                background: #fff;
+                padding: 10px 15px;
+                margin: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+                border: 1px solid #ccc;
+            }
+            .tab:hover {
+                background: #ddd;
+            }
+            .content {
+                display: none;
+                padding: 15px;
+                background: white;
+                border-radius: 5px;
+                margin-top: 10px;
+                border: 1px solid #ccc;
+            }
+            .active {
+                display: block;
+            }
+           
+            
         }
     </style>
         
@@ -57,7 +93,7 @@
         <a onclick="showSection('mission')">Mission & Vision</a>
         <a onclick="showSection('projects')">Projects</a>
         <a onclick="showSection('tutorials')">Tutorials</a>
-        <!--<a onclick="showSection('budget')">Budget</a>  -->
+        <a onclick="showSection('mobile-development')">Mobile Development</a>
         <a onclick="showSection('contact')">Contact</a>
         <a href="https://fetena.net/" target="_blank">EthioBooks 1-12/Exams</a>
         
@@ -313,6 +349,64 @@
                 <li>International Collaboration - 5,000,000 ETB</li>
             </ul>
         </section>
+        <div class="container">
+            <section id="mobile-development" class="section">
+                <h2>📱 Mobile App Development</h2>
+    
+                <div class="tab-container">
+                    <div class="tab" onclick="showContent('java-basics')">Java Basics</div>
+                    <div class="tab" onclick="showContent('ui-development')">UI Development</div>
+                    <div class="tab" onclick="showContent('intents-navigation')">Intents & Navigation</div>
+                    <div class="tab" onclick="showContent('data-storage')">Data Storage</div>
+                    <div class="tab" onclick="showContent('firebase')">Firebase</div>
+                </div>
+    
+                <div id="java-basics" class="content">
+                    <h3>🚀 Java Basics</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=UQrBgnm8bhU&t=2s" target="_blank">Setting up the Java Development Environment</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=tTR3Wn5Mbwg&t=3s" target="_blank">Java Classes and Objects</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=79QRulQ-VQo="_blank">Java Method Signature and Overloading</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=9mQvRZuFJlg" target="_blank">Java Inheritance</a></li>
+                    </ul>
+                </div>
+    
+                <div id="ui-development" class="content">
+                    <h3>🖥️ UI Development</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=243" target="_blank">Creating your Emulator Instance</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=243" target="_blank">Logging and Using LogCat</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=243" target="_blank">Toast Messages</a></li>
+                    </ul>
+                </div>
+    
+                <div id="intents-navigation" class="content">
+                    <h3>🔄 Intents & Navigation</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=243" target="_blank">Explicit Intents</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=243" target="_blank">Implicit Intents</a></li>
+                    </ul>
+                </div>
+    
+                <div id="data-storage" class="content">
+                    <h3>💾 Data Storage</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=244" target="_blank">SQLite Introduction</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=244" target="_blank">Using SQLite</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=244" target="_blank">Using Room Library in Android</a></li>
+                    </ul>
+                </div>
+    
+                <div id="firebase" class="content">
+                    <h3>🔥 Firebase</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=244" target="_blank">Intro to Firebase & Setting Up a Project</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=244" target="_blank">Firebase Authentication</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=244" target="_blank">Reading and Writing Data to Firestore</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
         <div class="containers">
             <h2>NextSynergy Tech - Tutorial Center</h2>
             
@@ -323,7 +417,7 @@
                 <div class="tab" onclick="openTab('registrations')">List of Registrations</div>
             </div>
             
-            <div id="courses" class="tab-content active">
+            <div id="courses" class="content">
                 <h2>Courses Offered</h2>
                 <ul>
                     <li>Full-Stack Development Mastery</li>
@@ -437,6 +531,51 @@
             setTimeout(function () {
                 window.location.href = `https://www.paypal.com/ncp/payment/73D56MU93UBYG`;
             }, 4000);
+        }
+    </script>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function showContent(tabId) {
+            let contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.style.display = 'none');
+            document.getElementById(tabId).style.display = 'block';
+        }
+    </script>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function showContent(tabId) {
+            let contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.style.display = 'none');
+            document.getElementById(tabId).style.display = 'block';
+        }
+    </script>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function showContent(tabId) {
+            let contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.style.display = 'none');
+            document.getElementById(tabId).style.display = 'block';
         }
     </script>
 

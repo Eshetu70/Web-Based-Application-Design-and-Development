@@ -146,7 +146,7 @@
             margin-bottom: 20px;
         }
         .tab {
-            background: #007bff;
+            background: #004080;
             color: white;
             padding: 10px 20px;
             margin: 5px;
@@ -154,7 +154,7 @@
             cursor: pointer;
         }
         .tab:hover {
-            background: #0056b3;
+            background: #004080;
         }
         .tab-content {
             display: none;
@@ -199,7 +199,7 @@
                 margin-bottom: 20px;
             }
             .tab {
-                background: #007bff;
+                background: #004080;
                 color: white;
                 padding: 10px 20px;
                 margin: 5px;
@@ -207,7 +207,7 @@
                 cursor: pointer;
             }
             .tab:hover {
-                background: #0056b3;
+                background: #004080;
             }
             .tab-content {
                 display: none;
