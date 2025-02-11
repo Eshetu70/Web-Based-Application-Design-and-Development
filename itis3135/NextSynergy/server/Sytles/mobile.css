@@ -72,6 +72,10 @@
     list-style: none;
     padding: 0;
 }
+#ecommerce ul li {
+    list-style: none;
+    padding: 0;
+}
 
 .content ul li {
     background: #e9ecef;
@@ -121,3 +125,53 @@
         text-align: center;
     }
 }
+
+/* E-Commerce Services Styling */
+#ecommerce-services {
+    background: linear-gradient(to right, #004080, #0073e6);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid gold;
+}
+
+#ecommerce-services h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+#ecommerce-services ul {
+    list-style: none;
+    padding: 0;
+}
+
+#ecommerce-services li {
+    margin: 10px 0;
+}
+
+#ecommerce-services a {
+    display: inline-block;
+    background: gold;
+    color: #004080;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#ecommerce-services a:hover {
+    background: white;
+    color: #004080;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
