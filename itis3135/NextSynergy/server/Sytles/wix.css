@@ -1,10 +1,11 @@
-/* General Header Styling */
+/* Header Styling */
 .custom-header {
     position: relative;
     width: 100%;
-    height: 100px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.5);
+    height: 150px;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding-top: 20px;
 }
 
 /* Background Video */
@@ -13,7 +14,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
 }
@@ -23,22 +24,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    height: 100px;
+    padding: 10px 20px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 /* Logo */
 .logo img {
-    height: 80px;
+    height: 60px;
+    max-width: 200px;
 }
 
-/* Menu */
+/* Navigation Menu */
 .nav-menu {
     list-style: none;
-    display: flex;
+    display: none;
     gap: 20px;
+    padding: 0;
 }
 
 .nav-menu li {
@@ -49,7 +51,8 @@
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 .nav-menu a:hover {
@@ -102,4 +105,63 @@
 
 .login-btn:hover {
     background: yellow;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: flex;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Dropdown Mobile Menu */
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: #002b5c;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu a {
+    color: white;
+    padding: 12px;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #004080;
+}
+
+/* Welcome Text */
+.welcome-text {
+    color: white;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* Responsive - Mobile View */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .dropdown-menu {
+        display: none;
+    }
 }
