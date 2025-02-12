@@ -59,7 +59,7 @@
         }
          /* Responsive menu for mobile devices */
          .dropdown {
-            display: none;
+            display: flex;
             flex-direction: column;
             background: #003366;
             width: 100%;
