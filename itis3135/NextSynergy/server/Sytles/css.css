@@ -73,7 +73,7 @@
             display: block;
         }
         .menu-icon {
-            display: none;
+            display: flex;
             font-size: 24px;
             color: white;
             cursor: pointer;
