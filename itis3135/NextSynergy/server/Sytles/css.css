@@ -1,410 +1,238 @@
-/* General Page Styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
 
-/* Custom Header */
-.custom-header {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    overflow: hidden;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #004080;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #003366;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;   
+            
+        }
+        img {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+        .section {
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        footer {
+            background: #004080;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            position: relative;
+        }
+         /* Responsive menu for mobile devices */
+         .dropdown {
+            display: none;
+            flex-direction: column;
+            background: #003366;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+        .dropdown a {
+            padding: 15px;
+            display: block;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            text-align: center;
+        }
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
 
-/* Background Video */
-.header-bg video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    z-index: -1;
-}
 
-/* Navigation Bar */
-.nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 100px;
-    position: relative;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.7);
-}
+        .course-list, .icon-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .course-list li, .icon-list li {
+            background: #435568;
+            color: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            width: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .course-list li:hover, .icon-list li:hover {
+            background: #0056b3;
+            cursor: pointer;
+        }
+        .icon-list li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            text-align: center;
+        }
+        .icon-list img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
 
-/* Logo */
-.logo img {
-    height: 80px;
-}
+        
 
-/* Navigation Menu */
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-menu li {
-    display: inline;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.nav-menu a:hover {
-    color: yellow;
-}
-
-/* Right-side Icons */
-.nav-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-/* Language Selector */
-.lang-selector {
-    padding: 5px;
-    font-size: 16px;
-    border: none;
-    background: white;
-    color: black;
-    cursor: pointer;
-}
-
-/* Cart Icon */
-.cart-icon {
-    font-size: 22px;
-    color: white;
-    text-decoration: none;
-    position: relative;
-}
-
-/* Cart Count */
-.cart-count {
-    background: red;
-    color: white;
-    font-size: 14px;
-    border-radius: 50%;
-    padding: 2px 6px;
-    position: absolute;
-    top: -8px;
-    right: -10px;
-}
-
-/* Login Button */
-.login-btn {
-    background: white;
-    color: black;
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.login-btn:hover {
-    background: yellow;
-}
-
-/* Main Navigation Menu */
-nav {
-    display: flex;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-}
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: yellow;
-}
-
-/* Main Content Styling */
-.container {
-    padding: 20px;
-    text-align: center;
-}
-
-.section {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-/* Footer */
-footer {
-    background: #004080;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    width: 100%;
-}
-
-/* Responsive Navigation Menu */
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Mobile Dropdown Menu */
-.dropdown {
-    display: none;
-    flex-direction: column;
-    background: #003366;
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    top: 100px;
-    left: 0;
-}
-
-.dropdown a {
-    padding: 15px;
-    display: block;
-    color: white;
-    text-decoration: none;
-}
-
-.dropdown a:hover {
-    background: #002244;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .nav-menu {
-        display: none;
-    }
+       
+        .containers {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+       
+        
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            background: #004080;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab:hover {
+            background: #004080;
+        }
+        .tab-content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .register-form input, .register-form select, .register-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .register-form button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .register-form button:hover {
+            background: #0056b3;
+        }
+        .success-message {
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
     
-    .menu-icon {
-        display: block;
-    }
-
-    .dropdown {
-        display: flex;
-    }
-}
-
-/* Course and Icon Lists */
-.course-list, .icon-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.course-list li, .icon-list li {
-    background: #435568;
-    color: white;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 18px;
-    width: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: background 0.3s ease;
-}
-
-.course-list li:hover, .icon-list li:hover {
-    background: #0056b3;
-    cursor: pointer;
-}
-
-.icon-list li a {
-    text-decoration: none;
-    color: white;
-    display: block;
-    text-align: center;
-}
-
-.icon-list img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-/* Registration Forms */
-.register-form input, .register-form select, .register-form button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.register-form button {
-    background: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.register-form button:hover {
-    background: #0056b3;
-}
-
-.success-message {
-    color: green;
-    font-weight: bold;
-    display: none;
-}
-
-/* Tabbed Sections */
-.containers {
-    max-width: 1000px;
-    margin: 50px auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-}
-
-.tab-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.tab {
-    background: #004080;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.tab:hover {
-    background: #003366;
-}
-
-.tab-content {
-    display: none;
-}
-
-.active {
-    display: block;
-}
-
-
-/* General Image Styling */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover Effect for Images */
-img:hover {
-    transform: scale(1.03);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Logo Image */
-.logo img {
-    height: 80px;
-    max-width: 200px;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-/* Profile Images (for Team or CEO) */
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #004080;
-    object-fit: cover;
-}
-
-/* Section-Specific Image Styling */
-.section img {
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-}
-
-/* Icons (Course & Tutorials) */
-.icon-list img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-}
-
-.icon-list img:hover {
-    transform: scale(1.1);
-}
-
-/* Payment & QR Code Images */
-.payment-section img {
-    max-width: 200px;
-    border-radius: 5px;
-}
-
-/* Full-Width Banner Images */
-.full-width-image {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-}
-
-/* Mobile Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .section img {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .profile-img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .icon-list img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .full-width-image {
-        max-height: 300px;
-    }
-}
+            .containers {
+                max-width: 1000px;
+                margin: 50px auto;
+                background: white;
+                padding: 20px;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                text-align: center;
+            }
+            
+            .tab-container {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            .tab {
+                background: #004080;
+                color: white;
+                padding: 10px 20px;
+                margin: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .tab:hover {
+                background: #004080;
+            }
+            .tab-content {
+                display: none;
+            }
+            .active {
+                display: block;
+            }
+            .register-form input, .register-form select, .register-form button {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            .register-form button {
+                background: #007bff;
+                color: white;
+                cursor: pointer;
+            }
+            .register-form button:hover {
+                background: #0056b3;
+            }
+            .success-message {
+                color: green;
+                font-weight: bold;
+                display: none;
+            }
+        
