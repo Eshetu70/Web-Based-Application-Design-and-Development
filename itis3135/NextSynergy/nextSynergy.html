@@ -107,6 +107,7 @@
                 <li><a href="#" onclick="showSection('mission')">Mission & Vision</a></li>
                 <li><a href="#" onclick="showSection('projects')">Projects</a></li>
                 <li><a href="#" onclick="showSection('tutorials')">Tutorials</a></li>
+                <li><a href="#" onclick="showSection('courses')">Registration</a></li>
                 <li><a href="#" onclick="showSection('mobile-development')">Mobile Development</a></li>
                 <li><a href="#" onclick="showSection('contact')">Contact</a></li>
             </ul>
@@ -138,6 +139,7 @@
             <a href="#" onclick="showSection('mission')">Mission & Vision</a>
             <a href="#" onclick="showSection('projects')">Projects</a>
             <a href="#" onclick="showSection('tutorials')">Tutorials</a>
+            <a href="#" onclick="showSection('courses')">Registration</a>
             <a href="#" onclick="showSection('mobile-development')">Mobile Development</a>
             <a href="#" onclick="showSection('contact')">Contact</a>
         </div>
@@ -370,41 +372,54 @@
             <p>Explore our detailed tutorials: <a href="https://webpages.charlotte.edu/ewekjira/itis3135/projects/index.html" target="_blank">Visit Tutorials</a></p>
         </section>
         
-        <section id="budget" class="section">
-            <h2>Budget & Infrastructure Development</h2>
-            <p><strong>Total Estimated Budget: 500,000,000 ETB</strong></p>
-            <p>NextSynergy Tech aims to establish a robust technological ecosystem, supporting digital transformation, education, and enterprise development in Ethiopia. A significant portion of this budget is allocated to land acquisition and infrastructure development in Addis Ababa or Sheger City.</p>
-            
-            <h3>1. Infrastructure & Land Development - 250,000,000 ETB</h3>
-            <ul>
-                <li>Land Acquisition for Tech Park in Addis Ababa or Sheger City - 100,000,000 ETB</li>
-                <li>Construction of NextSynergy Technology Hub - 100,000,000 ETB</li>
-                <li>Network Infrastructure & Data Centers - 50,000,000 ETB</li>
-            </ul>
-            
-            <h3>2. Technology & Software Development - 120,000,000 ETB</h3>
-            <ul>
-                <li>AI-Powered Software & Automation - 30,000,000 ETB</li>
-                <li>Blockchain & Cybersecurity Solutions - 20,000,000 ETB</li>
-                <li>Cloud Computing Infrastructure - 25,000,000 ETB</li>
-                <li>E-Commerce Platform Development - 20,000,000 ETB</li>
-            </ul>
-            
-            <h3>3. Education & Workforce Development - 80,000,000 ETB</h3>
-            <ul>
-                <li>Facility Setup & Equipment - 35,000,000 ETB</li>
-                <li>AI & Cybersecurity Training - 15,000,000 ETB</li>
-                <li>Software Development Bootcamps - 10,000,000 ETB</li>
-                <li>Scholarships & Internships - 20,000,000 ETB</li>
-            </ul>
-            
-            <h3>4. Government Collaboration & Public-Private Partnership - 30,000,000 ETB</h3>
-            <ul>
-                <li>Regulatory Compliance & Policy Support - 10,000,000 ETB</li>
-                <li>Public Service Digital Solutions - 15,000,000 ETB</li>
-                <li>International Collaboration - 5,000,000 ETB</li>
-            </ul>
+        <section id="courses">
+            <h2>Course Registration</h2>
+            <div class="containe">
+                <div class="course-card">
+                    <h2>Web Design & Development</h2>
+                    <p>Master the foundations of web development and build interactive, responsive websites. Topics include:</p>
+                    <ul>
+                        <li>HTML, CSS & JavaScript for front-end development</li>
+                        <li>AJAX & jQuery for dynamic user interfaces</li>
+                        <li>JSON & XML for structured data management</li>
+                        <li>Responsive Web Design techniques</li>
+                        <li>Website optimization and SEO best practices</li>
+                    </ul>
+                    <p class="prerequisites">📝 Prerequisites: No prior programming experience required.</p>
+                    <a href="https://www.nextsynergytech.online/regisstrations" class="register-button">Register</a>
+                </div>
+                
+                <div class="course-card">
+                    <h2>Advanced Programming</h2>
+                    <p>Gain proficiency in advanced coding techniques and full-stack development. Topics include:</p>
+                    <ul>
+                        <li>Object-Oriented Programming (OOP) with Java</li>
+                        <li>SQL & Database Management (MySQL, PostgreSQL)</li>
+                        <li>Backend development with Express.js & Node.js</li>
+                        <li>RESTful API development and integration</li>
+                        <li>Testing and debugging methodologies</li>
+                    </ul>
+                    <p class="prerequisites">📝 Prerequisites: Basic knowledge of HTML, CSS, and JavaScript.</p>
+                    <a href="https://www.nextsynergytech.online/regisstrations" class="register-button">Register</a>
+                </div>
+    
+                <div class="course-card">
+                    <h2>Mobile Application Development</h2>
+                    <p>Learn how to design and develop cross-platform mobile applications. Topics include:</p>
+                    <ul>
+                        <li>UI/UX design principles for mobile apps</li>
+                        <li>JavaScript & APIs for mobile functionalities</li>
+                        <li>Cross-platform development using React Native or Flutter</li>
+                        <li>Integration with Firebase and cloud services</li>
+                        <li>Performance optimization and debugging techniques</li>
+                    </ul>
+                    <p class="prerequisites">📝 Prerequisites: Completion of Web Design & Development and Advanced Programming.</p>
+                    <a href="https://www.nextsynergytech.online/regisstrations" class="register-button">Register</a>
+                </div>
+            </div>
         </section>
+
+
         <div class="container">
             <section id="mobile-development" class="section">
                 <h2>📱 Mobile App Development</h2>
@@ -463,69 +478,8 @@
                 </div>
             </section>
         </div>
-        <div class="containers">
-            <h2>NextSynergy Tech - Tutorial Center</h2>
-            
-            <div class="tab-container">
-                <div class="tab" onclick="openTab('courses')">Courses</div>
-                <div class="tab" onclick="openTab('registration')">Registration</div>
-                <div class="tab" onclick="openTab('login')">Admin Login</div>
-                <div class="tab" onclick="openTab('registrations')">List of Registrations</div>
-            </div>
-            
-            <div id="courses" class="content">
-                <h2>Courses Offered</h2>
-                <ul>
-                    <li>Full-Stack Development Mastery</li>
-                    <li>Java for Enterprise Applications</li>
-                    <li>Python for Data Science & Web Development</li>
-                    <li>Advanced Node.js & Express.js</li>
-                    <li>Database Management & Optimization</li>
-                </ul>
-            </div>
-            
-            <div id="registration" class="tab-content">
-                <div class="register-form">
-                    <h2>Register for a Course</h2>
-                    <form onsubmit="submitRegistration(event)">
-                        <label for="full-name">Full Name:</label>
-                        <input type="text" id="full-name" required>
-                        
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" required>
-                        
-                        <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" required>
-                        
-                        <label for="course">Select Course:</label>
-                        <select id="course">
-                            <option value="Full-Stack Development Mastery">Full-Stack Development Mastery</option>
-                            <option value="Java for Enterprise Applications">Java for Enterprise Applications</option>
-                            <option value="Python for Data Science & Web Development">Python for Data Science & Web Development</option>
-                            <option value="Advanced Node.js & Express.js">Advanced Node.js & Express.js</option>
-                            <option value="Database Management & Optimization">Database Management & Optimization</option>
-                        </select>
-                        
-                        <button type="submit">Submit Registration</button>
-                    </form>
-                    <p id="success-message" class="success-message">Successfully registered! Thank you for choosing NextSynergy Tech as your first choice.</p>
-                </div>
-            </div>
-            
-            <div id="login" class="tab-content">
-                <h2>Admin Login</h2>
-                <form onsubmit="validateLogin(event)">
-                    <label for="admin-email">Email:</label>
-                    <input type="email" id="admin-email" required>
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-            
-            <div id="registrations" class="tab-content" style="display:none;">
-                <h2>List of Registrations</h2>
-                <table id="registrations-table" border="1"></table>
-            </div>
-        </div>
+        
+        
         
         <div id="contact" class="section">
             <h2>Contact Us</h2>
@@ -639,7 +593,14 @@
         }
     </script>
 
-
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll("section").forEach(section => {
+                section.style.display = "none";
+            });
+            document.getElementById(sectionId).style.display = "block";
+        }
+    </script>
 
 </body>
 </html>
