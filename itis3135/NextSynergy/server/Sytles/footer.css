@@ -1,0 +1,82 @@
+.footer {
+    background: #004080;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: gold;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: gold;
+    color: #004080;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.contact-btn:hover {
+    background: white;
+    color: #004080;
+}
+
+.payment-section img {
+    width: 180px;
+    margin-top: 10px;
+}
+
+.qr-code img {
+    width: 120px;
+    margin-top: 15px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8em;
+    border-top: 1px solid gold;
+    padding-top: 10px;
+}
