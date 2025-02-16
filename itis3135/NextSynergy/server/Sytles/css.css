@@ -68,14 +68,7 @@
             padding: 10px;
             text-align: center;
         }
-        @media screen and (max-width: 768px) {
-            nav {
-                display: none;
-            }
-            .menu-icon {
-                display: block;
-            }
-        }
+        
 
 
         .course-list, .icon-list {
