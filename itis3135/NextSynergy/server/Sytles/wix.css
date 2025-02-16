@@ -152,7 +152,7 @@
 }
 
 .dropdown-menu.show-menu {
-    display: none;
+    display: flex;
 }
 
 .dropdown-menu a {
@@ -160,7 +160,7 @@
     font-size: 16px;
     padding: 12px;
     text-decoration: none;
-    display: none;
+    display: block;
     transition: background 0.3s ease;
 }
 
@@ -168,7 +168,11 @@
     background: #004080;
 }
 
-
+@media screen and (max-width: 768px) {
+    .dropdown-menu {
+        display: none;
+    }
+}
 
 
 
