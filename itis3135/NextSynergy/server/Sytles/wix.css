@@ -121,7 +121,7 @@
 
 /* Show dropdown when menu icon is clicked */
 .menu-icon.active + .dropdown-menu {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -152,7 +152,7 @@
 }
 
 .dropdown-menu.show-menu {
-    display: flex;
+    display: none;
 }
 
 .dropdown-menu a {
