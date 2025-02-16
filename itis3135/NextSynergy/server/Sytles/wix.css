@@ -119,11 +119,7 @@
 
 /* Dropdown Mobile Menu */
 
-/* Show dropdown when menu icon is clicked */
-.menu-icon.active + .dropdown-menu {
-    display: none;
-    flex-direction: column;
-}
+
 
 /* Welcome Text */
 .welcome-text {
@@ -150,7 +146,9 @@
     padding: 10px 0;
     border-radius: 6px;
 }
-
+.dropdown-menu a{
+    display: none;
+}
 .dropdown-menu.show-menu {
     display: flex;
 }
