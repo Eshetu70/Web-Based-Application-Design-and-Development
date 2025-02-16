@@ -55,7 +55,7 @@
             }
             
             if (window.innerWidth > 768) {
-                document.querySelector('.nav-menu').style.display = 'flex';
+                document.querySelector('.nav-menu').style.display = 'none';
             } else {
                 document.getElementById('navMenu').classList.remove("show-menu");
             }
@@ -776,7 +776,7 @@
             if (selectedSection) {
                 selectedSection.style.display = 'block';
             }
-            document.querySelector('.nav-menu').style.display = 'flex';
+            document.querySelector('.nav-menu').style.display = 'none';
         }
         function toggleMenu() {
             var menu = document.querySelector('.nav-menu');
