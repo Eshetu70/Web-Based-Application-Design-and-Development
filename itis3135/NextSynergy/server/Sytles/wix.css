@@ -151,23 +151,21 @@
     border-radius: 6px;
 }
 
+.dropdown-menu.show-menu {
+    display: flex;
+}
+
 .dropdown-menu a {
     color: white;
     font-size: 16px;
     padding: 12px;
     text-decoration: none;
-    display: none;
+    display: block;
     transition: background 0.3s ease;
 }
 
 .dropdown-menu a:hover {
     background: #004080;
-}
-
-@media screen and (max-width: 768px) {
-    .dropdown-menu {
-        display: block;
-    }
 }
 
 
