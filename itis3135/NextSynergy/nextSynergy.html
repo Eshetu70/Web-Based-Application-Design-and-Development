@@ -174,7 +174,7 @@
         </nav>
 
         <!-- Mobile Dropdown Menu -->
-        <div id="navMenu" class="dropdown-menu">
+        <div id="navMenu" class="dropdown-menu" style="display: none;">
             <a href="#" onclick="showSection('about')">About Us</a>
             <a href="#" onclick="showSection('services')">Services</a>
             <a href="#" onclick="showSection('ecommerce')">E-Commerce</a>
@@ -700,7 +700,7 @@
             sections.forEach(function(section) {
                 section.style.display = 'none';
             });
-    
+          
             // Show the selected section
             var selectedSection = document.getElementById(sectionId);
             if (selectedSection) {
@@ -737,6 +737,8 @@
         });
     </script>
     
+
+   
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
 </body>
