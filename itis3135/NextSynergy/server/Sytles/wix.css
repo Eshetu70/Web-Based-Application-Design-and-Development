@@ -38,7 +38,7 @@
 /* Navigation Menu */
 .nav-menu {
     list-style: none;
-    display: none;
+    display: flex;
     gap: 5px;
     padding: 0;
 }
@@ -136,34 +136,32 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 45px;
     left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    width: 80%;
+    background: #005f66;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     z-index: 999;
-    padding: 10px 0;
-    border-radius: 6px;
+    padding: 6px 0;
+    border-radius: 4px;
 }
-.dropdown-menu a{
-    display: none;
-}
+
 .dropdown-menu.show-menu {
     display: flex;
 }
 
 .dropdown-menu a {
     color: white;
-    font-size: 16px;
-    padding: 12px;
+    font-size: 13px;
+    padding: 8px;
     text-decoration: none;
     display: block;
-    transition: background 0.3s ease;
+    transition: background 0.2s ease;
 }
 
 .dropdown-menu a:hover {
-    background: #004080;
+    background: #00434c;
 }
 
 @media screen and (max-width: 768px) {
