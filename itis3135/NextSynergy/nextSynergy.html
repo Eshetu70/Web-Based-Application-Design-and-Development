@@ -16,6 +16,36 @@
     <link rel="stylesheet" href="server/Sytles/wix.css">
     <link rel="stylesheet" href="server/Sytles//contact..css">
     <link rel="stylesheet" href="server/Sytles/footer.css">
+    <link rel="stylesheet" href="server/Sytles/order.css">
+
+
+    <!-- Google Translate API -->
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,am,om',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    
+        function translateLanguage() {
+            var selectedLang = document.getElementById("languageSwitcher").value;
+            var googleFrame = document.querySelector(".goog-te-combo");
+            if (googleFrame) {
+                googleFrame.value = selectedLang;
+                googleFrame.dispatchEvent(new Event("change"));
+            }
+        }
+    
+        function toggleTranslate() {
+            var translateBox = document.getElementById("translateBox");
+            translateBox.style.display = translateBox.style.display === "none" ? "flex" : "none";
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
 
     <style>
         
@@ -107,29 +137,43 @@
                 <li><a href="#" onclick="showSection('ecommerce')">E-Commerce</a></li>
                 <li><a href="#" onclick="showSection('mission')">Mission & Vision</a></li>
                 <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+                <li><a href="#" onclick="showSection('order')">AppOrders</a></li>
                 <li><a href="#" onclick="showSection('tutorials')">Tutorials</a></li>
                 <li><a href="#" onclick="showSection('courses')">Registration</a></li>
                 <li><a href="#" onclick="showSection('mobile-development')">Mobile Development</a></li>
-                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                
             </ul>
 
             <!-- Right-side Icons -->
             <div class="nav-icons">
-                <select class="lang-selector">
-                    <option value="en">EN</option>
-                    <option value="am">AM</option>
-                    <option value="om">OM</option>
-                </select>
+                <div class="menu-translate-container">
+                    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+                    <div class="translate-icon" onclick="toggleTranslate()">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Translate" width="24" height="24">
+                    </div>
+                </div>
+                <div class="translate-container" id="translateBox">
+                    <select class="lang-selector" id="languageSwitcher" onchange="translateLanguage()">
+                        <option value="en">EN</option>
+                        <option value="am">AM</option>
+                        <option value="om">OM</option>
+                    </select>
+                    <div id="google_translate_element" class="translate-box"></div>
+                </div>
+            </div>
+
+    
+
 
                 <a href="https://www.nextsynergytech.online/cart-page" class="cart-icon">
                     🛒 <span class="cart-count">0</span>
                 </a>
 
-                <button class="login-btn">Log In</button>
+               <!-- <button class="login-btn">Log In</button> -->
             </div>
 
             <!-- Mobile Menu Icon -->
-            <div class="menu-icon" onclick="toggleMenu()">☰ Menu</div>
+           <!-- <div class="menu-icon" onclick="toggleMenu()">☰ Menu</div> -->
         </nav>
 
         <!-- Mobile Dropdown Menu -->
@@ -140,9 +184,10 @@
             <a href="#" onclick="showSection('mission')">Mission & Vision</a>
             <a href="#" onclick="showSection('projects')">Projects</a>
             <a href="#" onclick="showSection('tutorials')">Tutorials</a>
+            <a href="#" onclick="showSection('order')">AppOrders</a>
             <a href="#" onclick="showSection('courses')">Registration</a>
             <a href="#" onclick="showSection('mobile-development')">Mobile Development</a>
-            <a href="#" onclick="showSection('contact')">Contact</a>
+           
         </div>
 
     </header>
@@ -269,6 +314,26 @@
                 <li>Network-Based Applications: Cloud enterprise solutions.</li>
             </ul>
             <p>We also run NextSynergy Learning Academy, providing specialized training programs in AI, cybersecurity, and cloud computing.</p>
+        </section>
+
+        <section id="order" class="section">
+            <h1>Premium Website & Mobile App Development</h1>
+            <p>We create high-quality, professional websites and mobile applications tailored to your business needs.</p>
+            
+            <div class="service"><h2>Very Small Business Website</h2><p>Basic website solutions for small-scale businesses.</p><a href="https://www.nextsynergytech.online/contact" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Small Business Website</h2><p>Perfect for startups and small businesses to establish an online presence.</p><a href="#order" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Medium Business Website</h2><p>Advanced website solutions for growing businesses.</p><a href="https://www.nextsynergytech.online/contact" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Large Business & Enterprise Website</h2><p>Highly scalable and feature-rich websites for big businesses.</p><a href="#order" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>E-commerce Website</h2><p>Get a full-featured online store to sell products and accept payments.</p><a href="https://www.nextsynergytech.online/contact" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Portfolio Website</h2><p>Showcase your work and projects professionally.</p><a href="https://www.nextsynergytech.online/contact" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Blog Website</h2><p>Start a blog and share your ideas with the world.</p><a href="https://www.nextsynergytech.online/contact" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Corporate Website</h2><p>A professional website for large businesses and corporations.</p><a href="#order" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Educational Website</h2><p>Online learning platforms and school websites.</p><a href="https://www.nextsynergytech.online/contact" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>News & Media Website</h2><p>Publish news and media content online.</p><a href="https://www.nextsynergytech.online/contact" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Real Estate Website</h2><p>List properties and connect buyers with sellers.</p><a href="#order" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Hotel Website</h2><p>Manage bookings, display amenities, and attract guests online.</p><a href="https://www.nextsynergytech.online/contact" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Restaurant Website</h2><p>Showcase your menu, take reservations, and offer online ordering.</p><a href="#order" class="order-btn">Order Now</a></div>
+            <div class="service"><h2>Mobile Application</h2><p>Custom Android & iOS apps to expand your business reach.</p><a href="https://www.nextsynergytech.online/contact" class="order-btn">Order Now</a></div>
         </section>
            
 
@@ -493,12 +558,12 @@
 
         
     </div>
-
+            
+     
 
     <section id="privacy-policy" class="section">
         <h2>Privacy Policy</h2>
-        <p><strong>Effective Date:</strong> [Insert Date]</p>
-        <p><strong>Last Updated:</strong> [Insert Date]</p>
+    
     
         <h3>1. Introduction</h3>
         <p>Welcome to <strong>NextSynergy Tech</strong>. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal data when you interact with our website and services.</p>
@@ -567,7 +632,7 @@
             <div class="footer-section">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="https://www.nextsynergytech.online">Home</a></li>
+                    <li><a href="#" onclick="showSection('about')">Home</a></li>
                     <li><a href="https://www.nextsynergytech.online/solutions">Services</a></li>
                     <li><a href="https://www.nextsynergytech.online/courses">Courses</a></li>
                     <li><a href="https://www.nextsynergytech.online/contact">Contact</a></li>
@@ -582,7 +647,9 @@
                     <a href="mailto:eshetuwek1@gmail.com"><i class="fas fa-envelope"></i> eshetuwek1@gmail.com</a>
                     <a href="tel:+17044888465"><i class="fas fa-phone-alt"></i> +1 (704) 488-8465</a>
                 </div>
-                <a href="contact.html" class="contact-btn">Get in Touch</a>
+                <a href="https://www.nextsynergytech.online/contact" class="contact-btn">Get in Touch</a>
+
+                
             </div>
     
             <!-- Social Media -->
@@ -673,7 +740,34 @@
         });
     </script>
     
+
+    
+
+      <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+            document.querySelector('.nav-menu').style.display = 'flex';
+        }
+        function toggleMenu() {
+            var menu = document.querySelector('.nav-menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+    </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
     
 </body>
 </html>
