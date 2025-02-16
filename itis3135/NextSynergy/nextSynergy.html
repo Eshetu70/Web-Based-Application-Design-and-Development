@@ -44,18 +44,7 @@
             translateBox.style.display = translateBox.style.display === "none" ? "flex" : "none";
         }
     
-        function toggleMenu() {
-            var navMenu = document.getElementById("navMenu");
-            if (window.innerWidth <= 768) {
-                navMenu.classList.toggle("show-menu");
-            }
-        }
-    
-        document.querySelectorAll(".dropdown-menu a").forEach(item => {
-            item.addEventListener("click", function() {
-                document.getElementById("navMenu").classList.remove("show-menu");
-            });
-        });
+        
     
         
     </script>
