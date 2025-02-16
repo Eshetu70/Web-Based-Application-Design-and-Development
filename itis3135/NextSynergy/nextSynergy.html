@@ -44,14 +44,32 @@
             translateBox.style.display = translateBox.style.display === "none" ? "flex" : "none";
         }
     
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+            
+            if (window.innerWidth > 768) {
+                document.querySelector('.nav-menu').style.display = 'flex';
+            } else {
+                document.getElementById('navMenu').classList.remove("show-menu");
+            }
+        }
+    
         function toggleMenu() {
             var navMenu = document.getElementById("navMenu");
-            navMenu.classList.toggle("show-menu");
+            if (window.innerWidth <= 768) {
+                navMenu.classList.toggle("show-menu");
+            }
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
-
     <style>
         
       

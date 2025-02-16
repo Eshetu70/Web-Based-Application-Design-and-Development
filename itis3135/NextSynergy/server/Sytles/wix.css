@@ -38,7 +38,7 @@
 /* Navigation Menu */
 .nav-menu {
     list-style: none;
-    display: flex;
+    display: none;
     gap: 5px;
     padding: 0;
 }
@@ -46,9 +46,7 @@
 .nav-menu li {
     display: inline;
 }
- #navMenu{
-    display: none;
- }
+
 .nav-menu a {
     color: white;
     text-decoration: none;
