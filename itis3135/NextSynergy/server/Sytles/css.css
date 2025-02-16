@@ -55,8 +55,20 @@
         } */
          
          /* Responsive menu for mobile devices */
-       
-       
+         .dropdown {
+            display: none;
+            flex-direction: column;
+            background: #003366;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+        .dropdown a {
+            padding: 15px;
+            display: block;
+        }
         .menu-icon {
             display: flex;
             font-size: 24px;
@@ -65,7 +77,14 @@
             padding: 10px;
             text-align: center;
         }
-        
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
 
 
         .course-list, .icon-list {
