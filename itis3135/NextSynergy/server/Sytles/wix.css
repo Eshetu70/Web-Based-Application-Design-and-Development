@@ -46,7 +46,9 @@
 .nav-menu li {
     display: inline;
 }
-
+ #navMenu{
+    display: none;
+ }
 .nav-menu a {
     color: white;
     text-decoration: none;
