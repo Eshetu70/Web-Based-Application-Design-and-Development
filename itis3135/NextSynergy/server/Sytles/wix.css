@@ -156,7 +156,7 @@
     font-size: 13px;
     padding: 8px;
     text-decoration: none;
-    display: none;
+    display: block;
     transition: background 0.2s ease;
 }
 
@@ -166,7 +166,7 @@
 
 @media screen and (max-width: 768px) {
     .dropdown-menu {
-        display: none;
+        display: flex;
     }
 }
 
