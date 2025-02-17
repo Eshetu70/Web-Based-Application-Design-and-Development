@@ -738,6 +738,32 @@
     </script>
     
 
+    <script>function showSection(sectionId) {
+        console.log("Attempting to show section:", sectionId);
+    
+        // Hide all sections
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(function(section) {
+            section.style.display = 'none';
+        });
+    
+        // Show the selected section
+        var selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.style.display = 'block';
+            console.log("Successfully displayed section:", sectionId);
+    
+            // Hide menu after selection (for mobile)
+            var nav = document.getElementById('navMenu');
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            }
+        } else {
+            console.error("Section with ID '" + sectionId + "' not found.");
+        }
+    }
+    </script>
+
    
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     

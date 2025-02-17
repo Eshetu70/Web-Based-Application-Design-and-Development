@@ -2,11 +2,14 @@
 .container {
     max-width: 1000px;
     margin: 30px auto;
-    padding: 20px;
+    padding: 10px;
     background: #004080;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
 }
+
+
 
 /* Section Heading */
 .section h2 {
