@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="server/Sytles/footer.css">
     <link rel="stylesheet" href="server/Sytles/order.css">
     <style>
+        /* Custom Header */
         .custom-header {
             position: relative;
             width: 100%;
@@ -31,18 +32,6 @@
             z-index: -1;
         }
 
-        /* Iframe container */
-        .iframe-container {
-            width: 100%;
-            height: calc(100vh - 150px);
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         /* Back Button */
         .back-btn {
             position: absolute;
@@ -55,6 +44,57 @@
             color: black;
             font-weight: bold;
         }
+
+        /* Iframe Container */
+        .iframe-container {
+            width: 100%;
+            height: calc(100vh - 150px);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .custom-header {
+                height: 100px; /* Reduce header height for small screens */
+                font-size: 18px; /* Adjust text size */
+                padding-top: 10px;
+            }
+
+            .back-btn {
+                top: 5px;
+                left: 10px;
+                padding: 6px 10px;
+                font-size: 14px;
+            }
+
+            .iframe-container {
+                height: calc(100vh - 100px); /* Adjust iframe height */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .custom-header {
+                height: 80px;
+                font-size: 16px;
+                padding-top: 5px;
+            }
+
+            .back-btn {
+                top: 3px;
+                left: 5px;
+                padding: 5px 8px;
+                font-size: 12px;
+            }
+
+            .iframe-container {
+                height: calc(100vh - 80px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -66,7 +106,7 @@
             </video>
         </div>
         <a href="nextSynergy.html" class="back-btn">← Back</a>
-        <h1>Welcome to EthioBooks</h1>
+        <h2>Welcome to EthioBooks</h2>
     </div>
 
     <div class="iframe-container">
