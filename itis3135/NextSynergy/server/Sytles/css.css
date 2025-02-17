@@ -49,12 +49,12 @@
      
         @media screen and (max-width: 768px) {
             .container {
-                width: 95%; /* Ensures smaller screens don't have extra spacing */
+                width: 100%; /* Ensures smaller screens don't have extra spacing */
             }
         
             .section {
                 padding: 15px;
-                text-align: center;
+                
             }
         }
         /*
