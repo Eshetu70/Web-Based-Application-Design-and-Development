@@ -230,8 +230,7 @@
 
 @media (max-width: 768px) {
     .section {
-        width: 100%; /* Ensures it doesn't touch the edges */
-        max-width: 400px; /* Limits width for better readability */
+        
         margin: 0 auto; /* Centers the section horizontally */
         
         display: flex;
