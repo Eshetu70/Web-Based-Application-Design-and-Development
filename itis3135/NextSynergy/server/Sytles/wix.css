@@ -227,3 +227,17 @@
     border-radius: 4px;
     max-width: 20px;
 }
+
+@media (max-width: 768px) {
+    .section {
+        width: 90%; /* Ensures it doesn't touch the edges */
+        max-width: 400px; /* Limits width for better readability */
+        margin: 0 auto; /* Centers the section horizontally */
+        padding: 20px;
+        text-align: center; /* Centers the text content */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
