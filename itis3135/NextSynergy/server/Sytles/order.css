@@ -38,7 +38,7 @@ p {
     line-height: 1.6;
 }
 .section {
-    padding: 60px 25px;
+    
     background: linear-gradient(to right, #eef2f3, #dfe6e9);
     border-radius: 15px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
