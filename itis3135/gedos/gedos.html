@@ -50,16 +50,25 @@
     }
 
      /* Logo Styles */
-     .logo {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      z-index: 4;
-    }
-    .logo img {
-      width: 90px; /* Adjust as needed */
-      height: auto;
-    }
+.logo {
+  position: absolute;
+  top: 1px;
+  left: 20px;
+  z-index: 10; /* Ensure logo is above the video */
+}
+
+.logo img {
+  width: 150px;            /* Increased size for visibility */
+  height: auto;
+  border-radius: 10px;       /* Smooth corners for a professional look */
+  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.5)); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);   /* Slight scale on hover for a dynamic effect */
+  filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.6));
+}
     header p {
       margin: 5px 0 0;
       font-size: 1em;
@@ -247,7 +256,7 @@
       Your browser does not support the video tag.
     </video>
     <div class="logo">
-      <img src="images/logo.png" alt="Company Logo">
+      <img src="images/logos.png" alt="Company Logo">
     </div>
     <h1>Global Ceramics Imports & Professional Services</h1>
     <!-- Translator Icon -->
