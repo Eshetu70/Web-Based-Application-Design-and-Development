@@ -61,9 +61,8 @@
       z-index: -1;
     }
     header h1 {
-      margin: 0;
+      margin: 70px 0 0; /* Push title below the logo */
       font-size: 1.8em;
-      padding-top: 20px;
     }
     header p {
       margin: 5px 0 0;
@@ -96,7 +95,6 @@
       right: 60px; /* Adjust so it doesn't overlap translator icon */
       z-index: 5;
       cursor: pointer;
-      color: #fff;
     }
     /* Navigation Menu */
     nav {
@@ -249,12 +247,20 @@
       .logo img {
         width: 100px; /* Smaller logo on mobile */
       }
+      header h1 {
+        font-size: 1.4em; /* Smaller header title */
+        margin-top: 70px;  /* Adjusted margin to remain below logo */
+      }
       nav ul {
         display: none;
         flex-direction: column;
       }
       .mobile-menu-icon {
         display: block;
+      }
+      /* Make mobile menu icon appear white */
+      .mobile-menu-icon img {
+        filter: brightness(0) invert(1);
       }
     }
   </style>
@@ -269,6 +275,8 @@
     <div class="logo">
       <img src="images/logos.png" alt="Company Logo">
     </div>
+    <!-- H1 now appears below the logo -->
+    <h1>Gedas Global Ceramics Imports & Professional Services</h1>
     <!-- Translator Icon -->
     <div class="translate-icon" onclick="toggleTranslate()">
       <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Translate" width="24" height="24">
@@ -291,8 +299,6 @@
         <option value="es">Spanish</option>
       </select>
     </div>
-    <h1>Gedas Global Ceramics Imports & Professional Services</h1>
-
   </header>
   
   <!-- Navigation Menu -->
@@ -351,7 +357,7 @@
       </figure>
     </section>
     
-    <!-- Material Overview Section -->
+    <!-- Material Overview Section (Detailed Information) -->
     <section id="material-overview">
       <h2>Material Overview</h2>
       <p><strong>Special ceramics are at the heart of modern construction.</strong> Engineered for unmatched durability, exceptional heat resistance, and superior chemical stability, these materials are integral to both heavy industrial applications and refined architectural projects. Their unique properties not only provide reliability in extreme conditions but also contribute to energy efficiency and sustainability across building processes.</p>
@@ -511,7 +517,7 @@
       const tabs = document.querySelectorAll(".tab-link");
       const sections = document.querySelectorAll("main section");
       
-      // Set initial active section (should be "introduction")
+      // Set the initial active section (should be "introduction")
       sections.forEach(section => {
         section.classList.toggle("active", section.id === "introduction");
       });
@@ -521,10 +527,10 @@
           event.preventDefault();
           // Hide all sections
           sections.forEach(section => section.classList.remove("active"));
-          // Show target section
+          // Show the target section
           const targetId = this.getAttribute("data-target");
           document.getElementById(targetId).classList.add("active");
-          // If on mobile, hide the navigation menu after a selection
+          // If on mobile, hide the navigation menu after selection
           if (window.innerWidth <= 768) {
             document.querySelector("nav ul").style.display = "none";
           }
