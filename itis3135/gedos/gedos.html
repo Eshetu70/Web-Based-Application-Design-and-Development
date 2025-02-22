@@ -49,26 +49,50 @@
       padding-top: 20px;
     }
 
-     /* Logo Styles */
+  /* Logo Styles */
 .logo {
   position: absolute;
-  top: 1px;
+  top: 5px;
+  bottom: 5px;
   left: 20px;
-  z-index: 10; /* Ensure logo is above the video */
+  z-index: 10; /* Ensure logo is above video */
 }
-
 .logo img {
-  width: 150px;            /* Increased size for visibility */
+  width: 150px;            /* Larger size for desktop */
   height: auto;
-  border-radius: 10px;       /* Smooth corners for a professional look */
+  border-radius: 10px;       /* Smooth, professional corners */
   filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.5)); /* Subtle shadow for depth */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-
 .logo img:hover {
-  transform: scale(1.1);   /* Slight scale on hover for a dynamic effect */
+  transform: scale(1.1);   /* Slight scale on hover */
   filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.6));
 }
+
+/* Mobile Menu Icon Styles */
+.mobile-menu-icon {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 60px;  /* Adjust so it doesn't overlap with translator icon */
+  z-index: 5;
+  cursor: pointer;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .logo img {
+    width: 100px; /* Smaller logo on mobile */
+  }
+  .mobile-menu-icon {
+    display: block;
+  }
+  /* Optionally, hide the full navigation menu by default on mobile */
+  nav ul {
+    display: none;
+  }
+}
+
     header p {
       margin: 5px 0 0;
       font-size: 1em;
@@ -255,6 +279,7 @@
       <source src="https://video.wixstatic.com/video/11062b_cf8c08e78da1486686f59c0f6b9fbd11/720p/mp4/file.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    <!-- Logo on the left -->
     <div class="logo">
       <img src="images/logos.png" alt="Company Logo">
     </div>
@@ -262,6 +287,10 @@
     <!-- Translator Icon -->
     <div class="translate-icon" onclick="toggleTranslate()">
       <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Translate" width="24" height="24">
+    </div>
+    <!-- Mobile Menu Icon (visible on mobile) -->
+    <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="Menu" width="30" height="30">
     </div>
     <!-- Translate Box -->
     <div id="translateBox">
@@ -516,6 +545,16 @@
         });
       });
     });
+
+    function toggleMobileMenu() {
+      const navUl = document.querySelector("nav ul");
+      if (navUl.style.display === "block") {
+        navUl.style.display = "none";
+      } else {
+        navUl.style.display = "block";
+      }
+    }
+    
   </script>
   <!-- Load Google Translate API -->
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
