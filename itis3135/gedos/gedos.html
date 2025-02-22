@@ -27,6 +27,24 @@
       color: #fff;
       text-align: center;
     }
+    /* Logo Styles */
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      z-index: 4;
+    }
+    .logo img {
+      width: 120px; /* Increased size */
+      height: auto;
+      border-radius: 8px;
+      /* Add subtle drop-shadow for an amazing look */
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.1);
+    }
     /* Global Site Header with Video Background */
     header {
       position: relative;
@@ -48,52 +66,6 @@
       font-size: 1.8em;
       padding-top: 20px;
     }
-
-  /* Logo Styles */
-.logo {
-  position: absolute;
-  top: 5px;
-  bottom: 5px;
-  left: 20px;
-  z-index: 10; /* Ensure logo is above video */
-}
-.logo img {
-  width: 150px;            /* Larger size for desktop */
-  height: auto;
-  border-radius: 10px;       /* Smooth, professional corners */
-  filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.5)); /* Subtle shadow for depth */
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-.logo img:hover {
-  transform: scale(1.1);   /* Slight scale on hover */
-  filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.6));
-}
-
-/* Mobile Menu Icon Styles */
-.mobile-menu-icon {
-  display: none;
-  position: absolute;
-  top: 10px;
-  right: 60px;  /* Adjust so it doesn't overlap with translator icon */
-  z-index: 5;
-  cursor: pointer;
-  color: white;
-}
-
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-  .logo img {
-    width: 100px; /* Smaller logo on mobile */
-  }
-  .mobile-menu-icon {
-    display: block;
-  }
-  /* Optionally, hide the full navigation menu by default on mobile */
-  nav ul {
-    display: none;
-  }
-}
-
     header p {
       margin: 5px 0 0;
       font-size: 1em;
@@ -546,16 +518,6 @@
         });
       });
     });
-
-    function toggleMobileMenu() {
-      const navUl = document.querySelector("nav ul");
-      if (navUl.style.display === "block") {
-        navUl.style.display = "none";
-      } else {
-        navUl.style.display = "block";
-      }
-    }
-    
   </script>
   <!-- Load Google Translate API -->
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
