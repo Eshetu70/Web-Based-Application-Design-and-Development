@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Global Ceramics Imports & Professional Services with detailed information about international export and import of premium construction materials.">
+  <title>Global Ceramics Imports & Professional Services</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      color: #003366;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header, footer {
+      color: #fff;
+      text-align: center;
+    }
+    /* Global Site Header with Video Background */
+    header {
+      position: relative;
+      height: 150px; /* Adjust height as needed */
+      overflow: hidden;
+    }
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: -1;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      padding-top: 20px;
+    }
+
+     /* Logo Styles */
+     .logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      z-index: 4;
+    }
+    .logo img {
+      width: 90px; /* Adjust as needed */
+      height: auto;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1em;
+    }
+    /* Translator Icon and Box */
+    .translate-icon {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 3;
+    }
+    #translateBox {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 20px;
+      z-index: 3;
+      background-color: rgba(255,255,255,0.9);
+      color: #333;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    /* Navigation Menu */
+    nav {
+      background-color: #003366;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    /* Main Content Styling */
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    /* Hide sections by default except active one */
+    main section {
+      background-color: #fff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: none;
+    }
+    main section.active {
+      display: block;
+    }
+    h2, h3 {
+      color: #003366;
+    }
+    ul {
+      margin: 0 0 10px 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    figure {
+      margin: 20px auto;
+      text-align: center;
+    }
+    figure img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 4px;
+    }
+    figure figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 8px;
+    }
+    /* New Global Leadership Section */
+    #global-leadership {
+      text-align: left;
+    }
+    #global-leadership h2 {
+      margin-bottom: 15px;
+      font-size: 1.8em;
+      text-align: center;
+    }
+    #global-leadership h3 {
+      color: #003366;
+      margin-top: 20px;
+    }
+    #global-leadership p, #global-leadership ul {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+    #global-leadership ul {
+      margin-left: 20px;
+    }
+    /* Enhanced Contact Section with Full-Screen iFrame */
+    #contact {
+      background: #fdfdfd;
+      border: 1px solid #ddd;
+      padding: 30px;
+      border-radius: 8px;
+    }
+    #contact h2 {
+      margin-bottom: 15px;
+      font-size: 1.8em;
+    }
+    #contact p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+    #contact iframe {
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    /* Footer Styles */
+    footer {
+      background-color: #003366;
+      padding: 20px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin: 10px;
+    }
+    .footer-column h3 {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-column ul li {
+      margin: 5px 0;
+    }
+    .footer-column ul li a {
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Global Site Header -->
+  <header>
+    <video autoplay muted loop playsinline>
+      <source src="https://video.wixstatic.com/video/11062b_cf8c08e78da1486686f59c0f6b9fbd11/720p/mp4/file.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="logo">
+      <img src="images/logo.png" alt="Company Logo">
+    </div>
+    <h1>Global Ceramics Imports & Professional Services</h1>
+    <!-- Translator Icon -->
+    <div class="translate-icon" onclick="toggleTranslate()">
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Translate" width="24" height="24">
+    </div>
+    <!-- Translate Box -->
+    <div id="translateBox">
+      <div id="google_translate_element"></div>
+      <select id="languageSwitcher" onchange="translateLanguage()">
+        <option value="en">English</option>
+        <option value="am">Amharic</option>
+        <option value="om">Oromo</option>
+        <option value="ti">Tigrinya</option>
+        <option value="ar">Arabic</option>
+        <option value="fr">French</option>
+        <option value="zh-CN">Chinese (Simplified)</option>
+        <option value="es">Spanish</option>
+      </select>
+    </div>
+  </header>
+  
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="#introduction" class="tab-link" data-target="introduction">Home</a></li>
+      <li><a href="#global-leadership" class="tab-link" data-target="global-leadership">Leadership</a></li>
+      <li><a href="#material-overview" class="tab-link" data-target="material-overview">Materials</a></li>
+      <li><a href="#services" class="tab-link" data-target="services">Services</a></li>
+      <li><a href="#market-trends" class="tab-link" data-target="market-trends">Market Trends</a></li>
+      <li><a href="#import-regulations" class="tab-link" data-target="import-regulations">Regulations</a></li>
+      <li><a href="#contact" class="tab-link" data-target="contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Introduction Section -->
+    <section id="introduction" class="active">
+      <h2>Introduction</h2>
+      <p>As a leading global importer of premium construction materials and ceramics, we partner with world-class manufacturers and visionary companies. Our extensive network spans across continents, ensuring that we source the most innovative, sustainable, and high-quality materials available.</p>
+      <p>We collaborate with industry giants and emerging innovators alike, setting new benchmarks for performance and aesthetics in construction.</p>
+      <figure>
+        <img src="images/about.png" alt="Overview of Construction Materials">
+        <figcaption>A glimpse into our diverse portfolio of advanced construction materials and ceramics.</figcaption>
+      </figure>
+    </section>
+    
+    <!-- Global Leadership Section -->
+    <section id="global-leadership">
+      <h2>Global Leadership and Expertise</h2>
+      <p><strong>Leading Global Importer:</strong> Our company is recognized as one of the foremost players in sourcing and distributing premium construction materials and ceramics worldwide. This reflects a robust infrastructure and a deep understanding of international markets and regulations.</p>
+      <h3>Premium Products and Quality Assurance</h3>
+      <p><strong>Premium Construction Materials and Ceramics:</strong> We offer materials of superior quality, durability, and aesthetic appeal—from high-end ceramic tiles to sophisticated sanitary wares—meeting rigorous quality standards and offering a competitive edge over standard alternatives.</p>
+      <h3>Strategic Partnerships and Collaborations</h3>
+      <p><strong>World-Class Manufacturers and Visionary Companies:</strong> Our strategic alliances with top-tier manufacturers ensure access to the best products and industry-leading expertise. This collaboration drives:</p>
+      <ul>
+        <li><strong>Innovative Product Development:</strong> Joint ventures leading to groundbreaking products.</li>
+        <li><strong>Shared Expertise:</strong> Leveraging the experience and technology of established industry leaders.</li>
+      </ul>
+      <p>Working with both industry giants and emerging innovators sets new standards in performance and aesthetics.</p>
+      <h3>Extensive Global Network and Sourcing Strategy</h3>
+      <p><strong>Network Spanning Across Continents:</strong> Our international network allows us to tap into diverse markets and suppliers, providing:</p>
+      <ul>
+        <li><strong>Access to Diverse Technologies:</strong> Unique manufacturing techniques and sustainable practices from different regions.</li>
+        <li><strong>Supply Chain Resilience:</strong> Reduced dependency on a single market, mitigating economic and political risks.</li>
+        <li><strong>Cultural and Design Diversity:</strong> Inspiration from various architectural styles and construction techniques.</li>
+      </ul>
+      <h3>Focus on Innovation, Sustainability, and Aesthetics</h3>
+      <p><strong>Innovative and Sustainable Sourcing:</strong> We emphasize sourcing materials that are eco-friendly, high-performing, and visually appealing, contributing to environmentally responsible and aesthetically superior construction projects.</p>
+      <h3>Setting New Benchmarks</h3>
+      <p>By constantly pushing the envelope in performance and design, we redefine industry standards—offering materials that enhance durability, safety, and energy efficiency while elevating the visual appeal of structures.</p>
+      <figure>
+        <img src="images/global.png" alt="Global Leadership">
+        <figcaption>Global leadership and expertise in construction materials.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Material Overview Section -->
+    <section id="material-overview">
+      <h2>Material Overview</h2>
+      <p>Special ceramics are at the heart of modern construction. These materials are engineered to provide unmatched durability, heat resistance, and chemical stability. Our portfolio includes a wide array of ceramics for demanding industrial applications and sophisticated architectural designs.</p>
+      <p>Our partners are pioneers in refractories, porcelain, technical ceramics, bioceramics, and advanced ceramics. They leverage cutting-edge technology and strict quality control to drive innovation in construction worldwide.</p>
+      <ul>
+        <li><strong>Refractories:</strong> Essential for high-temperature furnaces and kilns.</li>
+        <li><strong>Porcelain:</strong> Versatile products used in sanitary ware, tiling, and decorative cladding.</li>
+        <li><strong>Technical Ceramics:</strong> Critical for precision engineering in electronics, medical devices, and aerospace.</li>
+        <li><strong>Bioceramics:</strong> Specialized for dental and orthopedic applications.</li>
+        <li><strong>Advanced Ceramics:</strong> Cutting-edge solutions for modern engineering and sustainable construction.</li>
+      </ul>
+      <figure>
+        <img src="images/artech.png" alt="Special Ceramics">
+        <figcaption>Our curated collection of high-performance ceramics developed by industry leaders.</figcaption>
+      </figure>
+      <p>Innovative companies in this sector continuously strive to enhance energy efficiency and environmental performance, ensuring our offerings remain robust and eco-friendly.</p>
+      <p><strong>Special ceramics are at the heart of modern construction.</strong> Engineered for unmatched durability, exceptional heat resistance, and superior chemical stability, these materials are integral to both heavy industrial applications and refined architectural projects. Their unique properties not only provide reliability in extreme conditions but also contribute to energy efficiency and sustainability across building processes.</p>
+      
+      <h3>Innovative Material Solutions for Modern Challenges</h3>
+      <p>Our portfolio encompasses a wide array of ceramics, each tailored to address specific industry demands. Through strategic partnerships with pioneers in the ceramics field, we ensure that every product benefits from state-of-the-art technology and stringent quality control. These collaborations empower us to set new benchmarks in performance, aesthetics, and sustainability on a global scale.</p>
+      
+      <h3>Detailed Product Categories</h3>
+      <p><strong>Refractories – Application & Benefits:</strong> Designed for high-temperature environments, refractories are essential for the safe and efficient operation of furnaces, kilns, and other thermal processing units. Their ability to withstand intense heat and resist thermal shock is critical in industries such as metallurgy, glass production, and chemical processing. Recent advancements also focus on reducing energy consumption and prolonging the lifespan of industrial equipment.</p>
+      
+      <p><strong>Porcelain – Versatility & Aesthetic Appeal:</strong> Porcelain ceramics are celebrated for their smooth finish, durability, and resistance to moisture and stains. They are widely used in sanitary ware, floor and wall tiling, and decorative cladding. Their elegant appearance coupled with robust performance makes them a favorite in both residential and commercial construction, contributing to modern, sleek design trends.</p>
+      
+      <p><strong>Technical Ceramics – Precision & Performance:</strong> Engineered for applications where exacting performance is crucial, technical ceramics are employed in electronics, medical devices, aerospace components, and automotive industries. Their exceptional hardness, low thermal conductivity, and outstanding wear resistance enable the production of precision components that drive the next generation of high-tech innovations. This category is vital for miniaturized components and devices that require both durability and precision.</p>
+      
+      <p><strong>Bioceramics – Medical Innovation & Biocompatibility:</strong> Specially formulated for dental and orthopedic applications, bioceramics offer excellent compatibility with biological tissues. They are used in dental implants, bone grafts, and joint replacements, where their strength and bio-inert properties promote natural tissue integration and healing. Advances in bioceramic technology are continually enhancing patient outcomes and expanding the possibilities in regenerative medicine.</p>
+      
+      <p><strong>Advanced Ceramics – Cutting-Edge Engineering & Sustainability:</strong> This category represents the forefront of ceramic innovation, offering materials with enhanced mechanical properties, superior wear resistance, and the ability to function under extreme conditions. Advanced ceramics are increasingly utilized in renewable energy systems, smart infrastructure, and sustainable construction solutions. They not only push the limits of performance but also contribute to reducing environmental impact through longer lifecycles and lower maintenance requirements.</p>
+      
+      <h3>Sustainability and Future Innovations</h3>
+      <p>The development of special ceramics is closely aligned with the global drive toward sustainable construction. Innovations in material science have led to ceramics that not only excel in performance but also minimize environmental footprints. By incorporating energy-efficient manufacturing processes and recycling technologies, our ceramics help build infrastructures that are resilient, eco-friendly, and future-proof. The integration of smart materials further enables structures to adapt to changing environmental conditions, ensuring long-term performance and safety.</p>
+    </section>
+
+    <!-- Professional Services Section -->
+    <section id="services">
+      <h2>Professional Services</h2>
+      <p>We provide a full spectrum of services designed to facilitate international trade in construction materials. Our expert team collaborates with architects, engineers, and project managers from the initial consultation to final delivery, ensuring seamless integration of our products into your projects.</p>
+      <p>Our globally recognized service partners offer customized solutions—from logistics and quality assurance to regulatory compliance and installation support—ensuring every project achieves optimal performance and aesthetic appeal.</p>
+      <figure>
+        <img src="images/special.png" alt="Professional Services">
+        <figcaption>Expert consulting, design, installation, and maintenance services for construction projects.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Global Market Trends Section -->
+    <section id="market-trends">
+      <h2>Global Market Trends</h2>
+      <p>The construction materials landscape is transforming as global market trends shift toward sustainability, technological integration, and innovative design. Our research teams collaborate with international partners to monitor and forecast emerging trends, ensuring that we remain at the forefront of industry innovation.</p>
+      <p>Significant trends include rapid urbanization, breakthroughs in material technology, and a growing emphasis on eco-friendly manufacturing practices. Our insights help clients stay ahead in a dynamic global market.</p>
+      <ul>
+        <li>Rapid urbanization and infrastructure expansion in emerging economies.</li>
+        <li>Breakthroughs in material performance driven by increased R&D investments.</li>
+        <li>An emphasis on green construction and energy efficiency.</li>
+      </ul>
+      <figure>
+        <img src="images/indusrial.png" alt="Global Market Trends">
+        <figcaption>Insights into the global trends shaping the future of construction materials.</figcaption>
+      </figure>
+      <p>Through strategic partnerships and continuous market analysis, we deliver the latest advancements and best practices to meet tomorrow’s construction challenges.</p>
+    </section>
+
+    <!-- Import Regulations and Compliance Section -->
+    <section id="import-regulations">
+      <h2>Import Regulations and Compliance</h2>
+      <p>International trade in construction materials is governed by strict regulatory frameworks that ensure safety, quality, and environmental responsibility. We work with partners who adhere to globally recognized standards such as ISO 9001, ISO 14001, ASTM, and CE marking protocols.</p>
+      <p>Our quality assurance team supports our clients by providing comprehensive documentation, compliance assistance, and expert guidance to navigate customs and trade agreements, ensuring smooth market entry worldwide.</p>
+      <figure>
+        <img src="images/comp.png" alt="Import Regulations">
+        <figcaption>Robust certification and testing procedures ensure our products meet global standards.</figcaption>
+      </figure>
+      <p>By maintaining a transparent and accountable supply chain, we support efficient international operations and seamless customs clearance.</p>
+    </section>
+
+    <!-- Contact Section with Embedded Registration and Additional Order Form Information -->
+    <section id="contact">
+      <h2>Contact and Register</h2>
+      <p>If you are looking to partner with a globally renowned importer of construction materials or require expert advice on ceramics and advanced building products, please get in touch. Our dedicated team is ready to discuss your project needs and provide tailored solutions.</p>
+      <p>We collaborate with companies worldwide to deliver excellence in every project. The registration portal below loads in full‑screen mode for an immersive experience.</p>
+      
+      <!-- Order Form Title Suggestions -->
+      <div class="order-form-instructions">
+        <h3>Order Form Title Suggestions</h3>
+        <p>Below are some title suggestions you might use on a contact/order form that includes file uploads for product orders:</p>
+        <ul>
+          <li><strong>Contact Information:</strong> For basic details such as name, email, and phone number.</li>
+          <li><strong>Product Order Details:</strong> For specifying which products you’re interested in and any order-related questions.</li>
+          <li><strong>Upload Files:</strong> For attaching relevant documents, images, or additional files needed to process the order.</li>
+          <li><strong>Additional Instructions or Comments:</strong> For any extra information, special requests, or clarification.</li>
+          <li><strong>Submit Your Order:</strong> A final call-to-action for form submission.</li>
+        </ul>
+      </div>
+      
+      <!-- Full-Screen Registration iFrame -->
+      <iframe src="https://www.nextsynergytech.online/registration" title="Contact and Registration"></iframe>
+      
+      <ul>
+        <li>Email: info@globalceramics.com</li>
+        <li>Phone: +1 (123) 456-7890</li>
+        <li>Address: 123 Ceramics Avenue, Industrial Park, City, Country</li>
+      </ul>
+    </section>
+  </main>
+  
+  <!-- Footer with Multiple Columns -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="#introduction" class="tab-link" data-target="introduction">Our Mission</a></li>
+          <li><a href="#services" class="tab-link" data-target="services">Our Services</a></li>
+          <li><a href="#material-overview" class="tab-link" data-target="material-overview">Our Materials</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#market-trends" class="tab-link" data-target="market-trends">Market Trends</a></li>
+          <li><a href="#import-regulations" class="tab-link" data-target="import-regulations">Regulations</a></li>
+          <li><a href="#contact" class="tab-link" data-target="contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+          <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2025 Global Ceramics Imports. All Rights Reserved.</p>
+  </footer>
+  
+  <!-- Google Translate and Tab Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,am,om,ti,ar,fr,zh-CN,es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+    function translateLanguage() {
+      var selectedLang = document.getElementById("languageSwitcher").value;
+      var googleFrame = document.querySelector(".goog-te-combo");
+      if (googleFrame) {
+        googleFrame.value = selectedLang;
+        googleFrame.dispatchEvent(new Event("change"));
+      }
+    }
+    function toggleTranslate() {
+      var translateBox = document.getElementById("translateBox");
+      translateBox.style.display = translateBox.style.display === "none" ? "flex" : "none";
+    }
+    
+    // Tab functionality: hide all sections and show the target section
+    document.addEventListener("DOMContentLoaded", function() {
+      const tabs = document.querySelectorAll(".tab-link");
+      const sections = document.querySelectorAll("main section");
+      
+      // Set the initial active section (should be "introduction")
+      sections.forEach(section => {
+        section.classList.toggle("active", section.id === "introduction");
+      });
+      
+      tabs.forEach(tab => {
+        tab.addEventListener("click", function(event) {
+          event.preventDefault();
+          // Hide all sections
+          sections.forEach(section => section.classList.remove("active"));
+          // Show the target section
+          const targetId = this.getAttribute("data-target");
+          document.getElementById(targetId).classList.add("active");
+        });
+      });
+    });
+  </script>
+  <!-- Load Google Translate API -->
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
