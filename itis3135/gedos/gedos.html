@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Global Ceramics Imports & Professional Services with detailed information about international export and import of premium construction materials.">
+  <meta name="description" content="Gedas Global Ceramics Imports & Professional Services with detailed information about international export and import of premium construction materials.">
   <title>Gedas Global Ceramics Imports & Professional Services</title>
   <style>
     /* Global Styles */
@@ -38,7 +38,6 @@
       width: 120px; /* Increased size */
       height: auto;
       border-radius: 8px;
-      /* Add subtle drop-shadow for an amazing look */
       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
       transition: transform 0.3s ease;
     }
@@ -88,6 +87,15 @@
       color: #333;
       padding: 10px;
       border-radius: 4px;
+    }
+    /* Mobile Menu Icon */
+    .mobile-menu-icon {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 60px; /* Adjust so it doesn't overlap translator icon */
+      z-index: 5;
+      cursor: pointer;
     }
     /* Navigation Menu */
     nav {
@@ -235,24 +243,28 @@
     .footer-column ul li a {
       color: #fff;
     }
+    /* Mobile Adjustments */
     @media (max-width: 768px) {
-      body {
-        font-size: 16px;
+      .logo img {
+        width: 100px; /* Smaller logo on mobile */
       }
       nav ul {
+        display: none;
         flex-direction: column;
+      }
+      .mobile-menu-icon {
+        display: block;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Global Site Header -->
+  <!-- Global Site Header with Logo -->
   <header>
     <video autoplay muted loop playsinline>
       <source src="https://video.wixstatic.com/video/11062b_cf8c08e78da1486686f59c0f6b9fbd11/720p/mp4/file.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <!-- Logo on the left -->
     <div class="logo">
       <img src="images/logos.png" alt="Company Logo">
     </div>
@@ -261,7 +273,7 @@
     <div class="translate-icon" onclick="toggleTranslate()">
       <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Translate" width="24" height="24">
     </div>
-    <!-- Mobile Menu Icon (visible on mobile) -->
+    <!-- Mobile Menu Icon -->
     <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
       <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="Menu" width="30" height="30">
     </div>
@@ -302,7 +314,7 @@
       <p>As a leading global importer of premium construction materials and ceramics, we partner with world-class manufacturers and visionary companies. Our extensive network spans across continents, ensuring that we source the most innovative, sustainable, and high-quality materials available.</p>
       <p>We collaborate with industry giants and emerging innovators alike, setting new benchmarks for performance and aesthetics in construction.</p>
       <figure>
-        <img src="images/about.png" alt="Overview of Construction Materials">
+        <img src="images/home.jpg" alt="Overview of Construction Materials">
         <figcaption>A glimpse into our diverse portfolio of advanced construction materials and ceramics.</figcaption>
       </figure>
     </section>
@@ -336,24 +348,10 @@
         <figcaption>Global leadership and expertise in construction materials.</figcaption>
       </figure>
     </section>
-
+    
     <!-- Material Overview Section -->
     <section id="material-overview">
       <h2>Material Overview</h2>
-      <p>Special ceramics are at the heart of modern construction. These materials are engineered to provide unmatched durability, heat resistance, and chemical stability. Our portfolio includes a wide array of ceramics for demanding industrial applications and sophisticated architectural designs.</p>
-      <p>Our partners are pioneers in refractories, porcelain, technical ceramics, bioceramics, and advanced ceramics. They leverage cutting-edge technology and strict quality control to drive innovation in construction worldwide.</p>
-      <ul>
-        <li><strong>Refractories:</strong> Essential for high-temperature furnaces and kilns.</li>
-        <li><strong>Porcelain:</strong> Versatile products used in sanitary ware, tiling, and decorative cladding.</li>
-        <li><strong>Technical Ceramics:</strong> Critical for precision engineering in electronics, medical devices, and aerospace.</li>
-        <li><strong>Bioceramics:</strong> Specialized for dental and orthopedic applications.</li>
-        <li><strong>Advanced Ceramics:</strong> Cutting-edge solutions for modern engineering and sustainable construction.</li>
-      </ul>
-      <figure>
-        <img src="images/artech.png" alt="Special Ceramics">
-        <figcaption>Our curated collection of high-performance ceramics developed by industry leaders.</figcaption>
-      </figure>
-      <p>Innovative companies in this sector continuously strive to enhance energy efficiency and environmental performance, ensuring our offerings remain robust and eco-friendly.</p>
       <p><strong>Special ceramics are at the heart of modern construction.</strong> Engineered for unmatched durability, exceptional heat resistance, and superior chemical stability, these materials are integral to both heavy industrial applications and refined architectural projects. Their unique properties not only provide reliability in extreme conditions but also contribute to energy efficiency and sustainability across building processes.</p>
       
       <h3>Innovative Material Solutions for Modern Challenges</h3>
@@ -373,7 +371,7 @@
       <h3>Sustainability and Future Innovations</h3>
       <p>The development of special ceramics is closely aligned with the global drive toward sustainable construction. Innovations in material science have led to ceramics that not only excel in performance but also minimize environmental footprints. By incorporating energy-efficient manufacturing processes and recycling technologies, our ceramics help build infrastructures that are resilient, eco-friendly, and future-proof. The integration of smart materials further enables structures to adapt to changing environmental conditions, ensuring long-term performance and safety.</p>
     </section>
-
+    
     <!-- Professional Services Section -->
     <section id="services">
       <h2>Professional Services</h2>
@@ -384,7 +382,7 @@
         <figcaption>Expert consulting, design, installation, and maintenance services for construction projects.</figcaption>
       </figure>
     </section>
-
+    
     <!-- Global Market Trends Section -->
     <section id="market-trends">
       <h2>Global Market Trends</h2>
@@ -401,7 +399,7 @@
       </figure>
       <p>Through strategic partnerships and continuous market analysis, we deliver the latest advancements and best practices to meet tomorrow’s construction challenges.</p>
     </section>
-
+    
     <!-- Import Regulations and Compliance Section -->
     <section id="import-regulations">
       <h2>Import Regulations and Compliance</h2>
@@ -413,8 +411,8 @@
       </figure>
       <p>By maintaining a transparent and accountable supply chain, we support efficient international operations and seamless customs clearance.</p>
     </section>
-
-    <!-- Contact Section with Embedded Registration and Additional Order Form Information -->
+    
+    <!-- Contact Section with Embedded Registration and Order Form Suggestions -->
     <section id="contact">
       <h2>Contact and Register</h2>
       <p>If you are looking to partner with a globally renowned importer of construction materials or require expert advice on ceramics and advanced building products, please get in touch. Our dedicated team is ready to discuss your project needs and provide tailored solutions.</p>
@@ -497,12 +495,21 @@
       translateBox.style.display = translateBox.style.display === "none" ? "flex" : "none";
     }
     
-    // Tab functionality: hide all sections and show the target section
+    // Mobile Menu Toggle and Auto-hide on Menu Item Click
+    function toggleMobileMenu() {
+      const navUl = document.querySelector("nav ul");
+      if (navUl.style.display === "block") {
+        navUl.style.display = "none";
+      } else {
+        navUl.style.display = "block";
+      }
+    }
+    
     document.addEventListener("DOMContentLoaded", function() {
       const tabs = document.querySelectorAll(".tab-link");
       const sections = document.querySelectorAll("main section");
       
-      // Set the initial active section (should be "introduction")
+      // Set initial active section (should be "introduction")
       sections.forEach(section => {
         section.classList.toggle("active", section.id === "introduction");
       });
@@ -512,9 +519,13 @@
           event.preventDefault();
           // Hide all sections
           sections.forEach(section => section.classList.remove("active"));
-          // Show the target section
+          // Show target section
           const targetId = this.getAttribute("data-target");
           document.getElementById(targetId).classList.add("active");
+          // If on mobile, hide the navigation menu after a selection
+          if (window.innerWidth <= 768) {
+            document.querySelector("nav ul").style.display = "none";
+          }
         });
       });
     });
