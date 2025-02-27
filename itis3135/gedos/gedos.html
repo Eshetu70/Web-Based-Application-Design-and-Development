@@ -369,18 +369,18 @@
     .footer-column ul li {
       margin: 5px 0;
     }
-
     @media (max-width: 768px) {
+      /* Hide h1 on mobile */
       header h1 {
         display: none;
       }
     
-      /* Ensure logo remains at the top */
+      /* Ensure logo remains at the top-left corner */
       .logo {
         position: absolute;
         top: 10px; /* Adjust as needed */
-        left: 20px;
-        transform: translateX(-50%);
+        left: 20px; /* Keeps it in the left corner */
+        transform: none; /* Remove translation to keep it aligned left */
         z-index: 1000;
       }
     
@@ -388,6 +388,7 @@
         width: 80px; /* Adjust logo size for mobile */
       }
     }
+    
 
     .container {
       max-width: 900px;
