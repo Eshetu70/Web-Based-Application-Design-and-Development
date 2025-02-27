@@ -36,92 +36,48 @@
     }
     /* Logo Styles */
     
-   /* Position the logo in the top-right corner */
-   .logo {
-    position: fixed;
-    top: 5px;  /* Adjust for top-right corner */
-    left: 20px; /* Align to the right */
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 12px;
-    overflow: hidden;
-    animation: glowEffect 5s infinite alternate;
+  /* Position the logo in the top-left corner */
+.logo {
+  position: fixed;
+  top: 5px;  /* Adjust for positioning */
+  left: 20px; /* Align to the left */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 8px;
 }
 
+/* Static Logo Image */
 .logo img {
-    width: 120px;  /* Adjust size as needed */
-    height: auto;
-    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
-    animation: floatEffect 4s infinite ease-in-out;
+  width: 100px;  /* Adjust size as needed */
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3)); /* Subtle shadow */
 }
 
-.logo::before {
-    content: "";
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    background: radial-gradient(circle, rgba(255, 223, 0, 0.7) 10%, rgba(255, 165, 0, 0.5) 50%, transparent 80%);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    z-index: -1;
-    animation: pulseEffect 4s infinite alternate;
-}
-
+/* Simple, Clean Text */
 .logo-text {
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #FFD700;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.9), 
-                 0 0 20px rgba(255, 140, 0, 0.7), 
-                 0 0 30px rgba(255, 69, 0, 0.5);
-    margin-left: 10px;
-    animation: shimmerEffect 6s infinite alternate ease-in-out;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff; /* Plain white text */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Soft shadow for contrast */
+  margin-left: 8px;
 }
 
-@keyframes glowEffect {
-    from {
-        box-shadow: 0 0 15px rgba(255, 223, 0, 0.6);
-    }
-    to {
-        box-shadow: 0 0 25px rgba(255, 140, 0, 0.8);
-    }
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+  .logo img {
+      width: 80px; /* Slightly smaller on mobile */
+  }
+  .logo-text {
+      font-size: 14px;
+      letter-spacing: 0.5px;
+  }
 }
 
-@keyframes pulseEffect {
-    from {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.8;
-    }
-    to {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 1;
-    }
-}
-
-@keyframes floatEffect {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes shimmerEffect {
-    from {
-        text-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
-    }
-    to {
-        text-shadow: 0 0 20px rgba(255, 140, 0, 0.8);
-    }
-}
 
     /* Global Site Header with Video Background */
     header {
@@ -438,21 +394,18 @@
       font-size: 2rem;
       font-weight: bold;
       text-align: center;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       font-family: 'Alegreya', serif;
       color: white;
-      text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 
-                   0 0 30px rgba(255, 165, 0, 0.7), 
-                   0 0 50px rgba(255, 140, 0, 0.5);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                   0 0 20px rgba(255, 255, 255, 0.6), 
+                   0 0 30px rgba(255, 255, 255, 0.4);
       position: relative;
       padding: 20px;
       display: inline-block;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: glowEffect 6s infinite alternate, floatEffect 5s infinite ease-in-out;
   }
   
-  /* Background glow effect behind text */
+  /* Subtle Background Glow */
   .magic-heading::before {
       content: "";
       position: absolute;
@@ -460,26 +413,10 @@
       left: 50%;
       width: 120px;
       height: 120px;
-      background: radial-gradient(circle, rgba(255, 223, 0, 0.8) 30%, rgba(255, 165, 0, 0.6) 70%, transparent 100%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, transparent 80%);
       border-radius: 50%;
-      transform: translate(-50%, -50%) scale(1);
+      transform: translate(-50%, -50%);
       z-index: -1;
-      animation: pulseEffect 4s infinite alternate;
-  }
-  
-  /* Gradient shimmer text effect */
-  .magic-heading h2 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(255, 223, 0, 1), 
-                   0 0 35px rgba(255, 140, 0, 0.9), 
-                   0 0 50px rgba(255, 69, 0, 0.7);
-      animation: shimmerEffect 8s infinite alternate ease-in-out;
   }
   
   /* Responsive Styles for Mobile */
@@ -487,63 +424,12 @@
       .magic-heading {
           font-size: 1.5rem;
           padding: 15px;
-          letter-spacing: 2px;
+          letter-spacing: 1px;
       }
   
       .magic-heading::before {
           width: 90px;
           height: 90px;
-      }
-  
-      .magic-heading h2 {
-          font-size: 2rem;
-          letter-spacing: 2px;
-      }
-  }
-  
-  /* Glow Animation */
-  @keyframes glowEffect {
-      from {
-          text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 
-                       0 0 30px rgba(255, 165, 0, 0.7), 
-                       0 0 50px rgba(255, 140, 0, 0.5);
-      }
-      to {
-          text-shadow: 0 0 25px rgba(255, 223, 0, 1), 
-                       0 0 45px rgba(255, 140, 0, 0.9), 
-                       0 0 60px rgba(255, 69, 0, 0.7);
-      }
-  }
-  
-  /* Background glow pulse effect */
-  @keyframes pulseEffect {
-      from {
-          transform: translate(-50%, -50%) scale(1);
-          opacity: 0.7;
-      }
-      to {
-          transform: translate(-50%, -50%) scale(1.2);
-          opacity: 1;
-      }
-  }
-  
-  /* Floating Effect */
-  @keyframes floatEffect {
-      from {
-          transform: translateY(0);
-      }
-      to {
-          transform: translateY(-10px);
-      }
-  }
-  
-  /* Gradient shimmer effect */
-  @keyframes shimmerEffect {
-      from {
-          background-position: left;
-      }
-      to {
-          background-position: right;
       }
   }
   
