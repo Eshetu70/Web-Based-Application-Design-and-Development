@@ -44,7 +44,7 @@
 
     /* Position the logo in the top-left corner */
     .logo {
-      position: fixed;
+      position: absolute;
       top: 5px;
       /* Adjust for positioning */
       left: 20px;
@@ -368,6 +368,25 @@
 
     .footer-column ul li {
       margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        display: none;
+      }
+    
+      /* Ensure logo remains at the top */
+      .logo {
+        position: fixed;
+        top: 10px; /* Adjust as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+      }
+    
+      .logo img {
+        width: 80px; /* Adjust logo size for mobile */
+      }
     }
 
     .container {
