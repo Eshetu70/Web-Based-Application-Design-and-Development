@@ -393,8 +393,7 @@
         filter: brightness(0) invert(1);
       }
     }
-
-
+   
 
     section {
       display: none;
@@ -521,6 +520,81 @@
         }
     }
 
+
+    .watermark {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 3px 6px;
+      border-radius: 5px;
+    }
+
+
+
+
+    /* Image Section */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+
+
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 20px;
+  }
+
+  .image-container {
+      position: relative;
+      display: inline-block;
+  }
+
+  .image-container img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 16px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.6); /* More transparent text */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Light shadow for visibility */
+      white-space: nowrap;
+  }
   </style>
 </head>
 <body>
@@ -582,19 +656,27 @@
       <p>As a leading global importer of premium construction materials and ceramics, we partner with world-class manufacturers and visionary companies. Our extensive network spans across continents, ensuring that we source the most innovative, sustainable, and high-quality materials available.</p>
       <p>We collaborate with industry giants and emerging innovators alike, setting new benchmarks for performance and aesthetics in construction.</p>
       <figure>
-        <img src="images/home.jpg" alt="Overview of Construction Materials">
+        <img src="images/ceramics/tower.jpeg" alt="Overview of Construction Materials">
         <figcaption>A glimpse into our diverse portfolio of advanced construction materials and ceramics.</figcaption>
       </figure>
 
       
-        <h2>Ceramic Materials Importer & Professional Services</h2>
+        <h2>GEDAS Constructions And Finishing Materials Importer & Professional Services</h2>
         <p>
             With over <span class="highlight">5 years of experience</span>, GEDAS Constructions And Finishing Materials  specializes in 
             <strong>importing high-quality construction materials</strong> from various countries worldwide to Ethiopia. 
             We provide a <strong>diverse range of construction solutions</strong>, ensuring durability, aesthetic appeal, and superior functionality 
             for residential, commercial, and industrial projects.
         </p>
-
+         <!-- Image Section -->
+  <section class="image-gallery">
+    <img src="images/ceramics/IMG_9050.jpeg" alt="Image 1">
+    
+    <img src="images/ceramics/IMG_9051.jpeg" alt="Image 2">
+    <img src="images/ceramics/IMG_9052.jpeg" alt="Image 3">
+    <img src="images/ceramics/IMG_9054.jpeg" alt="Image 4">
+    <img src="images/ceramics/tower.jpeg" alt="Image 5">
+  </section>
         <h2>Our Expertise in Construction Materials:</h2>
         <ul>
             <li><strong>Ceramic Materials</strong> – High-grade tiles, porcelain, and sanitary wares for modern finishing.</li>
@@ -604,6 +686,40 @@
             <li><strong>Glass & Aluminum Works</strong> – High-performance glass panels, aluminum doors, and windows for contemporary designs.</li>
             <li><strong>Electrical & Plumbing Supplies</strong> – Reliable wiring systems, pipes, and fittings to meet safety standards.</li>
         </ul>
+        <section class="image-gallery">
+          <div class="image-container">
+              <img src="images/ceramics/IMG_9050.jpeg" alt="Image 1">
+              <div class="watermark">GEDAS Constructions Materials<br>eshetuwek1@gmail.com</div>
+          </div>
+          <div class="image-container">
+              <img src="images/ceramics/IMG_9028.jpeg" alt="Image 2">
+              <div class="watermark">GEDAS Constructions Materials<br>eshetuwek1@gmail.com</div>
+          </div>
+          <div class="image-container">
+              <img src="images/ceramics/IMG_9029.jpeg" alt="Image 3">
+              <div class="watermark">GEDAS Constructions Materials<br>eshetuwek1@gmail.com</div>
+          </div>
+          <div class="image-container">
+              <img src="images/ceramics/IMG_9031.jpeg" alt="Image 4">
+              <div class="watermark">GEDAS Constructions Materials<br>eshetuwek1@gmail.com</div>
+          </div>
+          <div class="image-container">
+              <img src="images/ceramics/IMG_9032.jpeg" alt="Image 5">
+              <div class="watermark">GEDAS Constructions Materials<br>eshetuwek1@gmail.com</div>
+          </div>
+          <div class="image-container">
+              <img src="images/ceramics/IMG_9033.jpeg" alt="Image 6">
+              <div class="watermark">GEDAS Constructions Materials<br>eshetuwek1@gmail.com</div>
+          </div>
+          <div class="image-container">
+              <img src="images/ceramics/IMG_9034.jpeg" alt="Image 7">
+              <div class="watermark">GEDAS Constructions Materials<br>eshetuwek1@gmail.com</div>
+          </div>
+          <div class="image-container">
+              <img src="images/ceramics/IMG_9035.jpeg" alt="Image 8">
+              <div class="watermark">GEDAS Constructions Materials<br>eshetuwek1@gmail.com</div>
+          </div>
+      </section>
 
         <h2>Specialized Building Finishing Solutions:</h2>
         <ul>
