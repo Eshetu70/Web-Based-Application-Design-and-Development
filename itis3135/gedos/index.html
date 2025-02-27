@@ -3,166 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bulk Image Upload System</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h2 {
-            color: #222;
-            font-weight: 600;
-        }
-
-        .upload-container {
-            margin: 20px 0;
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        label.upload-btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #007bff;
-            color: #fff;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        label.upload-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .tab {
-            padding: 12px 18px;
-            background: #444;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .tab.active {
-            background: #ffcc00;
-            color: black;
-        }
-
-        .gallery {
-            display: none;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .gallery.active {
-            display: flex;
-        }
-
-        .gallery div {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery img {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .order-btn {
-            position: absolute;
-            bottom: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 204, 0, 0.9);
-            color: #222;
-            padding: 5px 10px;
-            font-size: 14px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Customer Submission</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
 </head>
 <body>
-    <h2>Upload & Order Images</h2>
-    <div class="upload-container">
-        <input type="file" id="imageUpload" accept="image/*" multiple>
-        <label for="imageUpload" class="upload-btn">Upload Images</label>
+    <header id="headerContainerTS"></header>
+    <div class="container">
+        <h1>Submit Your Details</h1>
+        <button id="loginBtn">Login with Google</button>
+        <p id="userGreeting"></p>
+        <form id="submissionForm">
+            <input type="text" id="name" placeholder="First Name" required>
+            <input type="text" id="lname" placeholder="Last Name" required>
+            <textarea id="message" placeholder="Message" required></textarea>
+            <input type="file" id="fileUpload">
+            <button type="submit">Submit</button>
+        </form>
+        <h2>Customer Submissions</h2>
+        <ul id="customerList"></ul>
     </div>
-    <div class="tabs">
-        <div class="tab active" onclick="changeTab('tab1')">Category 1</div>
-        <div class="tab" onclick="changeTab('tab2')">Category 2</div>
-        <div class="tab" onclick="changeTab('tab3')">Category 3</div>
-    </div>
-    <div id="tab1" class="gallery active"></div>
-    <div id="tab2" class="gallery"></div>
-    <div id="tab3" class="gallery"></div>
+
     <script>
-        const { jsPDF } = window.jspdf;
-        let orders = [];
+        const firebaseConfig = {
+            apiKey: "AIzaSyDCE-pEsnIN3K1xsdI2XkcuYIidDwSYf0U",
+            authDomain: "logins-d09d1.firebaseapp.com",
+            databaseURL: "https://logins-d09d1-default-rtdb.firebaseio.com",
+            projectId: "logins-d09d1",
+            storageBucket: "logins-d09d1.firebasestorage.app",
+            messagingSenderId: "297388775367",
+            appId: "1:297388775367:web:1e99b2e20d912612fa2be2"
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const storage = firebase.storage();
 
-        function addImageToGallery(imageSrc) {
-            let currentTab = document.querySelector('.tab.active').textContent;
-            let galleryId = currentTab === "Category 1" ? "tab1" : currentTab === "Category 2" ? "tab2" : "tab3";
-            let imageContainer = document.createElement('div');
-            let image = document.createElement('img');
-            image.src = imageSrc;
-            let orderBtn = document.createElement('button');
-            orderBtn.innerText = "Order";
-            orderBtn.className = "order-btn";
-            orderBtn.onclick = () => orderItem(imageSrc);
-            imageContainer.appendChild(image);
-            imageContainer.appendChild(orderBtn);
-            document.getElementById(galleryId).appendChild(imageContainer);
-        }
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider).then(result => {
+                document.getElementById("userGreeting").innerText = `Welcome, ${result.user.displayName}`;
+            }).catch(error => console.error(error));
+        });
 
-        function orderItem(imageSrc) {
-            orders.push(imageSrc);
-            alert("Added to order!");
-            generatePDF();
-        }
+        document.getElementById("submissionForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const lname = document.getElementById("lname").value;
+            const message = document.getElementById("message").value;
+            const file = document.getElementById("fileUpload").files[0];
+            let fileURL = "";
 
-        function generatePDF() {
-            const doc = new jsPDF();
-            doc.text("Order Summary", 10, 10);
-            orders.forEach((src, index) => {
-                doc.text(`Item ${index + 1}: ${src}`, 10, 20 + index * 10);
+            if (file) {
+                const storageRef = storage.ref(`uploads/${file.name}`);
+                await storageRef.put(file);
+                fileURL = await storageRef.getDownloadURL();
+            }
+
+            await db.collection("submissions").add({ name, lname, message, fileURL, date: new Date() });
+            alert("Submission Successful");
+            fetchSubmissions();
+        });
+
+        async function fetchSubmissions() {
+            const querySnapshot = await db.collection("submissions").get();
+            const customerList = document.getElementById("customerList");
+            customerList.innerHTML = "";
+            querySnapshot.forEach(doc => {
+                const data = doc.data();
+                const li = document.createElement("li");
+                li.innerHTML = `${data.name} ${data.lname} - ${data.message} - <a href="${data.fileURL}" target="_blank">File</a> - ${new Date(data.date.seconds * 1000).toLocaleDateString()}`;
+                customerList.appendChild(li);
             });
-            doc.save("order_summary.pdf");
-            sendEmail();
-        }
-
-        function sendEmail() {
-            alert("Order summary sent to eshetuwek1@gmail.com");
-        }
-
-        function changeTab(tabId) {
-            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.gallery').forEach(gallery => gallery.classList.remove('active'));
-            document.querySelector(`.tab[onclick="changeTab('${tabId}')"]`).classList.add('active');
-            document.getElementById(tabId).classList.add('active');
         }
     </script>
 </body>
