@@ -435,166 +435,175 @@
     
 
     .magic-heading {
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        letter-spacing: 3px;
-        font-family: 'Alegreya', serif;
-        color: white; /* Golden Text */
-        text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 
-                     0 0 40px rgba(255, 165, 0, 0.7), 
-                     0 0 60px rgba(255, 140, 0, 0.5);
-        position: relative;
-        padding: 20px 40px;
-        display: inline-block;
-        animation: glowEffect 6s infinite alternate, floatEffect 5s infinite ease-in-out;
-    }
-
-    .magic-heading::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 150px;
-        height: 150px;
-        background: radial-gradient(circle, rgba(255, 223, 0, 0.8) 20%, rgba(255, 165, 0, 0.6) 60%, transparent 100%);
-        border-radius: 50%;
-        transform: translate(-50%, -50%) scale(1);
-        z-index: -1;
-        animation: pulseEffect 4s infinite alternate;
-    }
-
-    .magic-heading h2 {
-        font-size: 2.8rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 0 25px rgba(255, 223, 0, 1), 
-                     0 0 45px rgba(255, 140, 0, 0.9), 
-                     0 0 60px rgba(255, 69, 0, 0.7);
-        animation: shimmerEffect 8s infinite alternate ease-in-out;
-    }
-
-    @keyframes glowEffect {
-        from {
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 
-                         0 0 40px rgba(255, 165, 0, 0.7), 
-                         0 0 60px rgba(255, 140, 0, 0.5);
-        }
-        to {
-            text-shadow: 0 0 30px rgba(255, 223, 0, 1), 
-                         0 0 50px rgba(255, 140, 0, 0.9), 
-                         0 0 70px rgba(255, 69, 0, 0.7);
-        }
-    }
-
-    @keyframes pulseEffect {
-        from {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 0.8;
-        }
-        to {
-            transform: translate(-50%, -50%) scale(1.3);
-            opacity: 1;
-        }
-    }
-
-    @keyframes floatEffect {
-        from {
-            transform: translateY(0);
-        }
-        to {
-            transform: translateY(-15px);
-        }
-    }
-
-    @keyframes shimmerEffect {
-        from {
-            background-position: left;
-        }
-        to {
-            background-position: right;
-        }
-    }
-
-
-    .watermark {
-      position: absolute;
-      bottom: 5px;
-      left: 5px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.8);
-      background: rgba(0, 0, 0, 0.5);
-      padding: 3px 6px;
-      border-radius: 5px;
-    }
-
-
-
-
-    /* Image Section */
-    .image-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    .image-gallery img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    }
-
-    .image-gallery img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    }
-
-
-
-
-    .image-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 20px;
-  }
-
-  .image-container {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 3px;
+      font-family: 'Alegreya', serif;
+      color: white;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 
+                   0 0 30px rgba(255, 165, 0, 0.7), 
+                   0 0 50px rgba(255, 140, 0, 0.5);
       position: relative;
+      padding: 20px;
       display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: glowEffect 6s infinite alternate, floatEffect 5s infinite ease-in-out;
   }
-
-  .image-container img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  }
-
-  .watermark {
+  
+  /* Background glow effect behind text */
+  .magic-heading::before {
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) rotate(-30deg);
-      font-size: 16px;
-      font-weight: bold;
-      color: rgba(255, 255, 255, 0.6); /* More transparent text */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Light shadow for visibility */
-      white-space: nowrap;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(255, 223, 0, 0.8) 30%, rgba(255, 165, 0, 0.6) 70%, transparent 100%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      z-index: -1;
+      animation: pulseEffect 4s infinite alternate;
   }
+  
+  /* Gradient shimmer text effect */
+  .magic-heading h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(255, 223, 0, 1), 
+                   0 0 35px rgba(255, 140, 0, 0.9), 
+                   0 0 50px rgba(255, 69, 0, 0.7);
+      animation: shimmerEffect 8s infinite alternate ease-in-out;
+  }
+  
+  /* Responsive Styles for Mobile */
+  @media (max-width: 768px) {
+      .magic-heading {
+          font-size: 1.5rem;
+          padding: 15px;
+          letter-spacing: 2px;
+      }
+  
+      .magic-heading::before {
+          width: 90px;
+          height: 90px;
+      }
+  
+      .magic-heading h2 {
+          font-size: 2rem;
+          letter-spacing: 2px;
+      }
+  }
+  
+  /* Glow Animation */
+  @keyframes glowEffect {
+      from {
+          text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 
+                       0 0 30px rgba(255, 165, 0, 0.7), 
+                       0 0 50px rgba(255, 140, 0, 0.5);
+      }
+      to {
+          text-shadow: 0 0 25px rgba(255, 223, 0, 1), 
+                       0 0 45px rgba(255, 140, 0, 0.9), 
+                       0 0 60px rgba(255, 69, 0, 0.7);
+      }
+  }
+  
+  /* Background glow pulse effect */
+  @keyframes pulseEffect {
+      from {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 0.7;
+      }
+      to {
+          transform: translate(-50%, -50%) scale(1.2);
+          opacity: 1;
+      }
+  }
+  
+  /* Floating Effect */
+  @keyframes floatEffect {
+      from {
+          transform: translateY(0);
+      }
+      to {
+          transform: translateY(-10px);
+      }
+  }
+  
+  /* Gradient shimmer effect */
+  @keyframes shimmerEffect {
+      from {
+          background-position: left;
+      }
+      to {
+          background-position: right;
+      }
+  }
+  
+
+/* Image Section */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.image-container img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.image-container:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Professional Animated Watermark */
+.watermark {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px 8px;
+  border-radius: 5px;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Watermark Appears on Hover */
+.image-container:hover .watermark {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   </style>
 </head>
 <body>
