@@ -96,7 +96,7 @@
       z-index: -1;
     }
     header h1 {
-      margin: 10px 0 0; /* Push title below the logo */
+      margin: 0px 0 0; /* Push title below the logo */
       font-size: 1.8em;
     }
     header p {
@@ -437,7 +437,7 @@
 /* Image Section */
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
   gap: 20px;
   max-width: 1400px;
   margin: 40px auto;
@@ -447,7 +447,7 @@
 .image-container {
   position: relative;
   display: inline-block;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 12px;
   transition: transform 0.4s ease-in-out;
 }
@@ -455,7 +455,7 @@
 .image-container img {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
@@ -566,12 +566,30 @@
         </p>
          <!-- Image Section -->
   <section class="image-gallery">
-    <img src="images/ceramics/IMG_9050.jpeg" alt="Image 1">
-    
+
+    <div class="image-container">
+      <img src="images/ceramics/IMG_9050.jpeg" alt="Image 1">
+      <div class="watermark">GEDAS Constructions Materials<br>gediamare@gmail.com<br> +251911133576 <br> +251929951830</div>
+  </div>
+  <div class="image-container">
     <img src="images/ceramics/IMG_9051.jpeg" alt="Image 2">
+      <div class="watermark">GEDAS Constructions Materials<br>gediamare@gmail.com<br> +251911133576 <br> +251929951830</div>
+  </div>
+  <div class="image-container">
     <img src="images/ceramics/IMG_9052.jpeg" alt="Image 3">
+      <div class="watermark">GEDAS Constructions Materials<br>gediamare@gmail.com<br> +251911133576 <br> +251929951830</div>
+  </div>
+  <div class="image-container">
     <img src="images/ceramics/IMG_9054.jpeg" alt="Image 4">
+      <div class="watermark">GEDAS Constructions Materials<br>gediamare@gmail.com<br> +251911133576 <br> +251929951830</div>
+  </div>
+  <div class="image-container">
     <img src="images/ceramics/tower.jpeg" alt="Image 5">
+      <div class="watermark">GEDAS Constructions Materials<br>gediamare@gmail.com<br> +251911133576 <br> +251929951830</div>
+  </div>
+  
+
+    
   </section>
         <h2>Our Expertise in Construction Materials:</h2>
         <ul>
