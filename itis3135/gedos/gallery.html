@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gedas Global Ceramics Imports & Professional Services with detailed information about international export and import of premium construction materials.">
+  <title>Gedas Global Ceramics Imports & Professional Services</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1c1c1c, #3a3a3a);
+      color: #fff;
+      line-height: 1.6;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(45deg, #ff9800, #e91e63, #3f51b5);
+      padding: 50px 0;
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      animation: headerGlow 5s infinite alternate;
+    }
+    @keyframes headerGlow {
+      from {
+        box-shadow: 0 4px 15px rgba(255, 152, 0, 0.6);
+      }
+      to {
+        box-shadow: 0 4px 15px rgba(63, 81, 181, 0.6);
+      }
+    }
+    nav {
+      background: linear-gradient(45deg, #2c3e50, #3498db, #2c3e50);
+      padding: 15px 0;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+      animation: navGlow 5s infinite alternate;
+    }
+    @keyframes navGlow {
+      from {
+        box-shadow: 0 6px 15px rgba(52, 152, 219, 0.6);
+      }
+      to {
+        box-shadow: 0 6px 15px rgba(44, 62, 80, 0.6);
+      }
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #000;
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section {
+      display: none;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .service-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .service-image:hover {
+      transform: scale(1.05);
+    }
+    .image-caption {
+      font-size: 16px;
+      color: #ffcc00;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Welcome to Gedas Global Ceramics & Professional Services
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#home" class="tab-link" data-target="home">Home</a></li>
+      <li><a href="#leadership" class="tab-link" data-target="leadership">Leadership</a></li>
+      <li><a href="#materials" class="tab-link" data-target="materials">Materials</a></li>
+      <li><a href="#services" class="tab-link" data-target="services">Services</a></li>
+      <li><a href="#gallery" class="tab-link" data-target="gallery">Gallery</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <section id="home" class="active">
+      <h2>Welcome to Gedas Global</h2>
+      <img src="images/home1.jpg" alt="Home Overview" class="service-image">
+      <p class="image-caption">A stunning overview of our premium construction services.</p>
+    </section>
+    
+    <section id="leadership">
+      <h2>Global Leadership</h2>
+      <img src="images/leadership1.jpg" alt="Leadership Vision" class="service-image">
+      <p class="image-caption">Our vision for global leadership in ceramics and construction.</p>
+    </section>
+    
+    <section id="materials">
+      <h2>High-Quality Materials</h2>
+      <img src="images/materials1.jpg" alt="Construction Materials" class="service-image">
+      <p class="image-caption">Top-tier materials sourced for lasting durability.</p>
+    </section>
+    
+    <section id="services">
+      <h2>Our Professional Services</h2>
+      <img src="images/services1.jpg" alt="Service Excellence" class="service-image">
+      <p class="image-caption">Delivering excellence in every project we undertake.</p>
+    </section>
+    
+    <section id="gallery">
+      <h2>Gallery - Our Work & Services</h2>
+      <img src="images/gallery1.jpg" class="service-image">
+      <p class="image-caption">Innovative designs that redefine quality.</p>
+      <img src="images/gallery2.jpg" class="service-image">
+      <p class="image-caption">Elegant structures with a modern touch.</p>
+      <img src="images/gallery3.jpg" class="service-image">
+      <p class="image-caption">Crafting perfection with every build.</p>
+      <img src="images/gallery4.jpg" class="service-image">
+      <p class="image-caption">Unparalleled creativity in architectural excellence.</p>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const tabs = document.querySelectorAll(".tab-link");
+      const sections = document.querySelectorAll("main section");
+      
+      tabs.forEach(tab => {
+        tab.addEventListener("click", function(event) {
+          event.preventDefault();
+          sections.forEach(section => section.classList.remove("active"));
+          document.getElementById(this.getAttribute("data-target")).classList.add("active");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

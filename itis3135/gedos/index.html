@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Image Upload System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .upload-container {
+            margin-bottom: 20px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label.upload-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FFD700;
+            color: #333;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .tab {
+            padding: 10px 15px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background: #FFD700;
+            color: black;
+        }
+
+        .gallery {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery.active {
+            display: flex;
+        }
+
+        .gallery a {
+            display: inline-block;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery a:hover {
+            transform: scale(1.1);
+        }
+
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #authSection {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Upload & Manage Tons of Images</h2>
+
+    <!-- Authentication Section -->
+    <div id="authSection">
+        <label for="email">Enter Email to Authenticate:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button onclick="authenticateUser()">Authenticate</button>
+    </div>
+
+    <!-- Upload Button -->
+    <div class="upload-container" id="uploadSection" style="display: none;">
+        <input type="file" id="imageUpload" accept="image/*" multiple>
+        <label for="imageUpload" class="upload-btn">Upload Images</label>
+    </div>
+
+    <!-- Tabs for Categories -->
+    <div class="tabs">
+        <div class="tab active" onclick="changeTab('tab1')">Category 1</div>
+        <div class="tab" onclick="changeTab('tab2')">Category 2</div>
+        <div class="tab" onclick="changeTab('tab3')">Category 3</div>
+        <div class="tab" onclick="changeTab('fullMaterials')">GEDASFullMaterials</div>
+    </div>
+
+    <!-- Image Galleries -->
+    <div id="tab1" class="gallery active"></div>
+    <div id="tab2" class="gallery"></div>
+    <div id="tab3" class="gallery"></div>
+    <div id="fullMaterials" class="gallery"></div>
+
+    <script>
+        const authorizedEmail = "eshetuwek1@gmail.com";
+
+        function authenticateUser() {
+            let enteredEmail = document.getElementById("email").value;
+            if (enteredEmail === authorizedEmail) {
+                alert("Authentication Successful!");
+                document.getElementById("uploadSection").style.display = "block";
+            } else {
+                alert("Unauthorized! Only the authorized user can upload images.");
+            }
+        }
+
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            const files = event.target.files;
+            if (files.length > 0) {
+                for (let i = 0; i < files.length; i++) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        addImageToGallery(e.target.result);
+                        saveImage(e.target.result);
+                    };
+                    reader.readAsDataURL(files[i]);
+                }
+            }
+        });
+
+        function addImageToGallery(imageSrc) {
+            let currentTab = document.querySelector('.tab.active').textContent;
+            let galleryId = currentTab === 'GEDASFullMaterials' ? 'fullMaterials' : 'tab1';
+
+            let anchor = document.createElement('a');
+            anchor.href = imageSrc;
+            anchor.target = "_blank"; // Open image in new tab
+            let image = document.createElement('img');
+            image.src = imageSrc;
+
+            anchor.appendChild(image);
+            document.getElementById(galleryId).appendChild(anchor);
+            document.getElementById('fullMaterials').appendChild(anchor.cloneNode(true));
+        }
+
+        function saveImage(imageSrc) {
+            let savedImages = JSON.parse(localStorage.getItem('uploadedImages')) || [];
+            savedImages.push(imageSrc);
+            localStorage.setItem('uploadedImages', JSON.stringify(savedImages));
+        }
+
+        function loadSavedImages() {
+            let savedImages = JSON.parse(localStorage.getItem('uploadedImages')) || [];
+            savedImages.forEach(src => addImageToGallery(src));
+        }
+
+        function changeTab(tabId) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.gallery').forEach(gallery => gallery.classList.remove('active'));
+
+            document.querySelector(`.tab[onclick="changeTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        window.onload = loadSavedImages;
+    </script>
+
+</body>
+</html>
