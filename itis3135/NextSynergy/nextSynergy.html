@@ -770,6 +770,31 @@
 
    
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".order-btn").forEach(function (button) {
+                button.addEventListener("click", function (event) {
+                    let serviceDiv = this.closest(".service");
+                    let headingText = serviceDiv ? serviceDiv.querySelector("h2").textContent : "";
+    
+                    let contactUrl = "https://www.nextsynergytech.online/contact";
+                    if (this.href.includes(contactUrl)) {
+                        event.preventDefault(); // Stop default navigation
+    
+                        let encodedHeading = encodeURIComponent(headingText);
+                        window.location.href = `${contactUrl}?service=${encodedHeading}`;
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
     
 </body>
 </html>
