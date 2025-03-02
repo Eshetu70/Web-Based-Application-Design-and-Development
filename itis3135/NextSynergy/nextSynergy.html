@@ -6,10 +6,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
 
-    <title>NextSynergy Tech</title>
+     <!-- SEO-Optimized Title -->
+     <title>NextSynergy Tech | Web & Mobile Development | E-Commerce & AI Solutions</title>
+
+     <!-- SEO-Optimized Meta Description -->
+     <meta name="description" content="NextSynergy Tech offers top-notch web & mobile development, AI-powered e-commerce solutions, cybersecurity, and business automation services. Get a free consultation today!">
+ 
+     <!-- SEO-Optimized Keywords -->
+     <meta name="keywords" content="Web Development, Mobile App Development, AI Solutions, Cybersecurity, E-Commerce, Online Store, Business Automation, Software Development, SEO Services">
+     <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
     
     <link rel="stylesheet" href="server/Sytles/css.css">
-    
     <script src="server/script.js"></script>
     <link rel="stylesheet" href="server/Sytles/course.css">
     <link rel="stylesheet" href="server/Sytles/mobile.css">
@@ -116,6 +123,7 @@
 </head>
 <body>
     <header class="custom-header">
+        <h1>NextSynergy Tech - Web & Mobile App Development | AI-Powered E-Commerce Solutions</h1>
         <!-- Background Video -->
         <div class="header-bg">
             <video autoplay loop muted playsinline>
@@ -134,6 +142,8 @@
             <!-- Desktop Navigation Menu -->
             <ul class="nav-menu">
                 <li><a href="#" onclick="showSection('about')">About Us</a></li>
+
+                <li><a href="#" onclick="showSection('who-we-are')">Who We Are</a></li>
                 <li><a href="#" onclick="showSection('services')">Services</a></li>
                 <li><a href="#" onclick="showSection('ecommerce')">E-Commerce</a></li>
                 <li><a href="#" onclick="showSection('mission')">Mission & Vision</a></li>
@@ -191,18 +201,138 @@
         </div>
 
     </header>
-   
+    
     
     
     
     <div class="container">
         <section id="about" class="section">
-            <h2>About Us</h2>
+            <h2>🚀 About NextSynergy Tech - Your Digital Transformation Partner</h2>
             <img src="abou.png" alt="About Us">
             <p>NextSynergy Tech is at the forefront of technological innovation, specializing in cutting-edge digital solutions across multiple industries.</p>
             <p>Our company is committed to technological research, application development, and student training. We empower young developers through our schools and innovation programs, ensuring they acquire the necessary skills to create impactful applications.</p>
             <p>We integrate AI and machine learning into our solutions to drive efficiency, automation, and business growth, setting new industry standards.</p>
         </section>
+        <section id="who-we-are" class="section">
+            <h2>🌟 Who We Are</h2>
+            <div class="who-we-are-container">
+                <div class="founder-info">
+                    <img src="my.jpg" alt="Eshetu T. Wekjira" class="founder-image">
+                    <h3>Eshetu T. Wekjira</h3>
+                    <p><strong>Founder & CEO, NextSynergy Tech</strong></p>
+                    <p>"At NextSynergy Tech, our mission is to build a digital generation and bring smiles to our customers. We empower businesses and individuals through innovative technology solutions, AI automation, and software development. Join us on our journey to redefine the future!"</p>
+                </div>
+            </div>
+        
+            
+            <div class="dropdowns">
+                <button class="dropdown-btn" onclick="toggleDropdown('education')">🎓 Education</button>
+                <div id="education" class="dropdown-content">
+                    <ul>
+                        <li>📌 University of North Carolina at Charlotte - B.S. Software Engineering</li>
+                        <li>📌 Specialized Software Systems & Networking</li>
+                        <li>📌 Addis Ababa University - B.S. Civil Engineering</li>
+                       
+                    </ul>
+                </div>
+        
+                <button class="dropdown-btn" onclick="toggleDropdown('experience')">💼 Job Experience</button>
+                <div id="experience" class="dropdown-content">
+                    <ul>
+                        <li>🚀 Amazon - Operations Manager</li>
+                        <li>💻 NextSynergy Tech - CEO & Software Developer</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <style>
+            .who-we-are-container {
+                text-align: center;
+                margin: 20px auto;
+                padding: 20px;
+                max-width: 600px;
+                background: #f9f9f9;
+                border-radius: 10px;
+                box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            }
+            .founder-image {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+            .dropdowns {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .dropdown-btn {
+                width: 90%;
+                padding: 12px;
+                background: #004080;
+                color: white;
+                border: none;
+                cursor: pointer;
+                margin: 10px 0;
+                border-radius: 5px;
+                font-size: 16px;
+                text-align: left;
+            }
+            .dropdown-content {
+                display: none;
+                background: white;
+                border: 1px solid #ccc;
+                margin: 5px auto;
+                padding: 15px;
+                max-width: 500px;
+                border-radius: 5px;
+                text-align: left;
+                box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+            }
+            .dropdown-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .dropdown-list li {
+                padding: 8px 0;
+                border-bottom: 1px solid #eee;
+            }
+            .dropdown-list li:last-child {
+                border-bottom: none;
+            }
+        </style>
+        
+        <script>
+            function toggleDropdown(id) {
+                var content = document.getElementById(id);
+                content.style.display = (content.style.display === "block") ? "none" : "block";
+            }
+        </script>
+        
+        <script>
+            function showSection(sectionId) {
+                // Hide all sections
+                document.querySelectorAll("section").forEach(section => {
+                    section.style.display = "none";
+                });
+            
+                // Show the selected section
+                let section = document.getElementById(sectionId);
+                if (section) {
+                    section.style.display = "block";
+                } else {
+                    console.error("Section not found:", sectionId);
+                }
+            }
+            
+            document.addEventListener("DOMContentLoaded", function () {
+                // Ensure sections hide/show properly on page load
+                showSection("about"); // Set default section
+            });
+        </script>
+    
+    </section>
         </section>
 
         <section id="services" class="section">
