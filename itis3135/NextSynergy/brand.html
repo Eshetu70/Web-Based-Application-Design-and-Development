@@ -3,43 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diamond Wrapper</title>
+    <title>Tech Comp Design</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            height: 100vh;
+           background: 
+  repeating-linear-gradient(45deg, #172757, #1b2838 10px, #2c3e50 20px), 
+  linear-gradient(45deg, rgba(23, 39, 87, 0.6), rgba(27, 40, 56, 0.6), rgba(44, 62, 80, 0.6));
+
+            color: white;
+            text-align: center;
             margin: 0;
             padding: 0;
-            background: repeating-linear-gradient(45deg, #0d1b2a, #1a2d44 10px, #284b63 20px);
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
-
         .wrapper {
-            width: 300px;
-            height: 300px;
-            background: repeating-linear-gradient(45deg, #172757, #1b2838 10px, #2c3e50 20px);
-            transform: rotate(45deg); /* Makes it a diamond */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(45deg);
+            background: linear-gradient(45deg, #ff9e00, #ff6a00);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 87, 34, 0.8);
+            width: 250px;
+            height: 250px;
+        }
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+        }
+        .box {
+            background: linear-gradient(135deg, #ffcc33, #ff6699, #ff3300);
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .content {
-            transform: rotate(-45deg); /* Rotates content back to normal */
-            color: white;
-            font-size: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(255, 105, 180, 0.9);
             font-weight: bold;
+            transform: rotate(-45deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        .box:hover {
+            background: linear-gradient(135deg, #ff4500, #ff1493, #ffcc00);
+            box-shadow: 0 20px 50px rgba(255, 69, 0, 1);
+            transform: rotate(-45deg) scale(1.15);
+        }
+        .box a {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+        }
+        .theme-icons {
+            position: absolute;
+            font-size: 25px;
+        }
+        .theme-icons.top {
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .theme-icons.left {
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .theme-icons.right {
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .theme-icons.bottom {
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+<style>
+        .section img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
-
-    <div class="wrapper">
-        <div class="content">Hello</div>
+    <h1 style="font-size: 32px; font-weight: bold;">Welcome to my Tech Company Page!</h1>
+    <section id="about" class="section">
+        <h2>🚀 About NextSynergy Tech - Your Digital Transformation Partner</h2>
+        <img src="abou.png" alt="About Us">
+        <p>NextSynergy Tech is at the forefront of technological innovation, specializing in cutting-edge digital solutions across multiple industries.</p>
+        <p>Our company is committed to technological research, application development, and student training. We empower young developers through our schools and innovation programs, ensuring they acquire the necessary skills to create impactful applications.</p>
+        <p>We integrate AI and machine learning into our solutions to drive efficiency, automation, and business growth, setting new industry standards.</p>
+    </section>
+    <div class="container">
+        <div class="theme-icons top">☀️</div>
+        <div class="theme-icons left">🌙</div>
+        <div class="wrapper">
+            <ul class="nav-menu">
+                <li><div class="box"><a href="#" onclick="showSection('about')">About</a></div></li>
+                <li><div class="box"><a href="#" onclick="showSection('who-we-are')">Who</a></div></li>
+                <li><div class="box"><a href="#" onclick="showSection('services')">Services</a></div></li>
+                <li><div class="box"><a href="#" onclick="showSection('ecommerce')">E-Commerce</a></div></li>
+                <li><div class="box"><a href="#" onclick="showSection('mission')">Mission</a></div></li>
+                <li><div class="box"><a href="#" onclick="showSection('projects')">Projects</a></div></li>
+                <li><div class="box"><a href="#" onclick="showSection('order')">Orders</a></div></li>
+                <li><div class="box"><a href="#" onclick="showSection('tutorials')">Tutorials</a></div></li>
+                <li><div class="box"><a href="#" onclick="showSection('courses')">Register</a></div></li>
+            </ul>
+        </div>
+        <div class="theme-icons right">🚀</div>
+        <div class="theme-icons bottom">✨</div>
     </div>
-
 </body>
 </html>
